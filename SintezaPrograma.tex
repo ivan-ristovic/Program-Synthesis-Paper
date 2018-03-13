@@ -1,0 +1,43 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper]{article}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usepackage[english,serbian]{babel}
+
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Teorema}[section]
+
+\begin{document}
+
+\title{Sinteza programa\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
+
+\author{Anja Ivanišević, Ivan Ristović, Milana Kovačević, Vesna Katanić\\ kontakt email prvog, drugog (trećeg) autora}
+\date{??.~?? 2018.}
+\maketitle
+
+\input{parts/abstract.tex}
+
+\tableofcontents
+
+\newpage
+
+\input{parts/uvod.tex}
+\input{parts/slike_i_tabele.tex}
+\input{parts/main.tex}
+\input{parts/zakljucak.tex}
+
+\addcontentsline{toc}{section}{Literatura}
+\appendix
+\bibliography{literatura}
+\bibliographystyle{plain}
+
+\input{parts/dodatak.tex}
+
+\end{document}
