@@ -1,5 +1,44 @@
 \section{Primene}
-\label{sec:primene}
+\label{sec:Primene}
+
+\subsection{Priprema podataka}
+\label{subsec:PripremaPodataka}
+
+Priprema podataka predstavlja proces čišćenja, transformacije i pripreme podataka iz polu-struktuiranog formata u format pogodan za analizu i prezentovanje. Procenjuje se da se 80\% vremena potroši na dovodjenje podataka u oblik pogodan za primenu algoritama iz mašinskog učenja ili istraživanja podataka radi izvlačenja korisnih zaključaka.
+
+Proces pripreme podataka često obuhvata sledeće korake:
+\begin{itemize}
+  \item izvlačenje
+  \item transformacija
+  \item formatiranje
+\end{itemize}
+
+Programiranje vođeno primerima  (\url{https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/pbe16.pdf}) čini čitav ovaj proces bržim [44].
 
 
-The synthesized program may be explicitly presented to the user for debugging, re-use, or for being  incorporated as part of a larger workflow. However, in some cases, the synthesized program may be implicit and is simply used to automate the intended one-off task for the user, as in case of spreadsheet string transformations [43].
+\subsection{Grafika}
+\label{subsec:Grafika}
+
+Programski opis grafičkih objekata omogućava dinamičku geometriju koja dovodi do bržih proračuna koordinata zavisnih tačaka od tačaka koje imaju slobodne koordinate. Ovo omogućava interaktivne izmene i efikasne animacije. Tehnike sinteze programa mogu uspešno generisati rešenja geometrijskih problema srednješkolske težine [48].
+
+Slike i crteži (u daljem tekstu grafike) nekada sadrže ponovljene šablone, teksture ili objekte. Konstrukcija takvih grafika zahteva pisanje skriptova ili copy-paste operacija, što može biti jako neprijatno i podložno greškama. Korišćenjem sinteze programa, moguće je da korisnik prikaže par primera i ostavi posao sintezeru da predvidi naredne objekte u nizu [21]. Štaviše, korišćenjem grafičkog interfejsa za domen vektorske grafike, moguće je interaktivno omogućiti korisniku crtanje isključivo pomoću grafičkih alata a generisanje programa ostaviti sintezeru.
+
+
+\subsection{Popravka koda}
+\label{subsec:PopravkaKoda}
+
+Postoji mnogo tehnika sinteze napravljenih specifično za problem popravke koda. [26, 60, 99, 130]. Za dat program P i specifikaciju $\phi$, problem popravke zahteva računanje modifikacija programa P koje stvaraju nov program P’ takav da zadovoljava $\phi$. Osnovna ideja ovih tehnika je da se prvo ubace alternativni izbori za izraze u programu, a onda tehnikama sinteze nađu zamene ili modifikacije izraza pronađu izrazi koji program dovode u oblik koji zadovoljava $\phi$.
+
+
+\subsection{Sugestije prilikom kodiranja}
+\label{subsec:SugestijePrilikomKodiranja}
+
+
+\subsection{Modelovanje}
+\label{subsec:Modelovanje}
+
+\subsection{Superoptimizacija}
+\label{subsec:Superoptimizacija}
+
+\subsection{Konkurentno programiranje}
+\label{subsec:KonkurentnoProgramiranje}
