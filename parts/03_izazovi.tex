@@ -51,6 +51,14 @@ Deljenje problema na potprobleme koji mogu da se sintetišu odvojeno nije moguć
 
 Deduktivna pretraga može lako da zaključi vrednosti konstanti u programu. To je bitno jer ukoliko program sadrži veliki broj konstanti, sama enumerativna pretraga bi se izgubila pokušavajući da pogodi njihove prave vrednosti. 
 
+\subsubsection{Induktivna pretraga}
+\label{subsubsec:Induktivna}
+
+Prethodno smo videli da se u slučaju deduktivne pretrage program sintetiše dokazivanjem teorema i razrešavanjem ograničenja. Za razliku od nje, induktivna pretraga sintetiše program na osnovu skupa ulaza i odgovarajućih izlaza. Sintezer koji koristi induktivnu pretragu pokušava da nađe opšti program koji zadovoljava dati skup ulaza i izlaza. Ovaj vid pretrage predstavlja jedan vid učenja na osnovu primera, takođe poznato kao \emph{Mašinsko učenje} (eng. \emph{Machine learning}). Dobra strana ovog pristupa jeste što je dovoljno fleksibilan da može da radi i sa nepotpunim specifikacijama problema. Međutim, može se desiti da rezultat ne zadovolji očekivanja korisnika ukoliko neki bitni slučajevi koji nisu pokriveni specifikacijom.
+
+Postoji više različitih pristupa koji mogu da se koriste u induktivnoj pretrazi. Jedan od tih pristupa je sinteza sa aktivnim učenjem. \emph{Aktivno učenje (eng. \emph{Active learning})} je poseban vid mašinskog učenja gde je algoritmu za učenje dopušteno da sam vrši selekciju podataka na osnovu kojih će da uči. Ovaj sintezer koristi induktivni algoritam za učenje, koji u sebi često poziva i deduktivne procedure. Iako kombinuje oba pristupa, sinteza sa aktivnim učenjem se u literaturi predstavlja kao primer induktivne sinteze.
+
+Još jedan primer induktivne pretrage je CEGIS. Ova tehnika će biti detaljno opisana u poglavlju \ref{sec:cegis}.
 
 \subsubsection{Tehnike sa ograničenjima}
 \label{subsubsec:ConstraintSolving}
@@ -60,7 +68,6 @@ Mnoge uspešne tehnike sinteze programa u svojoj osnovi sadrže tehnike prilago�
   \item \emph{Generisanje ograničenja} - U opštem slučaju, kada se kaže prilagođavanje ograničenjima misli se na na pronalaženje modela za formulu koja opisuje željeni program. Osnovna ideja je da se specifikacija programa kao i njegova dodatna ograničenja zapišu u jednoj logičkoj formuli. Uglavnom se tom prilikom u formulu dodaju i pretpostavke o rešenju.
   \item \emph{Razrešavanje ograničenja} - Formula u kojoj su zapisana ograničenja često sadrži kvatifikatore i nepoznate drugog reda. Ona se prvo transformiše u oblik pogodan za nekog od rešavača, na primer za SAT ili SMT rešavač. Na ovaj način se problem pretrage svodi na problem ispitivanja zadovoljivosti prosleđene formule. Svaki nađeni model za tu formulu predstavlja jedno moguće rešenje koje zadovoljava data ograničenja.
 \end{itemize}
-Jedna od tehnika sa ograničenjima je CEGIS. Ova tehnika je detaljno opisana u poglavlju \ref{sec:cegis}.
 
 \subsubsection{Statistička pretraga}
 \label{subsubsec:Statistical}
