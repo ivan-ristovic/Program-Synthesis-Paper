@@ -14,9 +14,19 @@ Jedna od mogućih implementacija se može naći na \cite{CEGISimpl}.
 \subsection{Arhitektura}
 \label{subsec:Arhitektura}
 
-CEGIS se sastoji iz dve faze, induktivne sinteze i verifikacije. Na početku sintezeru dajemo specifikaciju željenog programa. U fazi sinteze pronalazi se program kandidat koji može da zadovolji specifikacije. Nakon toga se u fazi verifikacije proverava da li taj kandidat zaista zadovoljava specifikacije. Ako verifikator ne uspe da pronađe kontra primer znači da smo pronašli traženi program. U suprotnom, verifikator prosleđuje sintezeru informacije o kontra primeru, koje će mu pomoći prilikom daljeg traženja novog kandidata. 
+CEGIS se sastoji iz dve faze, induktivne sinteze i verifikacije. Na početku sintezeru dajemo specifikaciju željenog programa. U fazi sinteze pronalazi se program kandidat koji može da zadovolji specifikacije. Nakon toga se u fazi verifikacije proverava da li taj kandidat zaista zadovoljava specifikacije. Ako verifikator ne uspe da pronađe kontra primer znači da smo pronašli traženi program. U suprotnom, verifikator prosleđuje sintezeru informacije o kontra primeru, koje će mu pomoći prilikom daljeg traženja novog kandidata. Na slici \ref{fig:cegis} predstavljena je opšta arhitektura CEGISa.
 
 Ovakav vid pretrage zove se pretraga vođena kontra primerima (eng. \emph{counterexample-guided}), zato što je povratna informacija sintezeru kontra primer koji se dodaje u specifikaciju programa. 
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.4]{resources/cegis.jpeg}
+\end{center}
+\caption{CEGIS petlja \cite{AboutPS}}
+\label{fig:cegis}
+\end{figure}
+
 
 Da bismo u potpunosti definisali CEGIS sintezu programa, potrebno je da odgovorimo na nekoliko važnih pitanja:
 
@@ -26,17 +36,6 @@ Da bismo u potpunosti definisali CEGIS sintezu programa, potrebno je da odgovori
   \item Kako da proverimo da li program kandidat zadovoljava specifikacije?
   \item Kako da prosledimo povratne informacije za buduće kandidate?
 \end{itemize}
-
-staviti ref na ovo zbog slike: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5597726/
-
-
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[scale=0.4]{resources/cegis.jpeg}
-\end{center}
-\caption{CEGIS petlja}
-\label{fig:cegis}
-\end{figure}
 
 
 \subsection{Primene CEGISa}
