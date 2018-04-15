@@ -47,7 +47,7 @@ U nastavku ćemo opisati kako se tri različite vrste sinteze programa koriste z
 \subsubsection{Oracle-guided synthesis}
 \label{subsec:oracleGuidedSynthesis}
 
-Oracle guided sznthesis pretpostavlja da imamo implementaciju programa koji želimo da sintetišemo, koja se naziva oracle program. Ova implementacija je specifikacija za oracle guided synthesis. Mi ćemo oracle tretirati kao crnu kutiju, možemo da joj damo ulazne vrednosti i dobijemo odgovarajući izlaz, nećemo razmatrati njenu implementaciju. Takođe startujemo sa skupom test primera, koji su parovi ulaz-izlaz. Pošto imamo oracle, možemo da kreiramo novi test primer jednostavno generišući random ulaze i od oracla dobiti odgovarajući izlaz za svaki prosleđeni ulaz.
+Oracle guided sznthesis pretpostavlja da imamo implementaciju programa koji želimo da sintetišemo, koja se naziva oracle program. Ova implementacija je specifikacija za oracle guided synthesis. Mi ćemo oracle tretirati kao crnu kutiju, možemo da joj damo ulazne vrednosti i dobijemo odgovarajući izlaz, ali nećemo razmatrati njenu implementaciju. Takođe startujemo sa skupom test primera, koji su parovi ulaz-izlaz. Pošto imamo oracle, možemo da kreiramo novi test primer jednostavno generišući random ulaze i od oracla dobiti odgovarajući izlaz za svaki prosleđeni ulaz.
 
 \paragraph{Faza sinteze}
 
@@ -55,35 +55,36 @@ Oracle guided sznthesis pretpostavlja da imamo implementaciju programa koji žel
  
  Na primer neka imamo biblioteku od tri komponente - dva sabiranja i jedno korenovanje. Njih je moguće povezati na sledeće načine:
 
+\begin{lstlisting}
 program(x,y):
 	o1 = add(x, y)
 	o2 = add(o1, y)
 	o3 = sqrt(o1)
 	return o3
-
+\end{lstlisting}
  
- Primetimo da SSA foma jednostavno povezuje komponente međusobno, tako da ako želimo da imamo dva sabiranja moramo da obezbedimo dve komponente za sabiranje. Takodje primetimo da se vrednost o2 ne koristi, takozvani mrtvi kod. To poželjna karakteristika jer ne moramo da unapred tačno odredimo koliko ćemo imati kojih operacija, već možemo samo da zadamo gornju granicu, a sanitajzer će generistai mrtvi kod za komponente koje se ne koriste.
+ Primetimo da SSA foma jednostavno povezuje komponente međusobno, tako da ako želimo da imamo dva sabiranja moramo da obezbedimo dve komponente za sabiranje. Takodje primetimo da se vrednost o2 ne koristi, takozvani mrtvi kod. To je poželjna karakteristika, jer ne moramo unapred tačno da odredimo koliko ćemo imati kojih operacija, već možemo samo da zadamo gornju granicu, a sanitaizer će generistai mrtvi kod za komponente koje se ne koriste.
  
- Sanitajzer koristi test primere da ograniči broj načina na koje se komponente mogu povezati. On koristi SMT rešavač da odredi koje komponente da poveže kako bi program bio tačan za sve test primere. Ako SMT rešavač ne uspe da nađe rešenje, onda nijedan program koji koristi samo date komponente ne može da zadovolji sve test primere - komponente nisu dovoljne. U suprotnom vraća program u SSA formi koji zadovoljava sve test primere.
+ Sanitaizer koristi test primere da ograniči broj načina na koje se komponente mogu povezati. On koristi SMT rešavač da odredi koje komponente da poveže kako bi program bio tačan za sve test primere. Ako SMT rešavač ne uspe da nađe rešenje, onda nijedan program koji koristi samo date komponente ne može da zadovolji sve test primere - komponente nisu dovoljne. U suprotnom vraća program u SSA formi koji zadovoljava sve test primere.
  
  \paragraph{Faza verifikacije}
 
-Ako postoji rešenje mi program koji je kandidat za rešenje prosleđujemo fazi verifikacije. Ovaj korak koristi SMT rešavač da odgovori na sledeće pitanje: Da li postoji program P', različit od kandidata za rešenje P, koji takođe zadovoljava sve test primere, ali se na nekom ulazu z ralikuje od P?
+Ako postoji rešenje mi programu koji je kandidat za rešenje prosleđujemo fazi verifikacije. Ovaj korak koristi SMT rešavač da odgovori na sledeće pitanje: Da li postoji program P', različit od kandidata za rešenje P, koji takođe zadovoljava sve test primere, ali se na nekom ulazu z ralikuje od P?
 Pojasnimo ovo deo po deo. Iz faze sinteze dobili smo program P koji je kandidat za rešenje i zadovoljava sve test primere. On što tražimo od verifikatora ja novi ulaz z i novi program P', takvi da za ulaz z programi P i P' daju različite izlaze. Program P' takođe zadovoljava sve početne test primere.
 Drugim rečima pitamo se da li postoji više od jednog programa koji mogu da zadovolje sve test primere? Ako postoji nismo završili.
-U ovom trenutku ništa ne pitamo oracle programa. Može da se desi i da program P i P' daju netačan izlaz za ulaz z, jedino što je u ovom trenutku važno za verifikator je da oni daju različit rezultat.
+U ovom trenutku ništa ne pitamo oracle program. Može da se desi i da program P i P' daju netačan izlaz za ulaz z, jedino što je u ovom trenutku važno za verifikator je da oni daju različit rezultat.
 
 Na primer evo kako radi za dva test primera i komponente koje smo koristili u prethodnom primeru
 
 /// sad doje slicica
 
-U ovom slučaju imamo samo dva test primera (0,0) i (1,0). Sanitajzer nam daje program P koji je kandidat sqrt(x)+y, koji zadovoljava oba test primera. Od verifikatora tražimo da nam da dve stvari: novi program P' i novi ulaz z. U ovom slučaju on to i uspeva. Vraća novi program x+y i novi test primer (4,5). Na novom test primeru program P i P' daju različite izlaze: sqrt(4)+5=7 dok je 4+5=9. U ovom slučaju ispostavlja se da oba programa daju pogrešan rezultat sobzirom da je izlaz koji daje oracle sqrt(4+5)=3. Medjutim činjenica da se P i P' razlikuju nam je dovoljna da se u petlji vratimo nazad pomoću feedback koraka.
+U ovom slučaju imamo samo dva test primera (0,0) i (1,0). Sanitaizer nam daje program P koji je kandidat sqrt(x)+y, koji zadovoljava oba test primera. Od verifikatora tražimo da nam da dve stvari: novi program P' i novi ulaz z. U ovom slučaju on to i uspeva. Vraća novi program x+y i novi test primer (4,5). Na novom test primeru program P i P' daju različite izlaze: sqrt(4)+5=7 dok je 4+5=9. U ovom slučaju ispostavlja se da oba programa daju pogrešan rezultat sobzirom da je izlaz koji daje oracle sqrt(4+5)=3. Medjutim činjenica da se P i P' razlikuju nam je dovoljna da se u petlji vratimo nazad pomoću feedback koraka.
 
 \paragraph{Feedback step}
 
 Ovaj korak razmatra novodobijeni ulaz z. Ulaz z se daje oraclu i od oracla se dobija ispravan izlaz. Zatim se ulaz z i njegov ispravan izlaz dodaju u skup test primera i ponovo prolazi kroz petlju.
 
-Da bi smo bili u potpunosti sigurni u naše rešenje moramo da imamo i neku vrstu validacije. Problem je da tokom prolaska kroy CEGIS petlju možemo da nađemo jedinstveni program koji zadovoljava sve test primere pre nego što nadjemo test primer koji taj program ne zadovoljava. Faza validacije treba da nakon završetka petlje potvrdi da program zadovoljava sve ulaze, a ne samo test primere.
+Da bi smo bili u potpunosti sigurni u naše rešenje moramo da imamo i neku vrstu validacije. Problem je da tokom prolaska kroz CEGIS petlju možemo da nađemo jedinstveni program koji zadovoljava sve test primere pre nego što nadjemo test primer koji taj program ne zadovoljava. Faza validacije treba da nakon završetka petlje potvrdi da program zadovoljava sve ulaze, a ne samo test primere.
 
 \subsubsection{Stohastička superoptimizacija}
 \label{subsec:stohastickaSuperoptimizacija}
@@ -95,11 +96,11 @@ Faza sinteze na osnovu tekućeg programa P sintetiše novi program P' primenom (
 
 \paragraph{Faza verifikacije}
 
-U ovoj fazi se kandidat i ciljni program prosleđuju verifikatoru kako bi se utvrdilo da li su ekvivalentni. Pošto verifikator može da bude veoma spor pre prosleđivanja programa verifikatoru koriste se test primeri iz "cost" funkcije. Ako bili koji od test primera ne uspe sa sigurnošću možemo da kažemo kandidat ne može da bude ispravno rešenje pa se ni ne poziva verifikator.
+U ovoj fazi se kandidat i ciljni program prosleđuju verifikatoru kako bi se utvrdilo da li su ekvivalentni. Pošto verifikator može da bude veoma spor pre prosleđivanja programa verifikatoru koriste se test primeri iz "cost" funkcije. Ako bili koji od test primera ne uspe sa sigurnošću možemo reći da kandidat ne može da bude ispravno rešenje pa se ni ne poziva verifikator.
 
 \paragraph{Feedback step}
 
-U ovoj fazi poredimo prethodno prihvaćeni program P i novog kandidata P'. Ako je P' bolji od P onda ćemo nadalje njega razmatrati. Ako P' nije bolji od P verovatnoća da ćemo njega razmatrati zavisi od toga koliko su programi P i P' slični.
+U ovoj fazi poredimo prethodno prihvaćeni program P i novog kandidata P'. Ako je P' bolji od P onda ćemo nadalje njega razmatrati. Ako P' nije bolji od P verovatnoća da ćemo razmatrati P' zavisi od toga koliko su programi P i P' slični.
 
 \subsubsection{Enumerativna pretraga}
 \label{subsec:enumerativnaPretraga}
@@ -112,8 +113,8 @@ Ideja enumerativne pretrage je da pretraži sve moguće programe. Programe delim
 Sintezu počinjemo od dubine 0 i pritom numerišemo sve programe na ovoj dubini. Na dubini k, ispitujemo sve programe koji imaju oblik operacija(a,b), gde su a i b bilo koji izraz dubine k-1. Broj programa koje treba ispitati ovakvim načinom pretrage raste eksponencijalno, pa se oslanjamo na feedback korak kako bi ubrzali pretragu.
 
 \paragraph{Faza verifikacije}
-Pošto smo nam se specifikacija programa zaniva na test primerima u ovoj fazi ćemo jednostavno pokrenuti sve test primere i uporediti rezultate. Ako program daje odgovarajuće izlaze za sve test primere završili smo.
+Pošto nam se specifikacija programa zaniva na test primerima u ovoj fazi ćemo jednostavno pokrenuti sve test primere i uporediti rezultate. Ako program daje odgovarajuće izlaze za sve test primere završili smo.
 
 \paragraph{Feedback step}
-Jedan od načina da smanjimo prostor pretrage je da na dubini k ne razmatramo sve programe dužine k-1 već samo one sa različitim izlazima. Postavlja se pitanje kako da odredimo da li su dva programa različita? Pošto smo ciljni program definisali pomoću test primera nije bitno da li su nam dva programa semantički jednaka, već nam je bitno da  za iste test primere daju različite rezultate. Na ovaj način smo iz pretrage izbacili mnogo programa koji nisu
+Jedan od načina da smanjimo prostor pretrage je da na dubini k ne razmatramo sve programe dužine k-1 već samo različite programe. Postavlja se pitanje kako da odredimo da li su dva programa različita? Pošto smo ciljni program definisali pomoću test primera nije bitno da li su nam dva programa semantički jednaka, već nam je bitno da  za iste test primere daju različite rezultate. Na ovaj način smo iz pretrage izbacili mnogo programa koji nisu
 semantički jednaki, ali se isto ponašaju u našem slučaju.
