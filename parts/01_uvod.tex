@@ -2,47 +2,11 @@
 \section{Uvod}
 \label{sec:uvod}
 
-Uz sve novouvedene termine u zagradi naglasiti od koje engleske reči termin potiče. Naredni primeri ilustruju način uvođenja enlegskih termina kao i citiranje.
+Danas sve veći broj ljudi ima pristup pametnim uređajima, poput tableta, telefona i računara. Međutim, samo mali procenat ljudi ima adekvatna znanja za programiranje takvih uređaja. Standardni način programiranja ovih uređaja se sastoji od dizajniranja algoritma koji rešava problem i njegove implementacije. Automatska sinteza programa ima potencijal da promeni generalni pristup programiranja pametnih uređaja. Ona će omogućiti nestručnim licima da programiraju uređaje bez opisa algoritama i implementacije istih. Ideja je da korisnici sintezeru daju opis željenih funkcionalnosti, a on će im automatski generisati neophodnu implementaciju programa.
 
-\begin{theorem}
-Problem zaustavljanja (eng.~{\em halting problem}) je neodlučiv \cite{haltingproblem}.
-\end{theorem}
+Poslednjih nekoliko decenija došlo je do značajnog pomaka u razvoju automatskog rezonovanja, naročito u unapređivanju SAT (eng. \emph{Propositional satisfiability problem}) i SMT (eng. \emph{Satisfiability modulo theories}) rešavača, koji su sad u mogućnosti da reše i neke industrijske probleme. Ovaj napredak u automatskom rezonovanju dao je vetar u leđa razvoju programske sinteze koja svoja rešenja zasniva na logici prvog i drugog reda i automatskom dokazivanju teorema.
 
-\begin{theorem}
-Za prevođenje programa napisanih u programskom jeziku C može se koristiti GCC kompajler \cite{gcc}.
-\end{theorem}
+U ovom radu osvrnućemo se na neke primene programske sinteze, najveće izazove koji se u njoj javljaju, i neke tehnike zasnovane na CEGIS-u (eng. \emph{Counterexample-guided inductive synthesis}) koje su podstakle razvoj novih alata u ovoj oblasti.
 
-\begin{theorem}
- Da bi se ispitivala ispravost softvera, najpre je potrebno precizno definisati njegovo ponašanje \cite{laski2009software}.
-\end{theorem}
+ 
 
-Reference koje se koriste u ovom tekstu zadate su u datoteci {\em literature.bib}. Prevođenje u pdf format u Linux okruženju može se uraditi na sledeći način:
-\begin{verbatim}
-pdflatex TemaImePrezime.tex
-bibtex TemaImePrezime.aux
-pdflatex TemaImePrezime.tex
-pdflatex TemaImePrezime.tex
-\end{verbatim}
-Prvo latexovanje je neophodno da bi se generisao {\em .aux} fajl. {\em bibtex} proizvodi odgovarajući {\em .bbl} fajl koji se koristi za generisanje literature.
-Potrebna su dva prolaza (dva puta pdflatex) da bi se reference ubacile u tekst (tj da ne bi ostali znakovi pitanja umesto referenci). Dodavanjem novih referenci potrebno je ponoviti ceo postupak.
-
-
-Broj naslova i podnaslova je proizvoljan. Neophodni su samo Uvod i Zaključak. Na poglavlja unutar teksta referisati se po potrebi.
-\begin{theorem}
-U odeljku \ref{sec:naslov1} precizirani su osnovni pojmovi, dok su zaključci dati u odeljku \ref{sec:zakljucak}.
-\end{theorem}
-
-Još jednom da napomenem da nema razloga da pišete:
-\begin{verbatim}
-\v{s} i \v{c} i \'c ...
-\end{verbatim}
-Možete koristiti srpska slova
-\begin{verbatim}
-š i č i ć ...
-\end{verbatim}
-
-
-Ovde pišem uvodni tekst.
-Ovde pišem uvodni tekst.
-Ovde pišem uvodni tekst.
-Ovde pišem uvodni tekst.
