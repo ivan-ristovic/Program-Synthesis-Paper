@@ -17,27 +17,27 @@ Generisani program treba da se ponaša na način koji to korisnik definiše. Me�
 
 Formalno definisanje zahteva može često da izgleda komplikovano (možda čak i da deluje komplikovanije neko pisanje samog programa). Nasuprot tome, neformalne metode su mnogo prirodnije korisniku, ali dovode do drugih problema. Na primer, neka se željeni program definiše na osnovu primera njegovog ulaza i izlaza na sledeći način: \\
 \(\emph{“John Smith”} \rightarrow \emph{“Smith, J.”}\).\\
-Ovaj program vrši nama intuitivnu transformaciju niski, ali, na primer, da bi se on automatski generisao korišćenjem FlashFill \cite{FlashFill} programa, tj. program treba da pretraži prostor koji sadrži milione mogućih rešenja. Problem je u tome što programi nemaju ljudsku intuiciju, već se preprilagođavaju datim primerima ulaza i izlaza.
+Ovaj program vrši nama intuitivnu transformaciju niski, ali, na primer, da bi se on automatski generisao korišćenjem FlashFill \cite{FlashFill} programa, potrebno je pretražiti prostor koji sadrži milione mogućih rešenja. Problem je u tome što programi nemaju ljudsku intuiciju, već se preprilagođavaju datim primerima ulaza i izlaza.
 
-Većina programa koji se danas koriste su previše komplikovani da bi se u potpunosti opisali bilo formalnim bilo neformalnim metodama. Čak i ako bi se to nekako uspelo, opis programa bi mogao da bude toliko obiman kao i sama implementacija programa. Kako bi senteza ovakvih, realnih programa bila moguća, potrebno je omogućiti korisniku da na početku definiše željeni program do neke tačke, a da kasnije tokom sinteze, interaktivno sa računarom, postepeno dolazi do rešenja.
+Većina programa koji se danas koriste su previše komplikovani da bi se u potpunosti opisali bilo formalnim bilo neformalnim metodama. Čak i ako bi se to nekako uspelo, opis programa bi mogao da bude toliko obiman kao i njegova sama implementacija. Kako bi senteza ovakvih, realnih programa bila moguća, potrebno je omogućiti korisniku da on na početku definiše željeni program do neke tačke, a da kasnije tokom sinteze, interaktivno sa računarom, postepeno dolazi do rešenja.
 
 Upravo ovakvu napradnu pretragu koristi gore spomenuti program FlashFill. Tokom pretrage, on uključuje dodatnu komunikaciju sa korisnikom. Ovako on usmerava pretragu, te na kraju ipak uspeva da nađe rešenje u realnom vremenu.
 
 
-\subsection{Prostor programa}
+\subsection{Pretraživanje prostora programa}
 \label{subsec:ProstorPrograma}
 
 Svaka uspešna sinteza programa vrši neki vid pretrage prostora mogućih programa (eng. \emph{search space}). Ovo je težak kombinatorni problem. Broj mogućih rešenja raste eksponencijalno sa veličinom programa, te pretraga svih kandidata nije moguća u realnom vremenu. Potrebno je pažljivo vršiti odsecanja dela prostora pretrage kako bi se došlo do rešenja u realnom vremenu.
 
-Tehnike pretrage se mogu zasnivati na enumerativnoj pretrazi, dedukciji, tehnikama sa ograničenjima, statističkim tehnikama, kao i na kombinaciji nekih od nih.
+Tehnike pretrage se mogu zasnivati na enumerativnoj pretrazi, dedukciji, tehnikama sa ograničenjima, induktivnim i statističkim metodama. U praksi se uglavnom koristi neka od njihovih kombinacija, te ih je teško razgraničiti kao posebne metode pretrage.
 
 
 \subsubsection{Enumerativna pretraga}
 \label{subsubsec:Enumerative}
 
-Tehnike enumerativne pretrage za sintezu prigrana su se pokazale kao jedne od najefikasnijih tehnika za generisanje malih programa. Razlog ove efikasnosti je u pametnim tehnikama \emph{čišćenja} (eng. \emph{pruning}) u prostoru programa koji se pretražuje. Glavna ideja je da se prvo na neki način opiše prostor pretrage u kome se nalazi žejleni program. To može da se postigne korišćenjem meta-podataka kao što su veličina programa ili njegova složenost. Kada se mogući programi numerišu po osobinama, mogu da se odmah odbace oni koji ne zadovoljavaju prethodno definisane specifikacije.
+Tehnike enumerativne pretrage za sintezu programa su se pokazale kao jedne od najefikasnijih tehnika za generisanje malih programa. Razlog ove efikasnosti je u pametnim tehnikama \emph{čišćenja} (eng. \emph{pruning}) u prostoru programa koji se pretražuje. Glavna ideja je da se prvo na neki način opiše prostor pretrage u kome se nalazi žejleni program. To može da se postigne korišćenjem meta-podataka kao što su veličina programa ili njegova složenost. Kada se mogući programi numerišu po osobinama, mogu da se odmah odbace oni koji ne zadovoljavaju prethodno definisane specifikacije.
 
-Kako na osnovu pretpostavki vrši velika odsecanja, može da se dođe do toga da pogrešno numeriše neki od programa i time izgubi neka od mogućih rešenja. Zato je enumerativna tehnika polu-odlučiva, ali u opštem slučaju je upotrebljiva i daje dobre rezultate i to relativno brzo.
+Kako se na osnovu pretpostavki vrše velika odsecanja, moguće je na početku pogrešno numerisati neke od programa. Ovo može da dovede do gubitka nekog od mogućih rešenja. Zbog ovoga je enumerativna tehnika polu-odlučiva, tj. ne garantuje pronalazak rešenja ukoliko ono postoji. Međutim, u opštem slučaju je upotrebljiva i daje dobre rezultate i to relativno brzo.
 
 
 \subsubsection{Deduktivna pretraga}
@@ -47,32 +47,39 @@ Deduktivna sinteza programa je tradicionalni pogled na sintezu programa. Ovakvi 
 
 Deduktivna pretraga je pretraga odozgo - na dole. Koristi tehniku podeli-pa-vladaj (eng. \emph{divide-and-conquer}). Program sintetiše tako što se prvo podeli na potprobleme tako da svaki od njih ima svoju specifikaciju. Rekurzivno se obrade potproblemi, a zatim iskombinuju podrešenja kako bi se dobilo glavno rešenje.
 
-Deljenje problema na potprobleme koji mogu da se sintetišu odvojeno nije moguće u opštem slučaju. Ovo zavisi od prirode problema. U tom slučaju se deduktivna pretraga može iskombinovati sa enumerativnom. Kada deduktivna pretraga više ne može da razloži problem, enumerativnom pretragom (koja je odozdo - na gore) tada treba pretražiti prostor rešenja potproblema, a nakon toga spojiti dobijene rezultate.
+Deljenje problema na potprobleme koji mogu da se sintetišu odvojeno nije moguće u opštem slučaju. Ovo zavisi od prirode problema. U ovom slučaju se deduktivna pretraga može iskombinovati sa enumerativnom. Kada deduktivna pretraga više ne može da razloži problem, enumerativnom pretragom (koja je odozdo - na gore) tada treba pretražiti prostor rešenja potproblema, a nakon toga spojiti dobijene rezultate.
 
 Deduktivna pretraga može lako da zaključi vrednosti konstanti u programu. To je bitno jer ukoliko program sadrži veliki broj konstanti, sama enumerativna pretraga bi se izgubila pokušavajući da pogodi njihove prave vrednosti. 
 
-\subsubsection{Induktivna pretraga}
-\label{subsubsec:Induktivna}
-
-Prethodno smo videli da se u slučaju deduktivne pretrage program sintetiše dokazivanjem teorema i razrešavanjem ograničenja. Za razliku od nje, induktivna pretraga sintetiše program na osnovu skupa ulaza i odgovarajućih izlaza. Sintezer koji koristi induktivnu pretragu pokušava da nađe opšti program koji zadovoljava dati skup ulaza i izlaza. Ovaj vid pretrage predstavlja jedan vid učenja na osnovu primera, takođe poznato kao \emph{Mašinsko učenje} (eng. \emph{Machine learning}). Dobra strana ovog pristupa jeste što je dovoljno fleksibilan da može da radi i sa nepotpunim specifikacijama problema. Međutim, može se desiti da rezultat ne zadovolji očekivanja korisnika ukoliko neki bitni slučajevi koji nisu pokriveni specifikacijom.
-
-Postoji više različitih pristupa koji mogu da se koriste u induktivnoj pretrazi. Jedan od tih pristupa je sinteza sa aktivnim učenjem. \emph{Aktivno učenje (eng. \emph{Active learning})} je poseban vid mašinskog učenja gde je algoritmu za učenje dopušteno da sam vrši selekciju podataka na osnovu kojih će da uči. Ovaj sintezer koristi induktivni algoritam za učenje, koji u sebi često poziva i deduktivne procedure. Iako kombinuje oba pristupa, sinteza sa aktivnim učenjem se u literaturi predstavlja kao primer induktivne sinteze.
-
-Još jedan primer induktivne pretrage je CEGIS. Ova tehnika će biti detaljno opisana u poglavlju \ref{sec:cegis}.
 
 \subsubsection{Tehnike sa ograničenjima}
 \label{subsubsec:ConstraintSolving}
 
 Mnoge uspešne tehnike sinteze programa u svojoj osnovi sadrže tehnike prilagođavanja datim ograničenjima (eng. \emph{constraint solving}). One se sastoje od dva velika koraka:
 \begin{itemize}
-  \item \emph{Generisanje ograničenja} - U opštem slučaju, kada se kaže prilagođavanje ograničenjima misli se na na pronalaženje modela za formulu koja opisuje željeni program. Osnovna ideja je da se specifikacija programa kao i njegova dodatna ograničenja zapišu u jednoj logičkoj formuli. Uglavnom se tom prilikom u formulu dodaju i pretpostavke o rešenju.
-  \item \emph{Razrešavanje ograničenja} - Formula u kojoj su zapisana ograničenja često sadrži kvatifikatore i nepoznate drugog reda. Ona se prvo transformiše u oblik pogodan za nekog od rešavača, na primer za SAT ili SMT rešavač. Na ovaj način se problem pretrage svodi na problem ispitivanja zadovoljivosti prosleđene formule. Svaki nađeni model za tu formulu predstavlja jedno moguće rešenje koje zadovoljava data ograničenja.
+  \item \emph{Generisanje ograničenja} - U opštem slučaju, kada se kaže prilagođavanje ograničenjima misli se na pronalaženje modela za formulu koja opisuje željeni program. Osnovna ideja je da se specifikacija programa kao i njegova dodatna ograničenja zapišu u jednoj logičkoj formuli. Uglavnom se tom prilikom u formulu dodaju i pretpostavke o rešenju.
+  \item \emph{Razrešavanje ograničenja} - Formula u kojoj su zapisana ograničenja često sadrži kvantifikatore i nepoznate drugog reda. Ona se prvo transformiše u oblik pogodan za nekog od rešavača, na primer za SAT ili SMT rešavač. Na ovaj način se problem pretrage svodi na problem ispitivanja zadovoljivosti prosleđene formule. Svaki nađeni model za tu formulu predstavlja jedno moguće rešenje koje zadovoljava data ograničenja.
 \end{itemize}
+
+
+\subsubsection{Induktivna pretraga}
+\label{subsubsec:Induktivna}
+
+Sintezer koji koristi induktivnu pretragu pokušava da nađe opšti program koji zadovoljava dati skup ulaza i odgovarajućih izlaza.
+
+Induktivna pretraga je veoma opšti pojam. Ona se, na primer, može smatrati kao nadogradnja tehnike pretrage sa ograničenjima \ref{subsubsec:ConstraintSolving}. Prilikom svake iteracije se generišu neka ograničenja, rešavačem se dođe mogućeg rešenja, a zatim se ono ispita da li je ono zadovoljavajuće opšte rešenje.
+
+Sa druge strane, induktivna pretraga može da koristi tehnike mašinskog učenja. To može da radi na razne načine, a jedan od takvih pristupa je sinteza sa aktivnim učenjem. \emph{Aktivno učenje (eng. \emph{Active learning})} je poseban vid mašinskog učenja gde je algoritmu za učenje dopušteno da sam vrši selekciju podataka na osnovu kojih će da uči. Ovakav sintezer koristi induktivni algoritam za učenje, koji u sebi često poziva i deduktivne procedure. Iako kombinuje oba pristupa, sinteza sa aktivnim učenjem se u literaturi predstavlja kao primer induktivne sinteze.
+
+Dobra strana induktivnog pristupa jeste što je dovoljno fleksibilan da može da radi i sa nepotpunim specifikacijama problema. Međutim, može se desiti da rezultat ne zadovolji očekivanja korisnika ukoliko neki bitni slučajevi nisu pokriveni specifikacijom datom primerima ulaza i izlaza.
+
+Jedan primer induktivne pretrage je CEGIS. Ova tehnika će biti detaljno opisana u poglavlju \ref{sec:cegis}.
+
 
 \subsubsection{Statistička pretraga}
 \label{subsubsec:Statistical}
 
-Postoji veliki broj metoda koje se koriste za pretragu prostora programa a koriste neku vrstu statistike kako bi došle do rešenja. Mogu se koristiti tehnike mašinskog učenja, genetsko programiranje, probabilističko zaključivanje i mnoge druge.
+Postoji veliki broj metoda koje se koriste za pretragu prostora programa a koriste neku vrstu statistike kako bi došle do rešenja. Neke od tehnika koje se mogu koristiti su tehnike mašinskog učenja, genetsko programiranje i probabilističko zaključivanje.
 
 \emph{Mašinsko učenje} - Tehnike mašinskog učenja mogu doprineti ostalim pretragama uvodeći verovatnoću u čvorove granjanja prilikom pretrage. Vrednosti verovatnoće se uglavnom generišu pre sinteze programa: tokom treninga ili na primer na osnovu datih primera ulaza i izlaza. 
 

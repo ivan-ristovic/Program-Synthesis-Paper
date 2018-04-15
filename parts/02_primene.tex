@@ -1,7 +1,7 @@
 \section{Primene}
 \label{sec:Primene}
 
-Sinteza programa je moćan alat i mogućnosti primene su raznolike. Programski sintezeri se mogu naći u velikom broju današnjih aplikacija. Automatsko generisanje programskog koda čini proces programiranja manje repetitivnim i manje podložnim greškama. Moderni sintezeri omogućavaju programerima da zadaju šablon koda ili par \emph{primera} koda, dok se ostatak generiše automatski. Ovaj proces se naziva \emph{Programiranje vođeno primerima} (eng. \emph{Programming Based on Examples)} \cite{PBE}, u daljem tekstu \emph{PBE}.
+Sinteza programa je moćan alat i mogućnosti primene su raznolike. Programski sintezeri se mogu naći u velikom broju današnjih aplikacija. Automatsko generisanje programskog koda čini proces programiranja manje repetitivnim i manje podložnim greškama. Moderni sintezeri omogućavaju programerima da zadaju šablon koda ili par \emph{primera} koda, dok se ostatak generiše automatski. Ovaj proces se naziva \emph{Programiranje vođeno primerima} (eng. \emph{Programming Based on Examples)} \cite{ProgrammingBasedOnExamples}, u daljem tekstu \emph{PBE}.
 
 Neke od oblasti primene sinteze programa koje će biti pokrivene u ovom radu su:
 \begin{itemize}
@@ -17,7 +17,7 @@ Neke od oblasti primene sinteze programa koje će biti pokrivene u ovom radu su:
 \subsection{Priprema podataka}
 \label{subsec:PripremaPodataka}
 
-\emph{Priprema podataka} predstavlja proces čišćenja, transformacije i pripreme podataka iz polu-struktuiranog formata u format pogodan za analizu i prezentovanje. Problem je skupoća dovođenja podataka u oblik pogodan za primenu algoritama iz oblasti mašinskog učenja ili istraživanja podataka radi izvlačenja korisnih zaključaka. PBE čini čitav ovaj proces bržim \cite{PBE}.
+\emph{Priprema podataka} predstavlja proces čišćenja, transformacije i pripreme podataka iz polu-struktuiranog formata u format pogodan za analizu i prezentovanje. Problem je skupoća dovođenja podataka u oblik pogodan za primenu algoritama iz oblasti mašinskog učenja ili istraživanja podataka radi izvlačenja korisnih zaključaka. PBE čini čitav ovaj proces bržim \cite{ProgrammingBasedOnExamples}.
 
 Proces pripreme podataka često obuhvata sledeće korake:
 \begin{itemize}
@@ -26,9 +26,7 @@ Proces pripreme podataka često obuhvata sledeće korake:
   \item formatiranje
 \end{itemize}
 
-Transformacija podataka se često svodi na manipulisanje niskama ili izmenama samih tipova podataka. Iako savremeni programski jezici pomažu korisnicima uvodeći širok spektar komandi, korisnici se zamaraju pisanjem skriptova ili makroa kako bi obavili posao. Alati koji koriste PBE su idealni za ovakav posao \cite{PBE, SynthesizingNumberTransformationsFromIOExamples}
-
-[slika ovde ?]
+Transformacija podataka se često svodi na manipulisanje niskama ili izmenama samih tipova podataka. Iako savremeni programski jezici pomažu korisnicima uvodeći širok spektar komandi, korisnici se zamaraju pisanjem skriptova ili makroa kako bi obavili posao. Alati koji koriste PBE su idealni za ovakav posao \cite{ProgrammingBasedOnExamples, SynthesizingNumberTransformationsFromIOExamples}
 
 
 \subsection{Grafika}
@@ -37,8 +35,6 @@ Transformacija podataka se često svodi na manipulisanje niskama ili izmenama sa
 Programski opis grafičkih objekata dovodi do bržih proračuna koordinata zavisnih tačaka od tačaka koje imaju slobodne koordinate, što omogućava interaktivne izmene i efikasne animacije. Tehnike sinteze programa mogu uspešno generisati rešenja geometrijskih problema srednješkolske težine \cite{SynthesizingGeometryConstructions}.
 
 Slike i crteži (u daljem tekstu \emph{grafike}) nekada sadrže ponovljene šablone, teksture ili objekte. Konstrukcija takvih grafika zahteva pisanje skriptova ili ponovljenih operacija, što može biti jako neprijatno i podložno greškama. Korišćenjem PBE, moguće je mogućiti korisniku da prikaže par primera i ostavi posao sintezeru da predvidi naredne objekte u nizu \cite{Backpropagation}. Štaviše, korišćenjem grafičkog interfejsa za domen vektorske grafike, moguće je interaktivno omogućiti korisniku crtanje isključivo pomoću grafičkih alata a generisanje programskog koda ostaviti sintezeru.
-
-[slika ovde ?]
 
 
 \subsection{Popravka koda}
@@ -50,7 +46,7 @@ Za dat program $P$ i specifikaciju $\phi$, problem popravke koda zahteva računa
 \subsection{Sugestije prilikom kodiranja}
 \label{subsec:SugestijePrilikomKodiranja}
 
-Većina današnjih programerskih okruženja omogućava neku vrstu automatske dopune koda (\emph{IntelliSense} za \emph{MS Visual Studio} ili \emph{Content Assist} za \emph{Eclipse}). Programski sintesizeri mogu potencijalno generisati ne samo tokene već i čitave jedinice koda. Dva najbitnija pristupa ovom problemu su \emph{statistički modeli} \cite{CCWSLM} i \emph{type-directed completion} \cite{TDCOPE}, ali je važno napomenuti da postoje i alati koji su uspešni iako ne koriste ove tehnike (npr. \emph{InSynth} \ref{IS} i \emph{Bing Developer Assistant} \ref{BDA}).
+Većina današnjih programerskih okruženja omogućava neku vrstu automatske dopune koda (\emph{IntelliSense} za \emph{MS Visual Studio} ili \emph{Content Assist} za \emph{Eclipse}). Programski sintesizeri mogu potencijalno generisati ne samo tokene već i čitave jedinice koda. Dva najbitnija pristupa ovom problemu su \emph{statistički modeli} \cite{CCWSLM} i \emph{type-directed completion} \cite{TDCOPE}, ali je važno napomenuti da postoje i alati koji su uspešni iako ne koriste ove tehnike (npr. \emph{InSynth} \cite{IS} i \emph{Bing Developer Assistant} \cite{BDA}).
 
 
 \subsection{Superoptimizacija}
