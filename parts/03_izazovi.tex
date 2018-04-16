@@ -67,9 +67,9 @@ Mnoge uspešne tehnike sinteze programa u svojoj osnovi sadrže tehnike prilago�
 
 Sintezer koji koristi induktivnu pretragu pokušava da nađe opšti program koji zadovoljava dati skup ulaza i odgovarajućih izlaza.
 
-Induktivna pretraga je veoma opšti pojam. Ona se, na primer, može smatrati kao nadogradnja tehnike pretrage sa ograničenjima \ref{subsubsec:ConstraintSolving}. Prilikom svake iteracije se generišu neka ograničenja, rešavačem se dođe mogućeg rešenja, a zatim se ono ispita da li je ono zadovoljavajuće opšte rešenje.
+Induktivna pretraga je veoma opšti pojam. Ona se, na primer, može smatrati kao nadogradnja tehnike pretrage sa ograničenjima \ref{subsubsec:ConstraintSolving} \cite{SGS}. Prilikom svake iteracije se generišu neka ograničenja, rešavačem se dođe mogućeg rešenja, a zatim se ono ispita da li je ono zadovoljavajuće opšte rešenje.
 
-Sa druge strane, induktivna pretraga može da koristi tehnike mašinskog učenja. To može da radi na razne načine, a jedan od takvih pristupa je sinteza sa aktivnim učenjem. \emph{Aktivno učenje} (eng. \emph{Active learning}) je poseban vid mašinskog učenja gde je algoritmu za učenje dopušteno da sam vrši selekciju podataka na osnovu kojih će da uči. Ovakav sintezer koristi induktivni algoritam za učenje, koji u sebi često poziva i deduktivne procedure. Iako kombinuje oba pristupa, sinteza sa aktivnim učenjem se u literaturi predstavlja kao primer induktivne sinteze.
+Sa druge strane, induktivna pretraga može da koristi tehnike mašinskog učenja. To može da radi na razne načine, a jedan od takvih pristupa je sinteza sa aktivnim učenjem \cite{SGS}. \emph{Aktivno učenje} (eng. \emph{Active learning}) je poseban vid mašinskog učenja gde je algoritmu za učenje dopušteno da sam vrši selekciju podataka na osnovu kojih će da uči. Ovakav sintezer koristi induktivni algoritam za učenje, koji u sebi često poziva i deduktivne procedure. Iako kombinuje oba pristupa, sinteza sa aktivnim učenjem se u literaturi predstavlja kao primer induktivne sinteze.
 
 Dobra strana induktivnog pristupa jeste što je dovoljno fleksibilan da može da radi i sa nepotpunim specifikacijama problema. Međutim, može se desiti da rezultat ne zadovolji očekivanja korisnika ukoliko neki bitni slučajevi nisu pokriveni specifikacijom datom primerima ulaza i izlaza.
 
