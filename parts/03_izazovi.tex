@@ -8,14 +8,14 @@ Pisanje programa koji može da sintetiše drugi program predstavlja veliki izazo
     \item Pretraživanje prostora mogućih programa u potrazi za onim koji zadovoljava definisane specifikacije.
 \end{itemize}
 
-Prostor programa se povećava eksponencijalno brzo u odnosu na veličinu željenog programa. Zbog toga postoje različiti pristupi njegovog pretraživanja, a neke od tih tehnika su opisane u poglavlju \ref{subsec:ProstorPrograma}.
+Prostor programa se povećava eksponencijalno brzo u odnosu na ve\-li\-či\-nu željenog programa. Zbog toga postoje različiti pristupi njegovog pretraživanja, a neke od tih tehnika su opisane u poglavlju \ref{subsec:ProstorPrograma}.
 
 \subsection{Definisanje specifikacija}
 \label{subsec:DefinisanjeSpecifikacija}
 
 Generisani program treba da se ponaša na način koji to korisnik definiše. Međutim, precizno definisanje zahteva je zapravo mnogo teže nego što izleda na prvi pogled. Postoje različiti načini za definisanje zahteva, npr. korišćenjem formalnih logičkih izraza, zadavanjem primera ulaza i izlaza programa ili definisanje neformalnim metodama.
 
-Formalno definisanje zahteva može često da izgleda komplikovano (možda čak i da deluje komplikovanije neko pisanje samog programa). Nasuprot tome, neformalne metode su mnogo prirodnije korisniku, ali dovode do drugih problema. Na primer, neka se željeni program definiše na osnovu primera njegovog ulaza i izlaza na sledeći način: \\
+Formalno definisanje zahteva može često da izgleda ko\-mpli\-ko\-va\-no (mo\-žda čak i da deluje komplikovanije neko pisanje samog programa). Nasuprot tome, neformalne metode su mnogo prirodnije korisniku, ali dovode do drugih problema. Na primer, neka se željeni program definiše na osnovu primera njegovog ulaza i izlaza na sledeći način: \\
 \(\emph{“John Smith”} \rightarrow \emph{“Smith, J.”}\).\\
 Ovaj program vrši nama intuitivnu transformaciju niski, ali, na primer, da bi se on automatski generisao korišćenjem \emph{FlashFill} \cite{FlashFill} programa, potrebno je pretražiti prostor koji sadrži milione mogućih rešenja. Problem je u tome što programi nemaju ljudsku intuiciju, već se preprilagođavaju datim primerima ulaza i izlaza.
 
@@ -27,7 +27,7 @@ Upravo ovakvu napradnu pretragu koristi gore spomenuti program \emph{FlashFill}.
 \subsection{Pretraživanje prostora programa}
 \label{subsec:ProstorPrograma}
 
-Svaka uspešna sinteza programa vrši neki vid pretrage prostora mogućih programa (eng. \emph{search space}). Ovo je težak kombinatorni problem. Broj mogućih rešenja raste eksponencijalno sa veličinom programa, te pretraga svih kandidata nije moguća u realnom vremenu. Potrebno je pažljivo vršiti odsecanja dela prostora pretrage kako bi se došlo do rešenja u realnom vremenu.
+Svaka uspešna sinteza programa vrši neki vid pretrage prostora mo\-gu\-ćih programa (eng. \emph{search space}). Ovo je težak kombinatorni problem. Broj mogućih rešenja raste eksponencijalno sa veličinom programa, te pretraga svih kandidata nije moguća u realnom vremenu. Potrebno je pažljivo vršiti odsecanja dela prostora pretrage kako bi se došlo do rešenja u realnom vremenu.
 
 Tehnike pretrage se mogu zasnivati na enumerativnoj pretrazi, dedukciji, tehnikama sa ograničenjima, induktivnim i statističkim metodama. U praksi se uglavnom koristi neka od njihovih kombinacija, te ih je teško razgraničiti kao posebne metode pretrage.
 
@@ -57,7 +57,7 @@ Deduktivna pretraga može lako da zaključi vrednosti konstanti u programu. To j
 
 Mnoge uspešne tehnike sinteze programa u svojoj osnovi sadrže tehnike prilagođavanja datim ograničenjima (eng. \emph{constraint solving}). One se sastoje od dva velika koraka:
 \begin{itemize}
-    \item \emph{Generisanje ograničenja} - U opštem slučaju, kada se kaže prilagođavanje ograničenjima misli se na pronalaženje modela za formulu koja opisuje željeni program. Osnovna ideja je da se specifikacija programa kao i njegova dodatna ograničenja zapišu u jednoj logičkoj formuli. Uglavnom se tom prilikom u formulu dodaju i pretpostavke o rešenju.
+    \item \emph{Generisanje ograničenja} - U opštem slučaju, kada se kaže pri\-la\-go\-đa\-va\-nje ograničenjima misli se na pronalaženje modela za formulu koja opisuje željeni program. Osnovna ideja je da se specifikacija programa kao i njegova dodatna ograničenja zapišu u jednoj logičkoj formuli. Uglavnom se tom prilikom u formulu dodaju i pretpostavke o rešenju.
     \item \emph{Razrešavanje ograničenja} - Formula u kojoj su zapisana ograničenja često sadrži kvantifikatore i nepoznate drugog reda. Ona se prvo transformiše u oblik pogodan za nekog od rešavača, na primer za SAT ili SMT rešavač. Na ovaj način se problem pretrage svodi na problem ispitivanja zadovoljivosti prosleđene formule. Svaki nađeni model za tu formulu predstavlja jedno moguće rešenje koje zadovoljava data ograničenja.
 \end{itemize}
 
