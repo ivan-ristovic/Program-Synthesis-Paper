@@ -10,7 +10,7 @@ Pisanje programa koji može da sintetiše drugi program predstavlja veliki izazo
 
 Prostor programa se povećava eksponencijalno brzo u odnosu na veličinu željenog programa. Zbog toga postoje različiti pristupi njegovog pretraživanja, a neke od tih tehnika su opisane u poglavlju \ref{subsec:ProstorPrograma}.
 
-\subsection*{Definisanje specifikacija}
+\subsection{Definisanje specifikacija}
 \label{subsec:DefinisanjeSpecifikacija}
 
 Generisani program treba da se ponaša na način koji to korisnik definiše. Međutim, precizno definisanje zahteva je zapravo mnogo teže nego što izleda na prvi pogled. Postoje različiti načini za definisanje zahteva, npr. korišćenjem formalnih logičkih izraza, zadavanjem primera ulaza i izlaza programa ili definisanje neformalnim metodama.
@@ -24,7 +24,7 @@ Većina programa koji se danas koriste su previše komplikovani da bi se u potpu
 Upravo ovakvu napradnu pretragu koristi gore spomenuti program \emph{FlashFill}. Tokom pretrage, on uključuje dodatnu komunikaciju sa korisnikom. Ovako on usmerava pretragu, te na kraju ipak uspeva da nađe rešenje u realnom vremenu.
 
 
-\subsection*{Pretraživanje prostora programa}
+\subsection{Pretraživanje prostora programa}
 \label{subsec:ProstorPrograma}
 
 Svaka uspešna sinteza programa vrši neki vid pretrage prostora mogućih programa (eng. \emph{search space}). Ovo je težak kombinatorni problem. Broj mogućih rešenja raste eksponencijalno sa veličinom programa, te pretraga svih kandidata nije moguća u realnom vremenu. Potrebno je pažljivo vršiti odsecanja dela prostora pretrage kako bi se došlo do rešenja u realnom vremenu.
@@ -32,7 +32,7 @@ Svaka uspešna sinteza programa vrši neki vid pretrage prostora mogućih progra
 Tehnike pretrage se mogu zasnivati na enumerativnoj pretrazi, dedukciji, tehnikama sa ograničenjima, induktivnim i statističkim metodama. U praksi se uglavnom koristi neka od njihovih kombinacija, te ih je teško razgraničiti kao posebne metode pretrage.
 
 
-\subsubsection*{Enumerativna pretraga}
+\subsubsection{Enumerativna pretraga}
 \label{subsubsec:Enumerative}
 
 Tehnike enumerativne pretrage za sintezu programa su se pokazale kao jedne od najefikasnijih tehnika za generisanje malih programa. Razlog ove efikasnosti je u pametnim tehnikama \emph{čišćenja} (eng. \emph{pruning}) u prostoru programa koji se pretražuje. Glavna ideja je da se prvo na neki način opiše prostor pretrage u kome se nalazi žejleni program. To može da se postigne korišćenjem meta-podataka kao što su veličina programa ili njegova složenost. Kada se mogući programi numerišu po osobinama, mogu da se odmah odbace oni koji ne zadovoljavaju prethodno definisane specifikacije.
@@ -40,7 +40,7 @@ Tehnike enumerativne pretrage za sintezu programa su se pokazale kao jedne od na
 Kako se na osnovu pretpostavki vrše velika odsecanja, moguće je na početku pogrešno numerisati neke od programa. Ovo može da dovede do gubitka nekog od mogućih rešenja. Zbog ovoga je enumerativna tehnika polu-odlučiva, tj. ne garantuje pronalazak rešenja ukoliko ono postoji. Međutim, u opštem slučaju je upotrebljiva i daje dobre rezultate i to relativno brzo.
 
 
-\subsubsection*{Deduktivna pretraga}
+\subsubsection{Deduktivna pretraga}
 \label{subsubsec:Deductive}
 
 Deduktivna sinteza programa je tradicionalni pogled na sintezu programa. Ovakvi pristupi pretpostavljaju da postoji celokupna formalna specifikacija željenog programa. Ovo je vrlo jaka pretpostavka imajući u vidu da ta specifikacija može da bude veoma velika ukoliko je program kompleksan. Rešenje se sintetiše postupkom dokazivanja teorema, logičkim zaključivanjem i razrešavanjem ograničenja.
@@ -52,7 +52,7 @@ Deljenje problema na potprobleme koji mogu da se sintetišu odvojeno nije moguć
 Deduktivna pretraga može lako da zaključi vrednosti konstanti u programu. To je bitno jer ukoliko program sadrži veliki broj konstanti, sama enumerativna pretraga bi se izgubila pokušavajući da pogodi njihove prave vrednosti.
 
 
-\subsubsection*{Tehnike sa ograničenjima}
+\subsubsection{Tehnike sa ograničenjima}
 \label{subsubsec:ConstraintSolving}
 
 Mnoge uspešne tehnike sinteze programa u svojoj osnovi sadrže tehnike prilagođavanja datim ograničenjima (eng. \emph{constraint solving}). One se sastoje od dva velika koraka:
@@ -62,7 +62,7 @@ Mnoge uspešne tehnike sinteze programa u svojoj osnovi sadrže tehnike prilago�
 \end{itemize}
 
 
-\subsubsection*{Induktivna pretraga}
+\subsubsection{Induktivna pretraga}
 \label{subsubsec:Induktivna}
 
 Sintezer koji koristi induktivnu pretragu pokušava da nađe opšti program koji zadovoljava dati skup ulaza i odgovarajućih izlaza.
@@ -76,7 +76,7 @@ Dobra strana induktivnog pristupa jeste što je dovoljno fleksibilan da može da
 Jedan primer induktivne pretrage je CEGIS. Ova tehnika će biti detaljno opisana u poglavlju \ref{sec:cegis}.
 
 
-\subsubsection*{Statistička pretraga}
+\subsubsection{Statistička pretraga}
 \label{subsubsec:Statistical}
 
 Postoji veliki broj metoda koje se koriste za pretragu prostora programa a koriste neku vrstu statistike kako bi došle do rešenja. Neke od tehnika koje se mogu koristiti su tehnike mašinskog učenja, genetsko programiranje i probabilističko zaključivanje.
