@@ -40,8 +40,40 @@ Slike i crteži (u daljem tekstu \emph{grafike}) nekada sadrže ponovljene šabl
 \subsection{Popravka koda}
 \label{subsec:PopravkaKoda}
 
-Za dat program $P$ i specifikaciju $\phi$, problem popravke koda zahteva računanje modifikacija programa $P$ koje stvaraju nov program $P'$ takav da zadovoljava $\phi$. Osnovna ideja ovih tehnika je da se prvo ubace alternativni izbori za izraze u programu, a onda tehnikama programske sinteze izraza pronađu izrazi koji program dovode u oblik koji zadovoljava $\phi$. Postoji mnogo tehnika sinteze napravljenih specifično za problem popravke koda \cite{Qlose, ProgramRepairAsAGame}.
+Za dat program $P$ i specifikaciju $\phi$, problem popravke koda zahteva računanje modifikacija programa $P$ koje stvaraju nov program $P'$ takav da zadovoljava $\phi$. Osnovna ideja ovih tehnika je da se prvo ubace alternativni izbori za izraze u programu, a onda tehnikama programske sinteze izraza pronađu izrazi koji program dovode u oblik koji zadovoljava $\phi$. Postoji mnogo tehnika sinteze napravljenih specifično za problem popravke koda \cite{Qlose, ProgramRepairAsAGame}. Primer koda generisanog od strane programa \emph{SemFix} \cite{SemFix} se može videti na slici \ref{fig:CodeRepair}.
 
+\begin{figure}[t]
+    \centering
+    \begin{tabular}{ccc|cc}
+        \multicolumn{3}{c|}{Ulaz} & \multicolumn{2}{c}{Izlaz}\\
+        inb & usep & dsep & expected & actual \\
+        \hline
+        1 & 0 & 100 & 0 & 0 \\
+        1 & 11 & 110 & 1 & 0 \\
+        0 & 100 & 50 & 1 & 1 \\
+        1 & -20 & 60 & 1 & 0 \\
+        0 & 0 & 10 & 0 & 0 \\
+    \end{tabular}
+
+    \centering
+    \begin{lstlisting}[language=C]
+        int buggy(int inb, int usep, int dsep)
+        {
+            int bias;
+            if (inhb)
+                bias = dsep; //fix: bias = usep+100
+            else
+                bias = usep;
+            if (bias > dsep)
+                return 1;
+            else
+                return 0;
+        }
+    \end{lstlisting}
+
+    \caption{Primer koda sinteziranog od strane programa \emph{SemFix} \cite{SemFix} koristeći skup ulaznih i izlaznih test primera.}
+    \label{fig:CodeRepair}
+\end{figure}
 
 \subsection{Sugestije prilikom kodiranja}
 \label{subsec:SugestijePrilikomKodiranja}
