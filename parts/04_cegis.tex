@@ -48,12 +48,12 @@ U nastavku ćemo opisati kako se tri različite vrste sinteze programa koriste z
 \subsubsection{Sinteza vođena oracle-om}
 \label{subsec:OracleGuidedSynthesis}
 
-Sinteza vođena oracle-om (eng. \emph{Oracle-guided synthesis}, u daljem tekstu \emph{OGS}) [?] pretpostavlja da imamo implementaciju programa koji želimo da sintetišemo, koja se naziva oracle program. Mi ćemo oracle tretirati kao crnu kutiju, možemo da joj damo ulazne vrednosti i dobijemo odgovarajući izlaz, ali nećemo razmatrati njenu implementaciju. Počinjemo sa skupom test primera, koji su parovi ulaz-izlaz. Pošto imamo oracle, možemo da kreiramo novi test primer jednostavno generišući random ulaze i od oracla ćemo dobiti odgovarajući izlaz za svaki prosleđeni ulaz. Oracle program će predstavljati specifikaciju za OGS.
+Sinteza vođena oracle-om (eng. \emph{Oracle-guided synthesis}, u daljem tekstu \emph{OGS}) \cite{PSE} pretpostavlja da imamo implementaciju programa koji želimo da sintetišemo, koja se naziva oracle program. Mi ćemo oracle tretirati kao crnu kutiju, možemo da joj damo ulazne vrednosti i dobijemo odgovarajući izlaz, ali nećemo razmatrati njenu implementaciju. Počinjemo sa skupom test primera, koji su parovi ulaz-izlaz. Pošto imamo oracle, možemo da kreiramo novi test primer jednostavno generišući random ulaze i od oracla ćemo dobiti odgovarajući izlaz za svaki prosleđeni ulaz. Oracle program će predstavljati specifikaciju za OGS.
 
 
 \subsubsection{Faza sinteze}
 
-OGS-u prosleđujemo biblioteku komponenti na osnovu koje sintezer kreira program koji je kandidat za rešenje. Faza sinteze će uzeti sve komponente i odlučiti kako da poveže njihove ulaze i izlaze tako da formiraju program. Ovako dobijem program će biti u SSA formi (eng. \emph{Static Single Assignment form} SSA) [].
+OGS-u prosleđujemo biblioteku komponenti na osnovu koje sintezer kreira program koji je kandidat za rešenje. Faza sinteze će uzeti sve komponente i odlučiti kako da poveže njihove ulaze i izlaze tako da formiraju program. Ovako dobijem program će biti u SSA formi (eng. \emph{Static Single Assignment form} SSA) \cite{SSA}.
 
 Na primer neka imamo biblioteku od tri komponente - dva sabiranja i jedno korenovanje. Njih je moguće povezati na sledeći način:
 
@@ -106,7 +106,7 @@ Stohastička superoptimizacija pretražuje prostor programa i traži novi koji s
 \subsubsection{Faza sinteze}
 
 
-Faza sinteze na osnovu tekućeg programa $P$ sintetiše novi program $P'$ primenom \emph{MCMC} (eng. \emph{Markov-chain Monte Carlo sampling}). Definiše se i \emph{funkcija prilagođenosti} (eng. \emph{cost function}) koja određuje koliko je program $P'$ blizu traženom programu i koliko je brz program $P'$ kako bi odredili da li da prihvatimo program $P'$ ili ne. Što je kandidat bliži željenom programu veće su šanse da bude prihvaćen, ali čak i progami koji su dalji ili sporiji od traženog mogu biti prihvaćeni sa nekom verovatnoćom. Ako je kandidat prihvaćen prelazimo na fazu verifikacije, a u suprotnom ponavljamo proces.
+Faza sinteze na osnovu tekućeg programa $P$ sintetiše novi program $P'$ primenom \emph{MCMC} (eng. \emph{Markov-chain Monte Carlo sampling}) \cite{MCMC}. Definiše se i \emph{funkcija prilagođenosti} (eng. \emph{cost function}) koja određuje koliko je program $P'$ blizu traženom programu i koliko je brz program $P'$ kako bi odredili da li da prihvatimo program $P'$ ili ne. Što je kandidat bliži željenom programu veće su šanse da bude prihvaćen, ali čak i progami koji su dalji ili sporiji od traženog mogu biti prihvaćeni sa nekom verovatnoćom. Ako je kandidat prihvaćen prelazimo na fazu verifikacije, a u suprotnom ponavljamo proces.
 
 
 \subsubsection{Faza verifikacije}
