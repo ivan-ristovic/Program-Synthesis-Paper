@@ -17,7 +17,7 @@ Generisani program treba da se ponaša na način koji to korisnik definiše. Me�
 
 Formalno definisanje zahteva može često da izgleda ko\-mpli\-ko\-va\-no (mo\-žda čak i da deluje komplikovanije neko pisanje samog programa). Nasuprot tome, neformalne metode su mnogo prirodnije korisniku, ali dovode do drugih problema. Na primer, neka se željeni program definiše na osnovu primera njegovog ulaza i izlaza na sledeći način: \\
 \(\emph{“John Smith”} \rightarrow \emph{“Smith, J.”}\).\\
-Ovaj program vrši nama intuitivnu transformaciju niski, ali, na primer, da bi se on automatski generisao korišćenjem \emph{FlashFill} \cite{FlashFill} programa, potrebno je pretražiti prostor koji sadrži milione mogućih rešenja. Problem je u tome što programi nemaju ljudsku intuiciju, već se preprilagođavaju datim primerima ulaza i izlaza.
+Ovaj program vrši nama intuitivnu transformaciju niski, ali, na primer, da bi se on automatski generisao korišćenjem \emph{FlashFill} \cite{FlashFill} programa, potrebno je pretražiti prostor koji sadrži milione mogućih rešenja. Problem je u tome što programi nemaju ljudsku intuiciju, već se pre\-pri\-la\-go\-đa\-va\-ju datim primerima ulaza i izlaza.
 
 Većina programa koji se danas koriste su previše komplikovani da bi se u potpunosti opisali bilo formalnim bilo neformalnim metodama. Čak i ako bi se to nekako uspelo, opis programa bi mogao da bude toliko obiman kao i sama njegova implementacija. Kako bi sinteza ovakvih, realnih programa bila moguća, potrebno je omogućiti korisniku da on na početku definiše željeni program do neke tačke, a da kasnije tokom sinteze, interaktivno sa računarom, postepeno dolazi do rešenja.
 
@@ -43,7 +43,7 @@ Kako se na osnovu pretpostavki vrše velika odsecanja, moguće je na početku po
 \subsubsection{Deduktivna pretraga}
 \label{subsubsec:Deductive}
 
-Deduktivna sinteza programa je tradicionalni pogled na sintezu programa. Ovakvi pristupi pretpostavljaju da postoji celokupna formalna specifikacija željenog programa. Ovo je vrlo jaka pretpostavka imajući u vidu da ta specifikacija može da bude veoma velika ukoliko je program kompleksan. Rešenje se sintetiše postupkom dokazivanja teorema, logičkim zaključivanjem i razrešavanjem ograničenja.
+Deduktivna sinteza programa je tradicionalni pogled na sintezu programa. Ovakvi pristupi pretpostavljaju da postoji celokupna formalna spe\-ci\-fi\-ka\-ci\-ja željenog programa. Ovo je vrlo jaka pretpostavka imajući u vidu da ta specifikacija može da bude veoma velika ukoliko je program kompleksan. Rešenje se sintetiše postupkom dokazivanja teorema, logičkim zaključivanjem i razrešavanjem ograničenja.
 
 Deduktivna pretraga je pretraga odozgo - na dole. Koristi tehniku podeli-pa-vladaj (eng. \emph{divide-and-conquer}). Program se sintetiše tako što se prvo podeli na potprobleme tako da svaki od njih ima svoju specifikaciju. Rekurzivno se obrade potproblemi, a zatim iskombinuju podrešenja kako bi se dobilo glavno rešenje.
 
