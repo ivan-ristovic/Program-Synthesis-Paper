@@ -35,9 +35,9 @@ Tehnike pretrage se mogu zasnivati na enumerativnoj pretrazi, dedukciji, tehnika
 \subsubsection{Enumerativna pretraga}
 \label{subsubsec:Enumerative}
 
-Tehnike enumerativne pretrage za sintezu programa su se pokazale kao jedne od najefikasnijih tehnika za generisanje malih programa. Razlog ove efikasnosti je u pametnim tehnikama \emph{čišćenja} (eng. \emph{pruning}) u prostoru programa koji se pretražuje. Glavna ideja je da se prvo na neki način opiše prostor pretrage u kome se nalazi žejleni program. To može da se postigne korišćenjem meta-podataka kao što su veličina programa ili njegova složenost. Kada se mogući programi numerišu po osobinama, mogu da se odmah odbace oni koji ne zadovoljavaju prethodno definisane specifikacije.
+Tehnike enumerativne pretrage za sintezu programa su se pokazale kao jedne od najefikasnijih tehnika za generisanje malih programa. Razlog ove efikasnosti je u pametnim tehnikama \emph{čišćenja} (eng. \emph{pruning}) u prostoru programa koji se pretražuje. Glavna ideja je da se prvo na neki način opiše prostor pretrage u kome se nalazi željeni program. To može da se postigne korišćenjem meta-podataka kao što su veličina programa ili njegova složenost. Kada se mogući programi numerišu po osobinama, mogu da se odmah odbace oni koji ne zadovoljavaju prethodno definisane specifikacije.
 
-Kako se na osnovu pretpostavki vrše velika odsecanja, moguće je na početku pogrešno numerisati neke od programa. Ovo može da dovede do gubitka nekog od mogućih rešenja. Zbog ovoga je enumerativna tehnika polu-odlučiva, tj. ne garantuje pronalazak rešenja ukoliko ono postoji. Međutim, u opštem slučaju je upotrebljiva i daje dobre rezultate i to relativno brzo.
+Kako se na osnovu pretpostavki vrše velika odsecanja, moguće je doći do gubitka nekog od mogućih rešenja usled pogrešnog numerisanja na početku. Zbog ovoga je enumerativna tehnika polu-odlučiva, tj. ne garantuje pronalazak rešenja ukoliko ono postoji. Međutim, u opštem slučaju je upotrebljiva i daje dobre rezultate i to relativno brzo.
 
 
 \subsubsection{Deduktivna pretraga}
@@ -83,6 +83,6 @@ Postoji veliki broj metoda koje se koriste za pretragu prostora programa a koris
 
 \emph{Mašinsko učenje} - Tehnike mašinskog učenja mogu doprineti ostalim pretragama uvodeći verovatnoću u čvorove granjanja prilikom pretrage. Vrednosti verovatnoće se uglavnom generišu pre sinteze programa: tokom treninga ili na primer na osnovu datih primera ulaza i izlaza.
 
-\emph{Genetsko programiranje} - Genetsko programiranje je metod inspirisan biološtkom evolucijom. Sastoji se od održavanja populacije programa, njihovog ukrštanja i mogučih mutacija. Svaka jedinka populacije se ispituje u kojoj meri zadovoljava specifikacije žejlenog programa. One jedinke koje bolje odgovaraju rešenju nastavljaju da evoluiraju. Uspeh genetskih algoritama zavisi od funkcije zadovoljivosti, čiji dobar izbor predstavlja najteži problem ove tehnike.
+\emph{Genetsko programiranje} - Genetsko programiranje je metod inspirisan biološkom evolucijom. Sastoji se od održavanja populacije programa, njihovog ukrštanja i mogučih mutacija. Svaka jedinka populacije se ispituje u kojoj meri zadovoljava specifikacije željenog programa. One jedinke koje bolje odgovaraju rešenju nastavljaju da evoluiraju. Uspeh genetskih algoritama zavisi od funkcije zadovoljivosti, čiji dobar izbor predstavlja najteži problem ove tehnike.
 
 \emph{Probabilističko zaključivanje} (eng. \emph{Probabilistic inference}) - Ova tehnika dolazi do rešenja nadograđivanjem početnog programa. Dodaju se sitne izmene, jedna po jedna, i proverava da li takav promenjen program zadovoljava specifikacije.
