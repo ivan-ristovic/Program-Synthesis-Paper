@@ -1,7 +1,7 @@
 \section{Izazovi}
 \label{sec:Izazovi}
 
-Pisanje programa koji može da sintetiše drugi program je oblast koja je tek na početku svog razvoja. Danas, napisati čak i jednostavan sitezer nije lako. Naime, posmatrano sa visokog nivoa, problem sinteze se može razložiti na dva potproblema čije je efikasno rešavanje njen najveći izazov. Ti potproblemi su:
+Pisanje programa koji može da sintetiše drugi program je oblast koja je tek na početku svog razvoja. Danas, napisati čak i jednostavan sintezer nije lako. Naime, posmatrano sa visokog nivoa, problem sinteze se može razložiti na dva potproblema čije je efikasno rešavanje njen najveći izazov. Ti potproblemi su:
 
 \begin{itemize}
     \item Definisanje specifikacija željenog programa,
@@ -67,7 +67,7 @@ Mnoge uspešne tehnike sinteze programa u svojoj osnovi sadrže tehnike prilago�
 
 Sintezer koji koristi induktivnu pretragu pokušava da nađe opšti program koji zadovoljava dati skup ulaza i odgovarajućih izlaza.
 
-Induktivna pretraga je veoma opšti pojam. Ona se, na primer, može smatrati kao nadogradnja tehnike pretrage sa ograničenjima \ref{subsubsec:ConstraintSolving} \cite{SGS}. Prilikom svake iteracije se generišu neka ograničenja, rešavačem se dođe mogućeg rešenja, a zatim se ono ispita da li je ono zadovoljavajuće opšte rešenje.
+Induktivna pretraga je veoma opšti pojam. Ona se, na primer, može smatrati kao nadogradnja tehnike pretrage sa ograničenjima (videti \ref{subsubsec:ConstraintSolving}) \cite{SGS}. Prilikom svake iteracije se generišu neka ograničenja, rešavačem se dođe mogućeg rešenja, a zatim se ono ispita da li je zadovoljavajuće opšte rešenje.
 
 Sa druge strane, induktivna pretraga može da koristi tehnike mašinskog učenja. To može da radi na razne načine, a jedan od takvih pristupa je sinteza sa aktivnim učenjem \cite{SGS}. \emph{Aktivno učenje} (eng. \emph{Active learning}) je poseban vid mašinskog učenja gde je algoritmu za učenje dopušteno da sam vrši selekciju podataka na osnovu kojih će da uči. Ovakav sintezer koristi induktivni algoritam za učenje, koji u sebi često poziva i deduktivne procedure. Iako kombinuje oba pristupa, sinteza sa aktivnim učenjem se u literaturi predstavlja kao primer induktivne sinteze.
 
