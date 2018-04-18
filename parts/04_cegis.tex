@@ -41,10 +41,10 @@ Da bismo u potpunosti definisali CEGIS sintezu programa, potrebno je da odgovori
 U nastavku ćemo opisati kako se tri različite vrste sinteze programa koriste zajedno sa CEGIS idejom.
 
 
-\subsubsection{Sinteza vođena oracle-om}
+\subsubsection{Sinteza vođena uzorom}
 \label{subsec:OracleGuidedSynthesis}
 
-Sinteza vođena oracle-om (eng. \emph{Oracle-guided synthesis}, u daljem tekstu \emph{OGS}) \cite{PSE} pretpostavlja da imamo implementaciju programa koji želimo da sintetišemo, koja se naziva oracle program. Mi ćemo oracle tretirati kao crnu kutiju, možemo da joj damo ulazne vrednosti i dobijemo odgovarajući izlaz, ali nećemo razmatrati njenu implementaciju. Počinjemo sa skupom test primera, koji su parovi ulaz-izlaz. Pošto imamo oracle, možemo da kreiramo novi test primer jednostavno generišući random ulaze i od oracla ćemo dobiti odgovarajući izlaz za svaki prosleđeni ulaz. Oracle program će predstavljati specifikaciju za OGS.
+Sinteza vođena uzorom (eng. \emph{Oracle-guided synthesis}, u daljem tekstu \emph{OGS}) \cite{PSE} pretpostavlja da imamo implementaciju programa koji želimo da sintetišemo, koja se naziva program uzor. Mi ćemo uzor tretirati kao crnu kutiju, možemo da joj damo ulazne vrednosti i dobijemo odgovarajući izlaz, ali nećemo razmatrati njenu implementaciju. Počinjemo sa skupom test primera, koji su parovi ulaz-izlaz. Pošto imamo program uzor, možemo da kreiramo novi test primer jednostavno generišući random ulaze i od uzora ćemo dobiti odgovarajući izlaz za svaki prosleđeni ulaz. Uzor će predstavljati specifikaciju za OGS.
 
 
 \subsubsection*{Faza sinteze}
@@ -71,7 +71,7 @@ Sintezer koristi test primere da ograniči broj načina na koje se komponente mo
 Ako postoji rešenje mi program koji je kandidat za rešenje prosleđujemo fazi verifikacije. Ovaj korak koristi SMT rešavač da odgovori na sledeće pitanje: Da li postoji program $P'$, različit od kandidata za rešenje $P$, koji takođe zadovoljava sve test primere, ali se na nekom ulazu z ralikuje od $P$?
 Pojasnimo ovo deo po deo. Iz faze sinteze dobili smo program $P$ koji je kandidat za rešenje i zadovoljava sve test primere. Ono što tražimo od verifikatora ja novi ulaz $z$ i novi program $P'$, takvi da za ulaz $z$ programi $P$ i $P'$ daju različite izlaze. Program $P'$ takođe zadovoljava sve početne test primere.
 Drugim rečima pitamo se da li postoji više od jednog programa koji mogu da zadovolje sve test primere? Ako postoji nismo završili.
-U ovom trenutku ništa ne pitamo oracle program. Može da se desi i da program $P$ i $P'$ daju netačan izlaz za ulaz $z$, ali jedino što je u ovom trenutku važno za verifikator je da oni daju različit rezultat.
+U ovom trenutku ništa ne pitamo uzor. Može da se desi i da program $P$ i $P'$ daju netačan izlaz za ulaz $z$, ali jedino što je u ovom trenutku važno za verifikator je da oni daju različit rezultat.
 
 Na primer evo kako radi za dva test primera i komponente koje smo koristili u prethodnom primeru.
 
@@ -83,7 +83,7 @@ Na primer evo kako radi za dva test primera i komponente koje smo koristili u pr
     \label{fig:oraclePrimer1}
 \end{figure}
 
-U ovom slučaju imamo samo dva test primera $(0,0)$ i $(1,0)$. Sintezer nam daje program $P=\sqrt{x}+y$ koji je kandidat i koji zadovoljava oba test primera. Od verifikatora tražimo da nam da dve stvari: novi program $P'$ i novi ulaz $z$. U ovom slučaju on to i uspeva. Vraća novi program $x+y$ i novi test primer $(4,5)$. Na novom test primeru program $P$ i $P'$ daju različite izlaze: $\sqrt{4}+5=7$ dok je $4+5=9$. U ovom slučaju ispostavlja se da oba programa daju pogrešan rezultat sobzirom da je izlaz koji daje oracle $\sqrt{4+5}=3$. Međutim činjenica da se $P$ i $P'$ razlikuju nam je dovoljna da se u petlji vratimo nazad pomoću povratnog koraka.
+U ovom slučaju imamo samo dva test primera $(0,0)$ i $(1,0)$. Sintezer nam daje program $P=\sqrt{x}+y$ koji je kandidat i koji zadovoljava oba test primera. Od verifikatora tražimo da nam da dve stvari: novi program $P'$ i novi ulaz $z$. U ovom slučaju on to i uspeva. Vraća novi program $x+y$ i novi test primer $(4,5)$. Na novom test primeru program $P$ i $P'$ daju različite izlaze: $\sqrt{4}+5=7$ dok je $4+5=9$. U ovom slučaju ispostavlja se da oba programa daju pogrešan rezultat sobzirom da je izlaz koji daje program uzor $\sqrt{4+5}=3$. Međutim činjenica da se $P$ i $P'$ razlikuju nam je dovoljna da se u petlji vratimo nazad pomoću povratnog koraka.
 
 
 \subsubsection*{Povratni korak}
