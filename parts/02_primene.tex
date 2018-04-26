@@ -17,7 +17,7 @@ Neke od oblasti primene sinteze programa koje će biti pokrivene u ovom radu su:
 \subsection{Priprema podataka}
 \label{subsec:PripremaPodataka}
 
-\emph{Priprema podataka} predstavlja proces čišćenja, transformacije i pripreme podataka iz polu-struktuiranog formata u format pogodan za analizu i prezentovanje. Problem je skupoća dovođenja podataka u oblik pogodan za primenu algoritama iz oblasti mašinskog učenja ili istraživanja podataka radi izvlačenja korisnih zaključaka. PBE čini čitav ovaj proces bržim \cite{ProgrammingBasedOnExamples}.
+\emph{Priprema podataka} predstavlja proces čišćenja, transformacije i pripreme podataka iz polu-struktuiranog formata u format pogodan za analizu i prezentovanje. Problem je visoka cena dovođenja podataka u oblik pogodan za primenu algoritama iz oblasti mašinskog učenja ili istraživanja podataka radi izvlačenja korisnih zaključaka. PBE čini čitav ovaj proces bržim \cite{ProgrammingBasedOnExamples}.
 
 Proces pripreme često obuhvata sledeće operacije nad podacima:
 \begin{itemize}
@@ -26,7 +26,7 @@ Proces pripreme često obuhvata sledeće operacije nad podacima:
     \item formatiranje
 \end{itemize}
 
-Transformacija podataka se često svodi na manipulisanje niskama ili izmenama samih tipova podataka. Iako savremeni programski jezici pomažu korisnicima uvodeći širok spektar komandi, korisnici se zamaraju pisanjem skriptova ili makroa kako bi obavili posao. Alati koji koriste PBE su idealni za ovakav posao \cite{ProgrammingBasedOnExamples, SynthesizingNumberTransformationsFromIOExamples}
+Transformacija podataka se često svodi na manipulisanje niskama ili izmenama samih tipova podataka. Iako savremeni programski jezici pomažu korisnicima uvodeći širok spektar komandi, korisnici se zamaraju pisanjem skriptova ili makroa kako bi obavili posao. Alati koji koriste PBE su idealni za ovakav posao \cite{ProgrammingBasedOnExamples, SynthesizingNumberTransformationsFromIOExamples}.
 
 
 \subsection{Popravka koda}
@@ -52,7 +52,7 @@ Za dat program $P$ i specifikaciju $\phi$, problem popravke koda zahteva ra\-ču
         int buggy(int inb, int usep, int dsep)
         {
             int bias;
-            if (inhb)
+            if (inb)
                 bias = dsep; //fix: bias = usep+100
             else
                 bias = usep;
@@ -78,7 +78,7 @@ Većina današnjih programerskih okruženja omogućava neku vrstu a\-u\-to\-ma\-
 
 Programski opis grafičkih objekata dovodi do bržih proračuna koordinata zavisnih tačaka od tačaka koje imaju slobodne koordinate, što omogućava interaktivne izmene i efikasne animacije. Tehnike sinteze programa mogu uspešno generisati rešenja geometrijskih problema sre\-dnjo\-ško\-lske težine \cite{SynthesizingGeometryConstructions}.
 
-Slike i crteži (u daljem tekstu \emph{grafike}) nekada sadrže ponovljene šablone, teksture ili objekte. Konstrukcija takvih grafika zahteva pisanje skriptova ili ponovljenih operacija, što može biti jako neprijatno i podložno greškama. Korišćenjem PBE, moguće je omogućiti korisniku da prikaže par primera i ostavi posao sintezeru da predvidi naredne objekte u nizu \cite{Backpropagation}. Štaviše, korišćenjem grafičkog interfejsa za domen vektorske grafike, moguće je interaktivno postavljati grafike isključivo pomoću grafičkih alata ili grafičkog interfejsa, a generisanje programskog koda ostaviti sintezeru.
+Slike i crteži (u daljem tekstu \emph{grafike}) nekada sadrže ponovljene šablone, teksture ili objekte. Konstrukcija takvih grafika zahteva pisanje skriptova ili ponovljenih operacija, što može biti veoma naporno i podložno greškama. Korišćenjem PBE, moguće je omogućiti korisniku da prikaže par primera i ostavi posao sintezeru da predvidi naredne objekte u nizu \cite{Backpropagation}. Štaviše, korišćenjem grafičkog interfejsa za domen vektorske grafike, moguće je interaktivno postavljati grafike isključivo pomoću grafičkih alata ili grafičkog interfejsa, a generisanje programskog koda ostaviti sintezeru.
 
 
 \subsection{Superoptimizacija}
