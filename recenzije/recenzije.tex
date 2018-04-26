@@ -1,0 +1,482 @@
+
+
+ % !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper]{report}
+
+\usepackage[T2A]{fontenc} % enable Cyrillic fonts
+\usepackage[utf8x,utf8]{inputenc} % make weird characters work
+\usepackage[serbian]{babel}
+%\usepackage[english,serbianc]{babel}
+\usepackage{amssymb}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\newcommand{\odgovor}[1]{\textcolor{blue}{#1}}
+\def\zn{,\kern-0.09em,}
+
+
+\begin{document}
+
+\title{Dopunite naslov svoga rada\\ \small{Dopunite autore rada}}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Uputstva}
+\emph{Prilikom predavanja odgovora na recenziju, obrišite ovo poglavlje.}
+
+Neophodno je odgovoriti na sve zamerke koje su navedene u okviru recenzija. Svaki odgovor pišete u okviru okruženja \verb"\odgovor", \odgovor{kako bi vaši odgovori bili lakše uočljivi.} 
+\begin{enumerate}
+
+\item Odgovor treba da sadrži na koji način ste izmenili rad da bi adresirali problem koji je recenzent naveo. Na primer, to može biti neka dodata rečenica ili dodat pasus. Ukoliko je u pitanju kraći tekst onda ga možete navesti direktno u ovom dokumentu, ukoliko je u pitanju duži tekst, onda navedete samo na kojoj strani i gde tačno se taj novi tekst nalazi. Ukoliko je izmenjeno ime nekog poglavlja, navedite na koji način je izmenjeno, i slično, u zavisnosti od izmena koje ste napravili. 
+
+\item Ukoliko ništa niste izmenili povodom neke zamerke, detaljno obrazložite zašto zahtev recenzenta nije uvažen.
+
+\item Ukoliko ste napravili i neke izmene koje recenzenti nisu tražili, njih navedite u poslednjem poglavlju tj u poglavlju Dodatne izmene.
+\end{enumerate}
+
+Za svakog recenzenta dodajte ocenu od 1 do 5 koja označava koliko vam je recenzija bila korisna, odnosno koliko vam je pomogla da unapredite rad. Ocena 1 označava da vam recenzija nije bila korisna, ocena 5 označava da vam je recenzija bila veoma korisna. 
+
+NAPOMENA: Recenzije ce biti ocenjene nezavisno od vaših ocena. Na osnovu recenzije ja znam da li je ona korisna ili ne, pa na taj način vama idu negativni poeni ukoliko kažete da je korisno nešto što nije korisno. Vašim kolegama šteti da kažete da im je recenzija korisna jer će misliti da su je dobro uradili, iako to zapravo nisu. Isto važi i na drugu stranu, tj nemojte reći da nije korisno ono što jeste korisno. Prema tome, trudite se da budete objektivni. 
+\chapter{Recenzent \odgovor{--- ocena:} }
+
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+Rad govori o automatskom procesu generisanja programskog koda. Jasno su prikazane primene kao i primeri alata koji se koriste. Opisani su izazovi u ovoj oblasti - problem definisanja specifikacija i problem pretrage prostora programa. Prikazan je i CEGIS kao i njegove faze: definisanje specifikacija, sinteza kandidata, verifikacija kandidata i vraćanje podataka potrebnih za dalju sintezu programa.
+
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+
+
+\subsection{Sažetak}
+
+Smatram da se sažetak nekako naglo prekida. Možda može da se završi rečenicom da će se rad najviše fokusirati na CEGIS ili da se doda neki 'zaključak'. Takođe, fale ključne reči.
+
+
+
+\subsection{Naslov rada}
+Naslov je u redu, ali smo na času došli do zaključka da treba da, pored toga što nas upućuje u temu rada, bude i privlačan - tema nije isto što i naslov rada.
+
+
+
+\subsection{Pasusi od jedne rečenice}
+Ima par pasusa koji se sastoje od jedne rečenice. Trebalo bi ili dodati neke rečenice tim pasusima (koje podržavaju to rečeno, pružaju dodatne informacije, daju primere..) ili ih prosto pripojiti nekom od susednih pasusa. 
+
+Ovakvi pasusi se javljaju na sledećim mestima:
+\begin{itemize}
+	\item Uvod: poslednji pasus.
+    \item Superoptimizacija: prvi pasus.
+    \item Induktivna pretraga: prvi pasus.
+    \item CEGIS: poslednji pasus.
+    \item Primene CEGIS-a: prvi pasus.
+\end{itemize}
+
+
+
+\subsection{Jasnoća rada}
+
+Par delova rada mi nije bilo jasno, čak ni u prvih par puta čitanja - da li zbog formulacije, nedostatka adekvatnog objašnjenja ili su prosto pisani tako da osoba koja čita mora imati predznanja u nekim oblastima.
+
+
+\subsubsection{Deo rada: Grafika}
+
+\textbf{\textit{"Programski opis grafičkih objekata dovodi do bržih proračuna koor-dinata zavisnih tačaka od tačaka koje imaju slobodne koordinate, što omogućava interaktivne izmene i efikasne animacije. Tehnike sinteze programa mogu uspešno generisati rešenja geometrijskih problema srednjoškolske težine [13]."}}
+
+Rad ne govori o grafici i referenca na rad na tu temu postoji, ali mislim da bi bilo lepo dodati bar jednu uvodnu rečenicu koja će opisati grafičke objekte, šta je neefikasno u trenutnim proračunima i kako ovaj programski opis to poboljšava - ukratko, ali da postoji uvod u tematiku. Prosto previše naglo počinje odeljak i meni, kao nekom ko se ne razume u računarsku grafiku, je bilo potrebno da posetim gugl radi pojašnjenja. 
+
+
+\subsubsection{Deo rada: Superoptimizacija}
+\textbf{\textit{"Formula $prosek = \frac{x+y}{2}$ može dovesti do prekoračenja. Takođe koristi skupu aritmetičku operaciju deljenja. Alternativa je formula $(x | y) - ((x \oplus y) \gg 1)$."}}
+
+Smatram da bi bilo dobro prikazati na koji način je ova formula alternativa. Čitalac bi morao da ili dobro bude upoznat sa bitovskim operatorima, ili da provede mnogo vremena tumačeći formulu.
+
+
+\subsubsection{Deo rada: Definisanje specifikacija}
+\textbf{\textit{"Ovaj program vrši nama intuitivnu transformaciju niski, ali, na primer,
+da bi se on automatski generisao korišćenjem FlashFill [12] programa, potrebno je pretražiti prostor koji sadrži milione mogućih rešenja."}}
+
+Nije baš jasno šta taj prostor sadrži. Nakon čitanja rada, postalo mi je jasno da se radi o prostoru svih mogućih programa koji daju izlaz 'Smith, J.' za ulaz 'John Smith', ali u trenutku prvog čitanja ovog pasusa, više mi je zvučalo kao da se pretražuje prostor koji sadrži milione mogućih niski.
+
+
+\subsubsection{Deo rada: Enumerativna pretraga}
+\textbf{\textit{"Glavna ideja je da se prvo na neki način opiše prostor pretrage u kome se nalazi željeni program. To može da se postigne korišćenjem meta-podataka kao što su veličina programa ili
+njegova složenost. Kada se mogući programi numerišu po osobinama, mogu da se odmah odbace oni koji ne zadovoljavaju prethodno definisane specifikacije."}}
+
+Meni iz ovog pasusa nije bilo baš najjasnije šta je enumerativna pretraga. Da li ovo znači da mi kažemo da hoćemo program od 100 linija koda, zatim sve programe u prostoru pretrage numerišemo po veličini i zatim odsečemo sve one sa preko 100 linija koda? Nije mi baš jasna poslednja rečenica - oni su numerisani i mi opet gledamo da li zadovoljavaju speficikacije? Ili nam ta numeracija govori da li zadovoljavaju ili ne. Možda bi neki primer ili malo izmenjena formulacija pomogli razumevanju.
+
+
+\subsubsection{Deo rada: Statistička pretraga}
+\textbf{\textit{"Mašinsko učenje - Tehnike mašinskog učenja mogu doprineti ostalim pretragama uvodeći verovatnoću u čvorove granjanja prilikom pretrage. Vrednosti verovatnoće se uglavnom generišu pre sinteze programa: tokom treninga ili na primer na osnovu datih primera ulaza i izlaza."}}
+
+Pretpostavljam da verovatnoća služi da se neki delovi prostora pretrage iseku ako je ona manja od nekog broja. Smatram da bi trebalo da stoji objašnjenje kako se generišu kao i čemu te verovatnoće služe, ili da se bar stavi referenca na rad koji govori o tome.  
+
+
+\subsubsection{Deo rada: Sinteza vođena uzorom, deo Faza sinteze}
+\textbf{\textit{"Primetimo da SSA forma jednostavno povezuje komponente među-sobno, tako da ako želimo da imamo dva sabiranja moramo da obezbedimo dve komponente za sabiranje. Takođe primetimo da se vrednost o2 ne koristi, takozvani mrtvi kod. U ovom slucaju to je poželjna karakteristika,
+jer ne moramo unapred tačno da odredimo koliko ćemo imati kojih operacija, već možemo samo da zadamo gornju granicu, a sintezer će generisati mrtvi kod za komponente koje se ne koriste."}}
+
+Nije mi jasno šta je poželjna karakteristika - mrtvi kod ili to što imamo više komponenti za sabiranje (pretpostavljam da je kod u pitanju)? Malo je čudno formulisano. Prvo se kaže da su nam potrebne dve komponente za sabiranje a zatim da ne moramo da odredimo koliko ćemo imati kojih operacija. I kako tačno sintezer generiše mrtvi kod? Ceo pasus je malo zbunjujuć.
+
+
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+Ovde će biti izdvojene greške u kucanju, formulacije rečenica koje mi baš nisu zvučale najbolje kao i neki sitni predlozi.
+
+\subsection{Formulacije rečenica}
+\begin{itemize}
+	\item Uvod: \textbf{\textit{'Danas skoro da ne postoji osoba koja nema pristup modernim tehnologijama.'}}
+
+		Deo 'danas skoro da ne postoji osoba' mi zvuči previše neformalno za jedan seminarski rad. Možda bi bolje bilo 'U današnje vreme, pristup modernim tehnologijama je svima omogućen.' ili slično.
+        
+	\item Uvod: \textbf{\textit{'..dao je vetar u leđa..'}} 
+    
+    Ovo takođe zvuči malo neformalno. Možda bi bilo bolje iskoristiti 'podstakao' umesto ove sintagme.
+    
+    \item Priprema podataka: \textbf{\textit{'Priprema podataka predstavlja proces čišćenja, transformacije i pripreme podataka...'}}
+    
+    Loše je formulisano jer izgleda ovako: 'Priprema podataka je ...... priprema podataka'. Drugo 'priprema' može da bude 'prevođenje'. 
+    
+    \item Definisanje specifikacija: \textbf{\textit{'(možda čak i da deluje komplikovanije neko pisanje samog programa).'}}
+    
+    Bolje bi zvučalo da piše 'ponekad i komplikovanije od pisanja samog programa'. Ako se autori odluče da ne promene formulaciju, treba ispraviti 'neko' u 'nego'.
+    
+    \item Definisanje specifikacija: \textbf{\textit{'Čak i ako bi se to nekako uspelo, opis programa bi mogao da bude toliko obiman kao i sama njegova implementacija.'}}
+    
+    Trebalo bi preformulisati u 'Čak i kad bi se to uspelo, opis programa..'
+    
+    \item Deduktivna pretraga: \textbf{\textit{'...sama enumerativna pretraga bi se izgubila pokusavajuci da...'}}
+    
+    'Pretraga bi se izgubila' - zvuči malo neformalno za seminarski (naučni) rad. 
+    
+    \item Induktivna pretraga: \textbf{\textit{'Prilikom svake iteracije se generišu neka ograničenja, rešavačem se dođe mogućeg rešenja, a zatim se ono ispita da li je zadovoljavajuće opšte
+rešenje.'}}
+
+	Bolje bi zvučalo: 'Prilikom svake iteracije se generišu ograničenja, rešavačem se dođe do mogućeg rešenja a zatim se ispita da li je ono zadovoljavajuće kao opšte rešenje.' ili nešto tome slično.
+    
+    \item Statistička pretraga: \textbf{\textit{'Svaka jedinka populacije se ispituje u kojoj meri zadovoljava specikacije željenog programa.'}}
+    
+    Preformulisati u 'Ispituje se u kojoj meri svaka jedinka zadovoljva..'.
+    
+    \item CEGIS: \textbf{\textit{'Naime, rešavač bi u svakom slučaju pronašao rešenje za datu formulu, ali kako bi se to desilo u realnom vremenu, CEGIS (eng. Counter-example-Guided Inductive Synthesis) u sebi sadrži posebne tehnike za optimizaciju.'}}
+    
+    Preformulisati u 'Naime, rešavač je u stanju da pronađe rešenje za bilo koju proizvoljnu ulaznu formulu, ali da bi se to desilo u realnom vremenu, ..'. Takođe, treba izbaciti uvođenje skraćenice CEGIS jer je to već urađeno u uvodu.
+    
+    \item Sinteza vođena uzorom, faza verifikacije: \textbf{\textit{'Ako postoji rešenje mi program koji je kandidat za rešenje prosleđujemo fazi verikacije.', 'Ako postoji nismo završili.', 'U ovom trenutku ništa ne pitamo uzor.'}}
+    
+    Skroz je u redu da postoji obaraćanje u radu, ali ovde mi zvuči malo nepotrebno. Mi ne prosleđujemo program fazi verifikacije sem ako faza sinteze i faza verifikacije nisu skroz odvojene pa mi moramo ručno da prenosimo izlaz jedne u ulaz druge. Zatim, nismo mi zavšrili već program nije završio. Uzor svakako ne pitamo, ni mi ni naš program, već se ne vrši poređenje ili nešto slično tome.    
+\end{itemize}
+
+\subsection{Štamparske i stilske greške}
+\begin{itemize}
+	\item Sažetak: \textbf{\textit{'popravka'}} ispraviti u 'popravljanja'.
+	\item Uvod: \textbf{\textit{'veca'}} ispraviti u 'veća'.
+    \item Uvod: \textbf{\textit{'dugokog'}} ispraviti u 'dubokog'.
+    \item Priprema podataka: \textbf{\textit{'skupoća'}} ispraviti u 'visoka cena'.
+    \item Priprema podataka: \textbf{\textit{'Alati koji koriste PBE su idealni za ovakav posao [11, 22]'}} - fali tačka.
+    \item Popravka koda: U parčetu koda piše \textbf{\textit{'if (inhb)'}} a ta promenljiva ne postoji. Trebalo bi da piše inb.
+    \item Sugestije prilikom kodiranja: \textbf{\textit{'programerska okruženja'}} ispraviti u 'okruženja za rad'.
+    \item Grafika: \textbf{\textit{'jako neprijatno'}} ispraviti u 'veoma naporno'.
+    \item Grafika: \textbf{\textit{'moguće je omogućiti korisniku'}} ispraviti u 'omogućava se korisniku'.
+    \item Definisanje specifikacija: \textbf{\textit{'napradnu'}} ispraviti u 'naprednu'.
+    \item Definisanje specifikacija: \textbf{\textit{'gore spomenuti'}} ispraviti u 'gorepomenuti'
+    \item Statistička pretraga: \textbf{\textit{'..jedna po jedna, i proverava da li..'}} ispraviti u '..jedna po jedna, i proverava se da li..'.
+    \item CEGIS: \textbf{\textit{'SMT'}} u drugoj rečenici ispraviti u 'SMT rešavač' jer je SMT tip problema i on ne može da nalazi valuacije.
+    \item Arhitektura: \textbf{\textit{'kontra primer'}} ispraviti u 'kontraprimer'.
+    \item Sinteza vođena uzorom: \textbf{\textit{'random'}} ispraviti u 'proizvoljne'.
+    \item Sinteza vođena uzorom: \textbf{\textit{'dobijem'}} ispraviti u 'dobijen'.
+    \item Sinteza vođena uzorom: \textbf{\textit{'sobzirom'}} ispraviti u 's obzirom na to'. 
+    \item Sinteza vođena uzorom: \textbf{\textit{'oracla' i 'oraclu'}} ispraviti u 'uzora' i 'uzoru' jer je ovako nekonzistentno sa ostatkom rada.
+    \item Sinteza vođena uzorom: \textbf{\textit{'..ponovo prolazi kroz petlju.'}} ispraviti u '..ponovo se prolazi kroz petlju.' 
+    \item Sinteza vođena uzorom: \textbf{\textit{'bi smo'}} ispraviti u 'bismo'.
+    \item Sinteza vođena uzorom: \textbf{\textit{'Problem je da..'}} ispraviti u 'Problem je to što'.
+    \item Sinteza vođena uzorom: \textbf{\textit{'Faza validacije treba da..'}} nigde se ne pominje faza validacije, ovo treba ispraviti u 'verifikacije'.
+    \item Stohastička superoptimizacija: \textbf{\textit{'prtpostaviti'}} ispraviti u 'pretpostaviti'. 
+    \item Stohastička superoptimizacija: \textbf{\textit{'prilagpđenosti'}} ispraviti u 'prilagođenosti'.
+    \item Stohastička superoptimizacija: \textbf{\textit{'nadalje'}} ispraviti u 'ubuduće'.
+    \item Stohastička superoptimizacija: \textbf{\textit{'vraca'}} ispraviti u 'vraća'.
+    \item Zaključak: \textbf{\textit{'dolazi se do pitanja'}} ispraviti u 'postavlja se pitanje'.
+    \item Zaključak: \textbf{\textit{'Ali ova oblast..'}} izbaciti 'ali'.
+    \item Zaključak: \textbf{\textit{'S obzirom..'}} ispraviti u 'S obzirom na to..'.
+\end{itemize}
+
+\subsection{Engleski izrazi}
+Kod engleskih skraćenica, trebalo bi da je svaka reč napisana velikim početnim slovom, bar po mom mišljenju, jer je već sama skraćenica zapisana velikim slovima. Ako se autori ne slažu sa ovim predlogom, bar treba ustaliti jedan način pisanja - u radu se na nekim mestima piše svaka reč velikim slovom a na nekim mešano. Ovo se javlja na sledećim mestima:
+
+\begin{itemize}
+	\item Uvod: \textbf{\textit{'SAT (eng. Propositional satisability problem)'}}
+    \item Uvod: \textbf{\textit{'SMT (eng. Satisability modulo theories)'}}
+	\item Uvod: \textbf{\textit{'CEGIS-u (eng. Counterexample-guided inductive synthesis)'}}
+    \item CEGIS: \textbf{\textit{'CEGIS (eng. Counterexample-Guided Inductive Synthesis)'}}
+\end{itemize}
+
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\ 
+Da. Prikazano je zašto je potrebno baviti se ovom oblasti, koji izazovi postoje, šta je trenutno aktuelno u ovom polju. Mnogo se može naučiti a opet nije preopširno.
+
+\item Da li je nešto važno propušteno?\\ 
+Ne. Prikazana je motivacija ('olakšavanje života' programerima, kraće vreme pisanja koda..), izazovi (definisanje specifikacija i pretraga) a na kraju je veoma detaljno prikazan CEGIS koji predstavlja aktuelan pristup sintezi programa - što i jesu bili inicijalni zahtevi postavljeni pred autore. 
+
+\item Da li ima suštinskih grešaka i propusta?\\ 
+Suštinskih - ne. Samo par stvari koje bi, po mom mišljenju, trebalo malo bolje pojasniti. Rad je jasan i informativan.
+
+\item Da li je naslov rada dobro izabran?\\ 
+Možda. Naslov se poklapa sa temom a trebalo bi da bude malo preformulisan - da bude i 'privlačan' a i informativan. 
+
+\item Da li sažetak sadrži prave podatke o radu?\\ 
+Da. Sve što je rečeno da će biti opisano je i bilo opisano.
+
+\item Da li je rad lak-težak za čitanje?\\ 
+Srednje težine. Ima delova koji su laki za čitanje i veoma interesantni (što čini veći deo rada) ali ima i onih koji su konfuzni.
+
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\ 
+Jeste, ali ne iz oblasti sinteze programa, već nekih drugih oblasti. Mi, kao studenti MATF-a, možemo lako razumeti rad, ali na primer, neko ko nije slušao računarsku grafiku ili nije učio bitovske operatore će se zbuniti na par mesta u radu.
+
+\item Da li je u radu navedena odgovarajuća literatura?\\ 
+Jeste. Eventualno bi bilo dobro dodati literaturu za delove koji su istaknuti u delu 2 ako se autori odluče da ih ne objasne podrobnije (kao na primer za odeljak Mašinsko učenje u okviru statistkičke pretrage). 
+
+\item Da li su u radu reference korektno navedene?\\ 
+Da, reference u radu su pravilno navedene. Sama literatura je u dobrom formatu.
+
+\item Da li je struktura rada adekvatna?\\ 
+Da. Sadrži sažetak, sadržaj (možda može da sadrži i podnaslove, ako ne prelazi prvu stranu), pravilno napisan uvod i zaključak, reference.
+
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\ 
+Da. Slika 1 u radu je u stvari tabela, pa bi možda to trebalo preimenovati. Ali svakako je sve ispoštovano. 
+
+\item Da li su slike i tabele funkcionalne i adekvatne?\\ 
+Da. Jasne su same po sebi i na njih je referisano iz samog teksta.
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+Negde sam na granici između 'srednje upućen' i 'malo upućen'. Pročitah par članaka na ovu temu pre početka recenzije koje je profesorka predložila u mejlu.
+
+
+\chapter{Recenzent \odgovor{--- ocena:} }
+
+
+\section{О чему рад говори?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+\par Семинарски рад говори о томе шта представља синтеза програма, каква је њена улога у рачунарству, који су најчешћи проблеми приликом синтезе програма и како се они превазилазе. Основна замисао је да особа зада рачунару какав програм жели да добије, а специјалан програм за аутоматско генерисање кода, или тзв. синтезер програма, аутоматски генерише имплементацију жељеног програма. Међутим, то није једина примена синтезе програма. У раду је дато неколико примена синтезе програма. Такође, описани су главни потпроблеми синтезе програма, што су дефинисање спецификација жељеног програма и претраживање простора могућих програма ради проналажења оног који задовољава задате спецификације. При томе, оба потпроблема имају своје проблеме. Дефинисање жељене спецификације уопште није једноставно као што на први поглед делује, а простор програма експоненцијално расте, па се јављају проблеми како сузити тај простор, како би се цела синтеза програма завршила у реалном времену. На крају рада детаљно је описан метод CEGIS, који је заснован на следећем једноставном принципу: ако се за последњи синтетисани програм пронађе контрапример, тај програм није решење и треба наставити даље, а ако контрапримера нема, тај програм је решење. Дато је неколико примера који користи методу CEGIS, помоћу којих је јасно како она функционише.
+
+\section{Крупне примедбе и сугестије}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+\par Рад је веома квалитетно написан. У самој структури рада не треба вршити никакве измене. Међутим, требало би додати неколико ситница, да би рад био квалитетнији. На пример, у пододељку 2.2 Поправка кода, у примеру датом на слици 1, није дата спецификација програма, па је пример недовољно јасан. У пододељку 2.5 Супероптимизација требало би боље објаснити где је ту примена синтезе програма, пошто из тренутног текста то није јасно. Мало је јасније тек када се прочита део 4.2.2 Стохастичка супероптимизација, али би ипак требало боље објаснити у 2.5. С овим допунама, рад би био комплетиран. 
+
+\section{Ситне примедбе}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+\par Иако је рад веома квалитетно написан, уочен је известан број граматичких, стилских и штампарских грешака. Све уочене грешке су наведене у даљем тексту.
+
+\par У сажетку, у четвртој реченици уместо речи поправка треба ставити реч поправки, због слагања у падежу.
+
+\par У уводу су примећене следеће грешке:
+\begin{enumerate}
+\item У другој реченици написана је реч \zn veca'' уместо речи \zn veća''.
+\item У четвртој реченици написана је реч \zn имплементација'' у погрешном падежу (треба \zn имплементацији'').
+\item У петој реченици написана је реч \zn дугоког''. Треба је исправити на \zn дубоког'' или \zn дугог''.
+\item У последњем пасусу је неправилно преломљена реч \zn CEGIS-u''. Потребно је спречити прелом речи или додати још неку реч како не би једно слово било пренето у наредни ред.
+\end{enumerate}
+
+\par У пододељку 2.1 Припрема података, примећене су следеће грешке:
+\begin{enumerate}
+\item Уместо речи \zn полу-структуираног'' треба ставити реч \zn полуструктурираног''.
+\item У последњем пасусу у првој реченици треба ставити \zn измене'' уместо \zn изменама'', да би била у исправном падежу.
+\end{enumerate}
+
+\par У пододељку 2.2 Поправка кода, у коду функције buggy употребљена је недекларисана променљива inhb. Аутори су вероватно мислили на променљиву inb која је аргумент функције.
+
+\par У пододељку 2.3 Сугестије приликом кодирања, примећене су следеће грешке:
+\begin{enumerate}
+\item У другој реченици уместо речи \zn синтесизери'' треба ставити реч \zn синтезери''. Такође, требало би додати запету после речи \zn токене''.
+\item У трећој реченици би требало превести \zn type-directed completion'' на српски, да би било у складу с претходним појмом, који је преведен.
+\end{enumerate}
+
+\par У пододељку 2.6 Конкурентно програмирање, у другом пасусу у четвртој реченици треба ставити реч \zn додајући'' уместо речи \zn додавајући''.
+
+\par У пододељку 3.1 Дефинисање спецификација, примећене су следеће грешке:
+\begin{enumerate}
+\item У другом пасусу, у првој реченици уместо речи \zn неко'' треба ставити реч \zn него''.
+\item У трећем пасусу, у другој реченици уместо речи \zn као'' треба ставити реч \zn колико'', због претходно употребљене речи \zn толико''.
+\end{enumerate}
+
+\par У делу 3.2.1 Енумеративна претрага, треба избацити цртице у речима \zn мета-података'' и \zn полу-одлучива''. У делу 3.2.2 Дедуктивна претрага, треба писати \zn одозго надоле'' уместо \zn одозго - на доле''.
+
+\par У делу 3.2.3 Технике са ограничењима, примећене су следеће грешке:
+\begin{enumerate}
+\item У делу о генерисању ограничења, после речи \zn ограничењима'' треба додати запету.
+\item У делу о разрешавању ограничења, у другој реченици уместо речи \zn неког'' треба ставити реч \zn неки'' (\zn за неки од решавача'').
+\end{enumerate}
+
+\par У делу 3.2.5 Статистичка претрага, примећене су следеће грешке:
+\begin{enumerate}
+\item У првој реченици треба додати запету после речи \zn програма''.
+\item У другом пасусу уместо речи \zn грањања'' треба ставити реч \zn гранања'', а у последњој реченици треба ставити запете пре и после синтагме \zn на пример''.
+\item У четвртом пасусу реч \zn техника'' треба преломити као \zn те-хника''. У другој реченици је пожељно додати реч \zn се'' после речи \zn проверава''.
+\end{enumerate}
+
+\par У одељку 4 CEGIS, у другом пасусу треба ставити велико почетно слово у упитној реченици која је под наводницима и треба обрисати тачку после знака навода на крају. Такође, уочена је неконзистентност у писању речи \zn контрапример''. На почетку одељка је писано \zn контра-пример'', а касније у тексту као две речи, \zn контра пример''. Оба начина су неисправна и треба писати састављено \zn контрапример''.
+
+\par Препорука је да се слици 2 (CEGIS петља) смањи величина, како би стала на крај 8. стране. Тако ће се наћи одмах испод текста на коме се реферише на њу.
+
+\par Наслов пододељка 4.2 је неправилно написан. Треба додати цртицу да би писало \zn CEGIS-a''. Такође, део 4.2.1 је писан у активном стилу, док је остатак текста писан у пасивном стилу, што нарушава конзистентност. Примећене су и следеће грешке:
+\begin{enumerate}
+\item У параграфу о фази верификације, треба искосити слово \zn z'' и одмах након тога исправити реч \zn раликује'' у \zn разликује''. Такође, у петој реченици треба заменити реч \zn ја'' са \zn су''. Треба додати запете после синтагме \zn другим речима'', у реченици \zn Ако постоји, нисмо завршили'' и после синтагме \zn на пример'' у другом пасусу.
+\item Треба исправити неисправну реч \zn собзиром'' у две речи \zn с обзиром'' и треба додати запету после \zn међутим''.
+\item У параграфу о повратном кораку треба превести реч \zn oracle'', или је у крајњој мери употребити транскрибовано на оракл.
+\end{enumerate}
+
+\par У делу 4.2.2 Стохастичка супероптимизација, у параграфу о фази верификације, треба исправити реч \zn прилагпђености'' у \zn прилагођености''.
+
+\par У делу 4.2.3 Енумеративна претрага, у параграфу о фази верификације, треба додати запете у првој реченици после синтагме \zn тест примерима'' и у последњој реченици пре \zn завршили смо''.
+
+\par Коначно, у закључку треба да се исправи реченица тако да гласи овако: \zn Иако теоретски делује да овај приступ није довољно ефикасан, те да ће се извршати предуго, CEGIS је, као водећи представник ове групе, у пракси показао неочекивано добре резултате.''
+
+\section{Провера садржајности и форме семинарског рада}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Да ли рад добро одговара на задату тему?\\
+Рад веома добро одговара на задату тему. Читаоцу је јасно објашњено шта је синтеза програма, како синтезери уопштено раде и како конкретно ради једна од метода (CEGIS).
+
+\item Да ли је нешто важно пропуштено?\\
+Није ништа важно пропуштено. Једине крупније замерке су на дате на одељак о применама синтезе програма, јер су неке примери недовољно добро објашњени.
+
+\item Да ли има суштинских грешака и пропуста?\\
+Суштинских грешака нема. Рад је веома квалитетно написан и сем малих пропуста у делу о применама синтезе програма, једине грешке су граматичке и штампарске природе.
+
+\item Да ли је наслов рада добро изабран?\\
+Наслов рада је добро изабран. Садржи сасвим довољно информација да заинтересује неког будућег читаоца да прочита рад.
+
+\item Да ли сажетак садржи праве податке о раду?\\
+Сажетак је коректно написан. Говори о свему што стоји у раду и шта ће читалац из њега сазнати.
+
+\item Да ли је рад лак-тежак за читање?\\
+Рад није тежак за читање. Из једног читања се може лепо разумети суштина рада. Тежина читања углавном потиче од тежине саме области о којој рад говори.
+
+\item Да ли је за разумевање текста потребно предзнање и у коликој мери?\\
+За разумевање рада потребно је извесно предзнање, углавном из алгоритмике, јер се помињу ствари као што је претрага, као и SAT и SMT решавачи. Читалац, који је упућен у те појмове, без проблема ће разумети цео рад, док ће осталим читаоцима тај део бити мало нејасан.
+
+\item Да ли је у раду наведена одговарајућа литература?\\
+У раду је наведена одговарајућа литература. Постоји како литература за саму синтезу програма, тако и литература за конкретне програме који се њоме баве, примене наведене у раду (поправка кода, оптимизација и друго), као и SAT и SMT решаваче, који су веома важни за примене у синтези програма.
+
+\item Да ли су у раду референце коректно наведене?\\
+Референце су коректно наведене. На сваком месту где се јавља неки од важних концепата синтезе или програми који се користе у њеним применама, наведена је одговарајућа референца.
+
+\item Да ли је структура рада адекватна?\\
+Рад је адекватно структуриран. Има сажетак, садржај, увод, разраду, закључак и литературу. Све је наведено у правилном редоследу и сва\-ки од њих садржи потребне информације.
+
+\item Да ли рад садржи све елементе прописане условом семинарског рада (слике, табеле, број страна...)?\\
+Рад садржи све елементе прописане условима. Има 14 страна, што одговара условима, пошто има 4 аутора. Има 23 референце, што је скоро дупло више од најмањег траженог броја референци за 4 аутора. Такође, рад има 3 слике, на којима се налазе и табеле, те испуњава и ове услове.
+
+\item Да ли су слике и табеле функционалне и адекватне?\\
+Слике и табеле су функционалне и адекватне. Постоје 3 слике и две табеле у оквиру тих слика. Табеле представљају улазе и излазе програма који се у одговарајућем тексту описује и помажу лакшем разумевању текста. Једна слика која не садржи табелу на адекватан начин описује како CEGIS функционише.
+
+\end{enumerate}
+
+\section{Оцените себе}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+\par У област коју рецензирам сам потпуно неупућен, с обзиром на то да ми до момента читања овог рада није ни било познато да постоје програми који се баве аутоматским генерисањем кода. Читањем овог рада сазнао сам за једну нову, занимљиву и корисну област рачунарства и стекао знање о томе колико се до данас постигло у тој области.
+
+\chapter{Recenzent \odgovor{--- ocena:} }
+
+
+\section{O cemu rad govori?}
+U radu ''Sinteza programa'' je objašnjeno sta predstavlja pojam sinteze programa, kao i cime se bavi oblast. Objašnjena je motivacija za razvitak ove oblasti, kako bi se programerima olakšao posao, a takode kako bi i ''obicni'' korisnici mogli da pišu neke programe. Opisane su i primene oblasti kao što su primena podataka, popravka koda itd. Objašnjeno je da specifikacija programa koji sintezer treba da generiše mora da bude adekvatna io detaljna da bi to bilo moguce. Takode je pomenut problem prostora programa koji se mogu generisati i kako je taj prostor jako teško pretražiti. Opisane su i tehnike pomocu kojih se to može postici. Jedna od njih (CEGIS) je detaljno opisana.
+% ???????? ????? ?????? ????? ? ????? ???? ?????? ?????? ?????????? ??????? ???? (? ???? ???????? ?? ??? ??? ??????? ????????? ? ????????). ???? ?? 200 ?? 400 ?????????.
+
+\section{Krupne primedbe i sugestije}
+% ???????? ????? ???????? ? ????????????? ????? ??? ? ???? ????????? ? ??? ?? ??????? ?? ?? ???????-??????-????-?????? ?? ?? ??? ??? ????????????.
+\begin{itemize}
+    \item U sažetku ili uvodu dodati da li je sama oblast slicna mašinskom ucenju ili automatskom rezonovanju. Da li je možda podoblast neke od ovih, ili samo koristi neke od ideja i tehnika istih.\\
+    \item sekcija 2.6 Konkurentno programiranje - Možda dodati, malo objasniti (kratko), na koji nacin sam AGS algoritam odreduje da li se menja apstrakcija ili se menja program. Da li su u pitanju metode mašinskog ucenja ili nesto drugo?\\
+    \item sekcija 3.1 Definisanje specifikacija - Da li postoje alati koji omogucavaju da se program ''sam'' generiše do neke tacke, a da tek onda korisnik definiše ostatak? Da ne bude opisane situacije gde na pocetku korisnik radi, a zatim sintezer, vec obrnuto. Mislim da je ukoliko je to moguce lepo pomenuti i dati referencu i ka tom alatu.\\
+    \item sekcija 3.2 Pretraživanje prostora programa - Mislim da bi bilo dobro dodati referencu ka prostoru mogucih programa. Ili u jednoj recenici opisati šta je. Pretpostavke se mogu napraviti, ali bi bilo dobro da postoji opis ili referenca ka pojmu. Referenca ili objašnjenje se mogu naci i u sekciji 3 Izazovi gde je pojam prvi put pomenut.\\
+    \item sekcija 3.2.3 Tehnike sa ogranicenjima - Pri dodavanju pretpostavki o rešenju u koraku generisanja ogranicenja, u kojoj meri se daju ove pretpostavke? Da li se može desiti da davanjem velikog broja pretpostavki o rešenju dode do preprilagodavanja i u koraku razrešavanja ogranicenja nademo samo jedno rešenje?\\
+    \item sekcija 3.2.5 Statisticka pretraga - Nadogradnju programa vrši sintezer ili korisnik?\\
+    \item sekcija 4.2.1 Sinteza vodena uzorom - Šta znaci da u fazi validacije treba proveriti da li program zadovoljava sve ulaze? Na koji nacin se generišu ''svi ulazi''? Generalno, šta se podrazumeva pod ovim pojmom? Sve moguce ulaze ili njihove kombinacije nije moguce generisati za malo vece programe. O velikim softverima za kakve bi sinteza mogla jednog dana da se koristi da i ne govorimo.\\
+\end{itemize}
+\section{Sitne primedbe}
+% ???????? ????? ???????? ?? ???? ???????????-????????-???????? ??????
+\begin{itemize}
+    \item Sažetak - linija 6, popravki umesto popravka.\\
+    \item Uvod - linija 2, veca umesto veca.\\
+    \item Uvod - linija 8, dubokog umesto dugokog.\\
+    \item sekcija 2.3 Sugestije prilikom kodiranja - linija 3, sintezeri umesto sintesizeri. Možda i nije greška, ali u celom tekstu se javlja rec sintezeri, nigde više sintesizeri.\\
+    \item sekcija 2.6 Konkurentno programiranje - pasus 2, linije 4 i 6, mislim da je bolje ''kršenje'' nego ''prekrčenje''.\\
+    \item sekcija 2.6 Konkurentno programiranje - pasus 2, linija 8 dodajuci umesto dodavajuci.\\
+    \item sekcija 3.1 Definisanje specifikacija - linija 1, na nacin na koji to korisnik definiše umesto na nacin koji to korisnik definiše.\\
+    \item sekcija 3.1 Definisanje specifikacija - linija 5, definisanjem umesto definisanje.\\
+    \item sekcija 3.1 Definisanje specifikacija - linija 7, nego umesto neko.\\
+    \item sekcija 3.1 Definisanje specifikacija - poslednji pasus, linija 1, naprednu umesto napradnu.\\
+    \item sekcija 3.2.3 Tehnike sa ogranicenjima - stavka Razrešavanje ogranicenja, linija 3, neki umesto nekog.\\
+    \item sekcija 3.2.4 induktivna pretraga - linija 6, rešavacem se dode do moguceg rešenja umesto rešavacem se dode moguceg rešenja.\\
+    \item sekcija 3.2.5 Statisticka pretraga - stavka Genetsko programiranje, linija 3, mogucih umesto mogucih.\\
+    \item sekcija 4 CEGIS - linija 5 koji umesto koje.\\
+    \item sekcije 4 CEGIS i 4.1 Arhitektura - u prvoj sekciji piše kontra-primer, a u drugoj kontra primer. Nekonzistentno.\\
+    \item sekcija 4.2.1 Sinteza vodena uzorom - podsekcija Faza verifikacije, pasusu ispod slike, linija 5, programi umesto program.\\
+    \item sekcija 4.2.1 Sinteza vodena uzorom - podsekcija Faza verifikacije, pasusu ispod slike, linija 7, s obzirom umesto sobzirom.\\
+    \item sekcija 4.2.2 Stohasticka superoptimizacija - linija 3, pretpostaviti umesto prtpostaviti.\\
+    \item sekcija 4.2.2 Stohasticka superoptimizacija - podsekcija Faza verifikacije, linija 4, prilagodenosti umesto prilagpdenosti.\\
+\end{itemize}
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% O????????? ?? ??????? ?????? --- ?? ????? ??????? ???? ? ???????????
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu? Da.\\
+\item Da li je nešto važno propušteno? Ne.\\
+\item Da li ima suštinskih grešaka i propusta? Ne.\\
+\item Da li je naslov rada dobro izabran? Da.\\
+\item Da li sažetak sadrži prave podatke o radu? Da.\\
+\item Da li je rad lak-težak za citanje? Lak. Jako lepo napisano.\\
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri? Ne previše znanja, ali bi neke delove bilo možda malo lakše razumeti. Za delove koji nisu detaljno opisani postoje odgovarajuce reference, tako da je moguce sve pronaci.\\
+\item Da li je u radu navedena odgovarajuca literatura? Da.\\
+\item Da li su u radu reference korektno navedene? Da.\\
+\item Da li je struktura rada adekvatna? Da. \\
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)? Slika 3, ''Primer rada faze verifikacije'' je u formi tabele. Ukoliko se ona racuna kao tabela postoji sve, ukoliko ne, fali tabela. Takode Slika 1 poseduje deo koji lici na tabelu.\\
+\item Da li su slike i tabele funkcionalne i adekvatne? Da.\\
+\end{enumerate}
+
+\section{Ocenite sebe}
+Rekao bih da je moj nivo upucenosti u datu temu ''skoro neupucen''.
+% Napišite koliko ste upuceni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upuceni u oblast
+% c) srednje upuceni
+% d) malo upuceni 
+% e) skoro neupuceni
+% f) potpuno neupuceni
+% Obrazložite svoju odluku
+
+
+
+\chapter{Dodatne izmene}
+%Ovde navedite ukoliko ima izmena koje ste uradili a koje vam recenzenti nisu tražili. 
+
+\end{document}
