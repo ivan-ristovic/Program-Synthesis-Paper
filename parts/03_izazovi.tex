@@ -27,7 +27,7 @@ Upravo ovakvu naprednu pretragu koristi gorepomenuti program \emph{FlashFill}. T
 \subsection{Pretraživanje prostora programa}
 \label{subsec:ProstorPrograma}
 
-Svaka uspešna sinteza programa vrši neki vid pretrage prostora mo\-gu\-ćih programa (eng. \emph{search space}). Ovo je težak kombinatorni problem. Broj mogućih rešenja raste eksponencijalno sa veličinom programa, te pretraga svih kandidata nije moguća u realnom vremenu. Potrebno je pažljivo vršiti odsecanja dela prostora pretrage kako bi se došlo do rešenja u realnom vremenu.
+Svaka uspešna sinteza programa vrši neki vid pretrage prostora mo\-gu\-ćih programa (eng. \emph{search space}). Prostor mogućih programa predstavlja skup koji sadrži sve moguće programe koji se mogu napisati, a pretraga ovog skupa znači nalaženje programa koji zadovoljava specifikacije. Ovo je težak kombinatorni problem. Broj mogućih rešenja raste eksponencijalno sa veličinom programa, te pretraga svih kandidata nije moguća u realnom vremenu. Potrebno je pažljivo vršiti odsecanja dela prostora pretrage kako bi se došlo do rešenja u realnom vremenu.
 
 Tehnike pretrage se mogu zasnivati na enumerativnoj pretrazi, dedukciji, tehnikama sa ograničenjima, induktivnim i statističkim metodama. U praksi se uglavnom koristi neka od njihovih kombinacija, te ih je teško razgraničiti kao posebne metode pretrage.
 
@@ -35,7 +35,7 @@ Tehnike pretrage se mogu zasnivati na enumerativnoj pretrazi, dedukciji, tehnika
 \subsubsection{Enumerativna pretraga}
 \label{subsubsec:Enumerative}
 
-Tehnike enumerativne pretrage za sintezu programa su se pokazale kao jedne od najefikasnijih tehnika za generisanje malih programa. Razlog ove efikasnosti je u pametnim tehnikama \emph{čišćenja} (eng. \emph{pruning}) u prostoru programa koji se pretražuje. Glavna ideja je da se prvo na neki način opiše prostor pretrage u kome se nalazi željeni program. To može da se postigne korišćenjem meta-podataka kao što su veličina programa ili njegova složenost. Kada se mogući programi numerišu po osobinama, mogu da se odmah odbace oni koji ne zadovoljavaju prethodno definisane specifikacije.
+Tehnike enumerativne pretrage za sintezu programa su se pokazale kao jedne od najefikasnijih tehnika za generisanje malih programa. Razlog ove efikasnosti je u pametnim tehnikama \emph{čišćenja} (eng. \emph{pruning}) u prostoru programa koji se pretražuje. Glavna ideja je da se prvo na neki način opiše prostor pretrage u kome se nalazi željeni program. To može da se postigne korišćenjem metapodataka kao što su veličina programa ili njegova složenost. Kada se mogući programi numerišu po osobinama, mogu da se odmah odbace oni koji ne zadovoljavaju prethodno definisane specifikacije.
 
 Kako se na osnovu pretpostavki vrše velika odsecanja, moguće je doći do gubitka nekog od mogućih rešenja usled pogrešnog numerisanja na početku. Zbog ovoga je enumerativna tehnika poluodlučiva, tj. ne garantuje pronalazak rešenja ukoliko ono postoji. Međutim, u opštem slučaju je upotrebljiva i daje dobre rezultate i to relativno brzo.
 
@@ -58,14 +58,14 @@ Deduktivna pretraga može lako da zaključi vrednosti konstanti u programu. To j
 Mnoge uspešne tehnike sinteze programa u svojoj osnovi sadrže tehnike prilagođavanja datim ograničenjima (eng. \emph{constraint solving}). One se sastoje od dva velika koraka:
 \begin{itemize}
     \item \emph{Generisanje ograničenja} - U opštem slučaju, kada se kaže pri\-la\-go\-đa\-va\-nje ograničenjima, misli se na pronalaženje modela za formulu koja opisuje željeni program. Osnovna ideja je da se specifikacija programa kao i njegova dodatna ograničenja zapišu u jednoj logičkoj formuli. Uglavnom se tom prilikom u formulu dodaju i pretpostavke o rešenju.
-    \item \emph{Razrešavanje ograničenja} - Formula u kojoj su zapisana ograničenja često sadrži kvantifikatore i nepoznate drugog reda. Ona se prvo transformiše u oblik pogodan za nekog od rešavača, na primer za SAT ili SMT rešavač. Na ovaj način se problem pretrage svodi na problem ispitivanja zadovoljivosti prosleđene formule. Svaki nađeni model za tu formulu predstavlja jedno moguće rešenje koje zadovoljava data ograničenja.
+    \item \emph{Razrešavanje ograničenja} - Formula u kojoj su zapisana ograničenja često sadrži kvantifikatore i nepoznate drugog reda. Ona se prvo transformiše u oblik pogodan za neki od rešavača, na primer za SAT ili SMT rešavač. Na ovaj način se problem pretrage svodi na problem ispitivanja zadovoljivosti prosleđene formule. Svaki nađeni model za tu formulu predstavlja jedno moguće rešenje koje zadovoljava data ograničenja.
 \end{itemize}
 
 
 \subsubsection{Induktivna pretraga}
 \label{subsubsec:Induktivna}
 
-Sintezer koji koristi induktivnu pretragu pokušava da nađe opšti program koji zadovoljava dati skup ulaza i odgovarajućih izlaza. Induktivna pretraga je veoma opšti pojam. Ona se, na primer, može smatrati kao nadogradnja tehnike pretrage sa ograničenjima (videti \ref{subsubsec:ConstraintSolving}) \cite{SGS}. Prilikom svake iteracije se generišu ograničenja, rešavačem se dođe do mogućeg rešenja a zatim se ispita da li je ono zadovoljavajuće kao opšte rešenje.
+Induktivna pretraga je veoma opšti pojam. Ona se, na primer, može smatrati kao nadogradnja tehnike pretrage sa ograničenjima (videti \ref{subsubsec:ConstraintSolving}) \cite{SGS}. Prilikom svake iteracije se generišu ograničenja, rešavačem se dođe do mogućeg rešenja a zatim se ispita da li je ono zadovoljavajuće kao opšte rešenje.
 
 Sa druge strane, induktivna pretraga može da koristi tehnike mašinskog učenja. To može da radi na razne načine, a jedan od takvih pristupa je sinteza sa aktivnim učenjem \cite{SGS}. \emph{Aktivno učenje} (eng. \emph{Active learning}) je poseban vid mašinskog učenja gde je algoritmu za učenje dopušteno da sam vrši selekciju podataka na osnovu kojih će da uči. Ovakav sintezer koristi induktivni algoritam za učenje, koji u sebi često poziva i deduktivne procedure. Iako kombinuje oba pristupa, sinteza sa aktivnim učenjem se u literaturi predstavlja kao primer induktivne sinteze.
 
@@ -77,9 +77,9 @@ Jedan primer induktivne pretrage je CEGIS. Ova tehnika će biti detaljno opisana
 \subsubsection{Statistička pretraga}
 \label{subsubsec:Statistical}
 
-Postoji veliki broj metoda koje se koriste za pretragu prostora programa a koriste neku vrstu statistike kako bi došle do rešenja. Neke od tehnika koje se mogu koristiti su tehnike mašinskog učenja, genetsko programiranje i probabilističko zaključivanje.
+Postoji veliki broj metoda koje se koriste za pretragu prostora programa, a koriste neku vrstu statistike kako bi došle do rešenja. Neke od tehnika koje se mogu koristiti su tehnike mašinskog učenja, genetsko programiranje i probabilističko zaključivanje.
 
-\emph{Mašinsko učenje} - Tehnike mašinskog učenja mogu doprineti ostalim pretragama uvodeći verovatnoću u čvorove granjanja prilikom pretrage. Vrednosti verovatnoće se uglavnom generišu pre sinteze programa: tokom treninga ili na primer na osnovu datih primera ulaza i izlaza.
+\emph{Mašinsko učenje} - Tehnike mašinskog učenja mogu doprineti ostalim pretragama uvodeći verovatnoću u čvorove grananja prilikom pretrage. Vrednosti verovatnoće se uglavnom generišu pre sinteze programa: tokom treninga ili, na primer, na osnovu datih primera ulaza i izlaza \cite{MLinProgramSyntesys}.
 
 \emph{Genetsko programiranje} - Genetsko programiranje je metod inspirisan biološkom evolucijom. Sastoji se od održavanja populacije programa, njihovog ukrštanja i mogučih mutacija. Ispituje se u kojoj meri svaka jedinka zadovoljva. One jedinke koje bolje odgovaraju rešenju nastavljaju da evoluiraju. Uspeh genetskih algoritama zavisi od funkcije zadovoljivosti, čiji dobar izbor predstavlja najteži problem ove tehnike.
 
