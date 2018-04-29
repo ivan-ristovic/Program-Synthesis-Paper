@@ -17,7 +17,7 @@ Neke od oblasti primene sinteze programa koje će biti pokrivene u ovom radu su:
 \subsection{Priprema podataka}
 \label{subsec:PripremaPodataka}
 
-\emph{Priprema podataka} predstavlja proces čišćenja, transformacije i pripreme podataka iz polu-struktuiranog formata u format pogodan za analizu i prezentovanje. Problem je visoka cena dovođenja podataka u oblik pogodan za primenu algoritama iz oblasti mašinskog učenja ili istraživanja podataka radi izvlačenja korisnih zaključaka. PBE čini čitav ovaj proces bržim \cite{ProgrammingBasedOnExamples}.
+\emph{Priprema podataka} predstavlja proces čišćenja i transformacije podataka iz polustruktuiranog formata u format pogodan za analizu i prezentovanje. Problem je visoka cena dovođenja podataka u oblik pogodan za primenu algoritama iz oblasti mašinskog učenja ili istraživanja podataka radi izvlačenja korisnih zaključaka. PBE čini čitav ovaj proces bržim \cite{ProgrammingBasedOnExamples}.
 
 Proces pripreme često obuhvata sledeće operacije nad podacima:
 \begin{itemize}
@@ -26,7 +26,7 @@ Proces pripreme često obuhvata sledeće operacije nad podacima:
     \item formatiranje
 \end{itemize}
 
-Transformacija podataka se često svodi na manipulisanje niskama ili izmenama samih tipova podataka. Iako savremeni programski jezici pomažu korisnicima uvodeći širok spektar komandi, korisnici se zamaraju pisanjem skriptova ili makroa kako bi obavili posao. Alati koji koriste PBE su idealni za ovakav posao \cite{ProgrammingBasedOnExamples, SynthesizingNumberTransformationsFromIOExamples}.
+Transformacija podataka se često svodi na manipulisanje niskama ili izmene samih tipova podataka. Iako savremeni programski jezici pomažu korisnicima uvodeći širok spektar komandi, korisnici se zamaraju pisanjem skriptova ili makroa kako bi obavili posao. Alati koji koriste PBE su idealni za ovakav posao \cite{ProgrammingBasedOnExamples, SynthesizingNumberTransformationsFromIOExamples}.
 
 
 \subsection{Popravka koda}
@@ -70,23 +70,21 @@ Za dat program $P$ i specifikaciju $\phi$, problem popravke koda zahteva ra\-ču
 \subsection{Sugestije prilikom kodiranja}
 \label{subsec:SugestijePrilikomKodiranja}
 
-Većina današnjih programerskih okruženja omogućava neku vrstu a\-u\-to\-ma\-tske dopune koda (npr. \emph{IntelliSense} za \emph{MS Visual Studio} ili \emph{Content Assist} za \emph{Eclipse}). Programski sintesizeri mogu potencijalno generisati ne samo tokene već i čitave jedinice koda. Dva najbitnija pristupa ovom problemu su \emph{statistički modeli} \cite{CCWSLM} i \emph{type-directed completion} \cite{TDCOPE}, ali je važno napomenuti da postoje i alati koji su uspešni iako ne koriste ove tehnike (npr. \emph{InSynth} \cite{IS} i \emph{Bing Developer Assistant} \cite{BDA}).
+Većina današnjih okruženja za rad omogućava neku vrstu a\-u\-to\-ma\-tske dopune koda (npr. \emph{IntelliSense} za \emph{MS Visual Studio} ili \emph{Content Assist} za \emph{Eclipse}). Programski sintezeri mogu potencijalno generisati ne samo tokene, već i čitave jedinice koda. Dva najbitnija pristupa ovom problemu su \emph{statistički modeli} \cite{CCWSLM} i \emph{dopuna usmerena tipovima} (eng. \emph{type-directed completion}) \cite{TDCOPE}, ali je važno napomenuti da postoje i alati koji su uspešni iako ne koriste ove tehnike (npr. \emph{InSynth} \cite{IS} i \emph{Bing Developer Assistant} \cite{BDA}).
 
 
 \subsection{Grafika}
 \label{subsec:Grafika}
 
-Programski opis grafičkih objekata dovodi do bržih proračuna koordinata zavisnih tačaka od tačaka koje imaju slobodne koordinate, što omogućava interaktivne izmene i efikasne animacije. Tehnike sinteze programa mogu uspešno generisati rešenja geometrijskih problema sre\-dnjo\-ško\-lske težine \cite{SynthesizingGeometryConstructions}.
+Slike i crteži (u daljem tekstu \emph{grafike}) nekada sadrže ponovljene šablone, teksture ili objekte. Konstrukcija takvih grafika zahteva pisanje skriptova ili ponovljenih operacija, što može biti veoma naporno i podložno greškama. Korišćenjem PBE, omogućava se korisniku da prikaže par primera i ostavi posao sintezeru da predvidi naredne objekte u nizu \cite{Backpropagation}. Štaviše, korišćenjem grafičkog interfejsa za domen vektorske grafike, mogu-će je interaktivno postavljati grafike isključivo pomoću grafičkih alata ili grafičkog interfejsa, a generisanje programskog koda ostaviti sintezeru.
 
-Slike i crteži (u daljem tekstu \emph{grafike}) nekada sadrže ponovljene šablone, teksture ili objekte. Konstrukcija takvih grafika zahteva pisanje skriptova ili ponovljenih operacija, što može biti veoma naporno i podložno greškama. Korišćenjem PBE, moguće je omogućiti korisniku da prikaže par primera i ostavi posao sintezeru da predvidi naredne objekte u nizu \cite{Backpropagation}. Štaviše, korišćenjem grafičkog interfejsa za domen vektorske grafike, moguće je interaktivno postavljati grafike isključivo pomoću grafičkih alata ili grafičkog interfejsa, a generisanje programskog koda ostaviti sintezeru.
+Programski opis grafika dovodi do bržih proračuna koordinata zavisnih tačaka od tačaka koje imaju slobodne koordinate, što omogućava interaktivne izmene i efikasne animacije. Tehnike sinteze programa mogu uspešno generisati rešenja geometrijskih problema sre\-dnjo\-ško\-lske težine \cite{SynthesizingGeometryConstructions}.
 
 
 \subsection{Superoptimizacija}
 \label{subsec:Superoptimizacija}
 
-Superoptimizacija predstavlja proces kreiranja optimalnog poretka instrukcija mašinskog koda tako da je dobijeni fragment koda ekvivalentan polaznom uz dobijanje na performansama \cite{Superoptimizer}.
-
-Kao primer, uzmimo računanje proseka dva broja $x$ i $y$. Formula $\mathit{prosek}=\frac{x+y}{2}$ može dovesti do prekoračenja. Takođe koristi skupu aritmetičku operaciju deljenja. Alternativa je formula $(x \mid y)-((x \oplus y) \gg 1)$. Ova formula koristi veoma brze bitovske operatore i operaciju oduzimanja, rešavajući probleme prethodne formule.
+Superoptimizacija predstavlja proces kreiranja optimalnog poretka instrukcija mašinskog koda tako da je dobijeni fragment koda ekvivalentan polaznom uz dobijanje na performansama \cite{Superoptimizer}. Kao primer, uzmimo računanje proseka dva broja $x$ i $y$. Formula $\mathit{prosek}=\frac{x+y}{2}$ može dovesti do prekoračenja. Takođe koristi skupu aritmetičku operaciju deljenja. Alternativa je formula $(x \mid y)-((x \oplus y) \gg 1)$. Ova formula koristi veoma brze bitovske operatore i operaciju oduzimanja, rešavajući probleme prethodne formule.
 
 Jedan od načina da se kod automatski optimizuje je korišćenje  \emph{enumerativne pretrage} (videti sekciju \ref{subsubsec:Enumerative} na strani \pageref{subsubsec:Enumerative}), sa \emph{LENS} algoritmom kao predstavnikom \cite{ScalingUpSuperoptimization}.
 
@@ -96,4 +94,4 @@ Jedan od načina da se kod automatski optimizuje je korišćenje  \emph{enumerat
 
 Sinteza programa se u oblasti konkurentnog programiranja koristi kao pomoć programerima u pisanju bezbednog kompleksnog koda. Postoji više tehnika sinteze koje u programski kod uspešno postavljaju minimalne konstrukte za sinhronizaciju. Predstavnik u ovom polju je \emph{Sinteza vođena apstrakcijom} (eng. \emph{Abstraction-Guided Synthesis)} (u daljem tekstu \emph{AGS})  \cite{AGS}.
 
-AGS je tehnika kojom se program i njegova apstrakcija zajedno menjaju sve dok apstrakcija programa ne postane dovoljno precizna da ga verifikuje. AGS algoritam pravi apstraktnu reprezentaciju programa u apstraktnom domenu i proverava da li postoji prekršenje postavljene specifikacije programa. Specifikacija se obično vezuje za trku za podacima. Ukoliko postoji prekršenje specifikacije, AGS algoritam nedeterministički bira da li da menja apstrakciju (npr. sužavanjem domena) ili da menja sam program dodavajući sinhronizacione konstrukte. Ovaj postupak se ponavlja sve dok se ne nađe program koji može biti verifikovan apstrakcijom.
+AGS je tehnika kojom se program i njegova apstrakcija zajedno menjaju sve dok apstrakcija programa ne postane dovoljno precizna da ga verifikuje. AGS algoritam pravi apstraktnu reprezentaciju programa u apstraktnom domenu i proverava da li postoji kršenje postavljene specifikacije programa. Specifikacija se obično vezuje za trku za podacima. Ukoliko postoji prekršenje specifikacije, AGS algoritam nedeterministički bira da li da menja apstrakciju (npr. sužavanjem domena) ili da menja sam program dodajući sinhronizacione konstrukte. Ovaj postupak se ponavlja sve dok se ne nađe program koji može biti verifikovan apstrakcijom.

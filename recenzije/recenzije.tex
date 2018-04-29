@@ -21,9 +21,10 @@
 
 \begin{document}
 
-\title{Dopunite naslov svoga rada\\ \small{Dopunite autore rada}}
+\title{Sinteza programa\\ \small{ \href{mailto:anja.ivanisevic95@gmail.com}{Anja Ivanišević}, \href{mailto:mi14031@matf.bg.ac.rs}{Ivan Ristović}, \href{mailto:mi14042@matf.bg.ac.rs}{Milana Kovačević}, \href{mailto:vesna.katanic@gmail.com}{Vesna Katanić}}}
 
 \maketitle
+
 
 \tableofcontents
 
@@ -60,12 +61,13 @@ Rad govori o automatskom procesu generisanja programskog koda. Jasno su prikazan
 
 Smatram da se sažetak nekako naglo prekida. Možda može da se završi rečenicom da će se rad najviše fokusirati na CEGIS ili da se doda neki 'zaključak'. Takođe, fale ključne reči.
 
+TODO keywords?!?!?
 
 
 \subsection{Naslov rada}
 Naslov je u redu, ali smo na času došli do zaključka da treba da, pored toga što nas upućuje u temu rada, bude i privlačan - tema nije isto što i naslov rada.
 
-
+TODO
 
 \subsection{Pasusi od jedne rečenice}
 Ima par pasusa koji se sastoje od jedne rečenice. Trebalo bi ili dodati neke rečenice tim pasusima (koje podržavaju to rečeno, pružaju dodatne informacije, daju primere..) ili ih prosto pripojiti nekom od susednih pasusa.
@@ -73,26 +75,38 @@ Ima par pasusa koji se sastoje od jedne rečenice. Trebalo bi ili dodati neke re
 Ovakvi pasusi se javljaju na sledećim mestima:
 \begin{itemize}
 	\item Uvod: poslednji pasus.
-    \odgovor{Promenjen je poslednji pasus.}
-    \item Superoptimizacija: prvi pasus.
-    \item Induktivna pretraga: prvi pasus.
-    \odgovor{Izmenjeno.}
-    \item CEGIS: poslednji pasus.
-    \item Primene CEGIS-a: prvi pasus.
-\end{itemize}
 
+    \odgovor{Promenjen je poslednji pasus.}
+
+    \item Superoptimizacija: prvi pasus.
+
+    \odgovor{Izmenjeno. Pasus je spojen sa narednim.}
+
+    \item Induktivna pretraga: prvi pasus.
+
+    \odgovor{Izmenjeno.}
+
+    \item CEGIS: poslednji pasus.
+
+    \odgovor{Izmenjeno. Pasus je spojen sa prvim pasusom. }
+
+    \item Primene CEGIS-a: prvi pasus.
+
+    \odgovor{Izmenjeno. Dodata enumeracija. }
+\end{itemize}
 
 
 \subsection{Jasnoća rada}
 
 Par delova rada mi nije bilo jasno, čak ni u prvih par puta čitanja - da li zbog formulacije, nedostatka adekvatnog objašnjenja ili su prosto pisani tako da osoba koja čita mora imati predznanja u nekim oblastima.
 
-
 \subsubsection{Deo rada: Grafika}
 
-\textbf{\textit{"Programski opis grafičkih objekata dovodi do bržih proračuna koor-dinata zavisnih tačaka od tačaka koje imaju slobodne koordinate, što omogućava interaktivne izmene i efikasne animacije. Tehnike sinteze programa mogu uspešno generisati rešenja geometrijskih problema srednjoškolske težine [13]."}}
+\textbf{\textit{"Programski opis grafičkih objekata dovodi do bržih proračuna koordinata zavisnih tačaka od tačaka koje imaju slobodne koordinate, što omogućava interaktivne izmene i efikasne animacije. Tehnike sinteze programa mogu uspešno generisati rešenja geometrijskih problema srednjoškolske težine [13]."}}
 
 Rad ne govori o grafici i referenca na rad na tu temu postoji, ali mislim da bi bilo lepo dodati bar jednu uvodnu rečenicu koja će opisati grafičke objekte, šta je neefikasno u trenutnim proračunima i kako ovaj programski opis to poboljšava - ukratko, ali da postoji uvod u tematiku. Prosto previše naglo počinje odeljak i meni, kao nekom ko se ne razume u računarsku grafiku, je bilo potrebno da posetim gugl radi pojašnjenja.
+
+\odgovor{Ta sekcija je navedena kao primer primene programske sinteze u oblasti računarske grafike zarad dobitaka na performansama i automatizacije određenih procesa. Smatramo da je jasno šta su grafički objekti i ne vidimo razlog za dodatno objašnjenje (samo bi dovelo do više teksta bez vidljivog dobitka).  Ideja je bila da se čitaocu samo da uvid u to kako preko grafičkog interfejsa automatski možemo sintetisati programski kod i kako se na osnovu već postojećih grafičkih objekata interaktivnim izmenama mogu sintetisati novi (nešto kao MS Paint), a ne detaljisati o računarskoj grafici i problemima koje ona rešava. Promenili smo redosled pasusa kako bi se čitalac polako uveo u tematiku.}
 
 
 \subsubsection{Deo rada: Superoptimizacija}
@@ -100,36 +114,40 @@ Rad ne govori o grafici i referenca na rad na tu temu postoji, ali mislim da bi 
 
 Smatram da bi bilo dobro prikazati na koji način je ova formula alternativa. Čitalac bi morao da ili dobro bude upoznat sa bitovskim operatorima, ili da provede mnogo vremena tumačeći formulu.
 
-\odgovor {Pretpostavka ovog rada je da čitalac ima osnovna znanja iz programiranja te da nije neophodno da se pravi poseban osvrt na bitovske operatore.}
+\odgovor {Pretpostavka ovog rada je da čitalac ima osnovna znanja iz programiranja te da nije neophodno da se pravi poseban osvrt na bitovske operatore, s obzirom da razumevanje rada zahteva poznavanje osnova računarstva i informatike. Takodje ne vidimo šta je (osim eventualno bitovskih operatora) nejasno u ovoj formuli.}
+
 
 \subsubsection{Deo rada: Definisanje specifikacija}
-\textbf{\textit{"Ovaj program vrši nama intuitivnu transformaciju niski, ali, na primer,
-da bi se on automatski generisao korišćenjem FlashFill [12] programa, potrebno je pretražiti prostor koji sadrži milione mogućih rešenja."}}
+\textbf{\textit{"Ovaj program vrši nama intuitivnu transformaciju niski, ali, na primer, da bi se on automatski generisao korišćenjem FlashFill [12] programa, potrebno je pretražiti prostor koji sadrži milione mogućih rešenja."}}
 
 Nije baš jasno šta taj prostor sadrži. Nakon čitanja rada, postalo mi je jasno da se radi o prostoru svih mogućih programa koji daju izlaz 'Smith, J.' za ulaz 'John Smith', ali u trenutku prvog čitanja ovog pasusa, više mi je zvučalo kao da se pretražuje prostor koji sadrži milione mogućih niski.
 
 \odgovor {Slažemo se da bi rečenica mogla da navede na pogrešan zaključak. Izmenili smo kako je predloženo.}
+
 
 \subsubsection{Deo rada: Enumerativna pretraga}
 \textbf{\textit{"Glavna ideja je da se prvo na neki način opiše prostor pretrage u kome se nalazi željeni program. To može da se postigne korišćenjem meta-podataka kao što su veličina programa ili
 njegova složenost. Kada se mogući programi numerišu po osobinama, mogu da se odmah odbace oni koji ne zadovoljavaju prethodno definisane specifikacije."}}
 
 Meni iz ovog pasusa nije bilo baš najjasnije šta je enumerativna pretraga. Da li ovo znači da mi kažemo da hoćemo program od 100 linija koda, zatim sve programe u prostoru pretrage numerišemo po veličini i zatim odsečemo sve one sa preko 100 linija koda? Nije mi baš jasna poslednja rečenica - oni su numerisani i mi opet gledamo da li zadovoljavaju speficikacije? Ili nam ta numeracija govori da li zadovoljavaju ili ne. Možda bi neki primer ili malo izmenjena formulacija pomogli razumevanju.
-\odgovor {TODO milana}
+
+TODO milana
 
 
 \subsubsection{Deo rada: Statistička pretraga}
 \textbf{\textit{"Mašinsko učenje - Tehnike mašinskog učenja mogu doprineti ostalim pretragama uvodeći verovatnoću u čvorove granjanja prilikom pretrage. Vrednosti verovatnoće se uglavnom generišu pre sinteze programa: tokom treninga ili na primer na osnovu datih primera ulaza i izlaza."}}
 
 Pretpostavljam da verovatnoća služi da se neki delovi prostora pretrage iseku ako je ona manja od nekog broja. Smatram da bi trebalo da stoji objašnjenje kako se generišu kao i čemu te verovatnoće služe, ili da se bar stavi referenca na rad koji govori o tome.
+
 \odgovor {Upotreba mašinskog učenja je van opsega naseg rada. Dodata referenca.}
 
+
 \subsubsection{Deo rada: Sinteza vođena uzorom, deo Faza sinteze}
-\textbf{\textit{"Primetimo da SSA forma jednostavno povezuje komponente među-sobno, tako da ako želimo da imamo dva sabiranja moramo da obezbedimo dve komponente za sabiranje. Takođe primetimo da se vrednost o2 ne koristi, takozvani mrtvi kod. U ovom slucaju to je poželjna karakteristika,
-jer ne moramo unapred tačno da odredimo koliko ćemo imati kojih operacija, već možemo samo da zadamo gornju granicu, a sintezer će generisati mrtvi kod za komponente koje se ne koriste."}}
+\textbf{\textit{"Primetimo da SSA forma jednostavno povezuje komponente međusobno, tako da ako želimo da imamo dva sabiranja moramo da obezbedimo dve komponente za sabiranje. Takođe primetimo da se vrednost o2 ne koristi, takozvani mrtvi kod. U ovom slucaju to je poželjna karakteristika, jer ne moramo unapred tačno da odredimo koliko ćemo imati kojih operacija, već možemo samo da zadamo gornju granicu, a sintezer će generisati mrtvi kod za komponente koje se ne koriste."}}
 
 Nije mi jasno šta je poželjna karakteristika - mrtvi kod ili to što imamo više komponenti za sabiranje (pretpostavljam da je kod u pitanju)? Malo je čudno formulisano. Prvo se kaže da su nam potrebne dve komponente za sabiranje a zatim da ne moramo da odredimo koliko ćemo imati kojih operacija. I kako tačno sintezer generiše mrtvi kod? Ceo pasus je malo zbunjujuć.
 
+TODO veca/anja
 
 
 \section{Sitne primedbe}
@@ -140,88 +158,181 @@ Ovde će biti izdvojene greške u kucanju, formulacije rečenica koje mi baš ni
 \begin{itemize}
 	\item Uvod: \textbf{\textit{'Danas skoro da ne postoji osoba koja nema pristup modernim tehnologijama.'}}
 
-		Deo 'danas skoro da ne postoji osoba' mi zvuči previše neformalno za jedan seminarski rad. Možda bi bolje bilo 'U današnje vreme, pristup modernim tehnologijama je svima omogućen.' ili slično.
-		\odgovor {Slažemo se, ispravili smo kao sto je predloženo.}
+	Deo 'danas skoro da ne postoji osoba' mi zvuči previše neformalno za jedan seminarski rad. Možda bi bolje bilo 'U današnje vreme, pristup modernim tehnologijama je svima omogućen.' ili slično.
+
+	\odgovor {Slažemo se, ispravili smo kao sto je predloženo.}
 
 	\item Uvod: \textbf{\textit{'..dao je vetar u leđa..'}}
 
     Ovo takođe zvuči malo neformalno. Možda bi bilo bolje iskoristiti 'podstakao' umesto ove sintagme.
 
+	TODO milana
+
     \item Priprema podataka: \textbf{\textit{'Priprema podataka predstavlja proces čišćenja, transformacije i pripreme podataka...'}}
 
     Loše je formulisano jer izgleda ovako: 'Priprema podataka je ...... priprema podataka'. Drugo 'priprema' može da bude 'prevođenje'.
 
+    \odgovor{Ispravljeno.}
+
     \item Definisanje specifikacija: \textbf{\textit{'(možda čak i da deluje komplikovanije neko pisanje samog programa).'}}
+
     \odgovor {Ispravljeno.}
 
     Bolje bi zvučalo da piše 'ponekad i komplikovanije od pisanja samog programa'. Ako se autori odluče da ne promene formulaciju, treba ispraviti 'neko' u 'nego'.
+
     \odgovor {Ispravljeno.}
 
     \item Definisanje specifikacija: \textbf{\textit{'Čak i ako bi se to nekako uspelo, opis programa bi mogao da bude toliko obiman kao i sama njegova implementacija.'}}
 
     Trebalo bi preformulisati u 'Čak i kad bi se to uspelo, opis programa..'
+
     \odgovor {Ispravljeno.}
 
     \item Deduktivna pretraga: \textbf{\textit{'...sama enumerativna pretraga bi se izgubila pokusavajuci da...'}}
 
     'Pretraga bi se izgubila' - zvuči malo neformalno za seminarski (naučni) rad.
+
     \odgovor {Ispravljeno.}
 
     \item Induktivna pretraga: \textbf{\textit{'Prilikom svake iteracije se generišu neka ograničenja, rešavačem se dođe mogućeg rešenja, a zatim se ono ispita da li je zadovoljavajuće opšte
 rešenje.'}}
 
 	Bolje bi zvučalo: 'Prilikom svake iteracije se generišu ograničenja, rešavačem se dođe do mogućeg rešenja a zatim se ispita da li je ono zadovoljavajuće kao opšte rešenje.' ili nešto tome slično.
+
     \odgovor {Ispravljeno.}
 
     \item Statistička pretraga: \textbf{\textit{'Svaka jedinka populacije se ispituje u kojoj meri zadovoljava specikacije željenog programa.'}}
 
     Preformulisati u 'Ispituje se u kojoj meri svaka jedinka zadovoljva..'.
+
     \odgovor {Ispravljeno.}
 
     \item CEGIS: \textbf{\textit{'Naime, rešavač bi u svakom slučaju pronašao rešenje za datu formulu, ali kako bi se to desilo u realnom vremenu, CEGIS (eng. Counter-example-Guided Inductive Synthesis) u sebi sadrži posebne tehnike za optimizaciju.'}}
 
     Preformulisati u 'Naime, rešavač je u stanju da pronađe rešenje za bilo koju proizvoljnu ulaznu formulu, ali da bi se to desilo u realnom vremenu, ..'. Takođe, treba izbaciti uvođenje skraćenice CEGIS jer je to već urađeno u uvodu.
 
+    TODO anja/veca
+
     \item Sinteza vođena uzorom, faza verifikacije: \textbf{\textit{'Ako postoji rešenje mi program koji je kandidat za rešenje prosleđujemo fazi verikacije.', 'Ako postoji nismo završili.', 'U ovom trenutku ništa ne pitamo uzor.'}}
 
     Skroz je u redu da postoji obaraćanje u radu, ali ovde mi zvuči malo nepotrebno. Mi ne prosleđujemo program fazi verifikacije sem ako faza sinteze i faza verifikacije nisu skroz odvojene pa mi moramo ručno da prenosimo izlaz jedne u ulaz druge. Zatim, nismo mi zavšrili već program nije završio. Uzor svakako ne pitamo, ni mi ni naš program, već se ne vrši poređenje ili nešto slično tome.
+
+    TODO anja/veca
+
 \end{itemize}
 
 \subsection{Štamparske i stilske greške}
 \begin{itemize}
 	\item Sažetak: \textbf{\textit{'popravka'}} ispraviti u 'popravljanja'.
+
+    \odgovor{Izmenjeno.}
+
 	\item Uvod: \textbf{\textit{'veca'}} ispraviti u 'veća'.
+
+	\odgovor{Izmenjeno.}
+
     \item Uvod: \textbf{\textit{'dugokog'}} ispraviti u 'dubokog'.
+
+    \odgovor{Izmenjeno.}
+
     \item Priprema podataka: \textbf{\textit{'skupoća'}} ispraviti u 'visoka cena'.
+
+    \odgovor{Izmenjeno.}
+
     \item Priprema podataka: \textbf{\textit{'Alati koji koriste PBE su idealni za ovakav posao [11, 22]'}} - fali tačka.
+
+    \odgovor{Izmenjeno.}
+
     \item Popravka koda: U parčetu koda piše \textbf{\textit{'if (inhb)'}} a ta promenljiva ne postoji. Trebalo bi da piše inb.
+
+    \odgovor{Izmenjeno.}
+
     \item Sugestije prilikom kodiranja: \textbf{\textit{'programerska okruženja'}} ispraviti u 'okruženja za rad'.
+
+    \odgovor{Izmenjeno.}
+
     \item Grafika: \textbf{\textit{'jako neprijatno'}} ispraviti u 'veoma naporno'.
+
+    \odgovor{Izmenjeno.}
+
     \item Grafika: \textbf{\textit{'moguće je omogućiti korisniku'}} ispraviti u 'omogućava se korisniku'.
+
+    \odgovor{Izmenjeno.}
+
     \item Definisanje specifikacija: \textbf{\textit{'napradnu'}} ispraviti u 'naprednu'.
+
+    \odgovor{Izmenjeno.}
+
     \item Definisanje specifikacija: \textbf{\textit{'gore spomenuti'}} ispraviti u 'gorepomenuti'
+
+    \odgovor{Izmenjeno.}
+
     \item Statistička pretraga: \textbf{\textit{'..jedna po jedna, i proverava da li..'}} ispraviti u '..jedna po jedna, i proverava se da li..'.
-    \odgovor {Ispravljene su sve stavke dovde.}
+
+    TODO milana
 
     \item CEGIS: \textbf{\textit{'SMT'}} u drugoj rečenici ispraviti u 'SMT rešavač' jer je SMT tip problema i on ne može da nalazi valuacije.
+
+    TODO anja/veca
+
     \item Arhitektura: \textbf{\textit{'kontra primer'}} ispraviti u 'kontraprimer'.
     \item Sinteza vođena uzorom: \textbf{\textit{'random'}} ispraviti u 'proizvoljne'.
+
+	\odgovor{Izmenjeno.}
+
     \item Sinteza vođena uzorom: \textbf{\textit{'dobijem'}} ispraviti u 'dobijen'.
+
+	\odgovor{Izmenjeno.}
+
     \item Sinteza vođena uzorom: \textbf{\textit{'sobzirom'}} ispraviti u 's obzirom na to'.
-    \item Sinteza vođena uzorom: \textbf{\textit{'oracla' i 'oraclu'}} ispraviti u 'uzora' i 'uzoru' jer je ovako nekonzistentno sa ostatkom rada.
+
+    \odgovor{Izmenjeno.}
+
+	\item Sinteza vođena uzorom: \textbf{\textit{'oracla' i 'oraclu'}} ispraviti u 'uzora' i 'uzoru' jer je ovako nekonzistentno sa ostatkom rada.
+
+    \odgovor{Izmenjeno.}
+
     \item Sinteza vođena uzorom: \textbf{\textit{'..ponovo prolazi kroz petlju.'}} ispraviti u '..ponovo se prolazi kroz petlju.'
+
+    \odgovor{Izmenjeno.}
+
     \item Sinteza vođena uzorom: \textbf{\textit{'bi smo'}} ispraviti u 'bismo'.
+
+    \odgovor{Izmenjeno.}
+
     \item Sinteza vođena uzorom: \textbf{\textit{'Problem je da..'}} ispraviti u 'Problem je to što'.
+
+	\odgovor{Izmenjeno.}
+
     \item Sinteza vođena uzorom: \textbf{\textit{'Faza validacije treba da..'}} nigde se ne pominje faza validacije, ovo treba ispraviti u 'verifikacije'.
+
+	\odgovor{Izmenjeno.}
+
     \item Stohastička superoptimizacija: \textbf{\textit{'prtpostaviti'}} ispraviti u 'pretpostaviti'.
+
+	\odgovor{Izmenjeno.}
+
     \item Stohastička superoptimizacija: \textbf{\textit{'prilagpđenosti'}} ispraviti u 'prilagođenosti'.
+
+	\odgovor{Izmenjeno.}
+
     \item Stohastička superoptimizacija: \textbf{\textit{'nadalje'}} ispraviti u 'ubuduće'.
+
+	\odgovor{Izmenjeno.}
+
     \item Stohastička superoptimizacija: \textbf{\textit{'vraca'}} ispraviti u 'vraća'.
+
+	\odgovor{Izmenjeno.}
+
     \item Zaključak: \textbf{\textit{'dolazi se do pitanja'}} ispraviti u 'postavlja se pitanje'.
+
+	\odgovor{Izmenjeno.}
+
     \item Zaključak: \textbf{\textit{'Ali ova oblast..'}} izbaciti 'ali'.
     \item Zaključak: \textbf{\textit{'S obzirom..'}} ispraviti u 'S obzirom na to..'.
     \odgovor {Ispravljen zaključak.}
 \end{itemize}
+
 
 \subsection{Engleski izrazi}
 Kod engleskih skraćenica, trebalo bi da je svaka reč napisana velikim početnim slovom, bar po mom mišljenju, jer je već sama skraćenica zapisana velikim slovima. Ako se autori ne slažu sa ovim predlogom, bar treba ustaliti jedan način pisanja - u radu se na nekim mestima piše svaka reč velikim slovom a na nekim mešano. Ovo se javlja na sledećim mestima:
@@ -299,56 +410,95 @@ Negde sam na granici između 'srednje upućen' i 'malo upućen'. Pročitah par �
 % Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
 \par Рад је веома квалитетно написан. У самој структури рада не треба вршити никакве измене. Међутим, требало би додати неколико ситница, да би рад био квалитетнији. На пример, у пододељку 2.2 Поправка кода, у примеру датом на слици 1, није дата спецификација програма, па је пример недовољно јасан. У пододељку 2.5 Супероптимизација требало би боље објаснити где је ту примена синтезе програма, пошто из тренутног текста то није јасно. Мало је јасније тек када се прочита део 4.2.2 Стохастичка супероптимизација, али би ипак требало боље објаснити у 2.5. С овим допунама, рад би био комплетиран.
 
+\odgovor{2.2 - Specifikacija je zadata tabelom ulaza i izlaza.}
+\odgovor{2.5 - Ne vidimo kako to iz ovog teksta nije jasno. Data je specifikacija (naći prosek), a sintetisan efikasniji izraz koji ispunjava zadatu specifikaciju. U narednom pasusu je postavljena i prečica na deo rada koji detaljnije opisuje kako se zapravo pretražuje prostor formula kako bi se našla baš ova formula. U sekciji 2 smo navodili primene sinteze, a detaljniji opis sledi u narednim poglavljima.}
+
 \section{Ситне примедбе}
 % Напишете своја запажања на тему штампарских-стилских-језичких грешки
 \par Иако је рад веома квалитетно написан, уочен је известан број граматичких, стилских и штампарских грешака. Све уочене грешке су наведене у даљем тексту.
 
 \par У сажетку, у четвртој реченици уместо речи поправка треба ставити реч поправки, због слагања у падежу.
+
 \odgovor {Ispravljeno.}
 
 \par У уводу су примећене следеће грешке:
 \begin{enumerate}
 \item У другој реченици написана је реч \zn veca'' уместо речи \zn veća''.
+
+\odgovor{Ispravljeno.}
+
 \item У четвртој реченици написана је реч \zn имплементација'' у погрешном падежу (треба \zn имплементацији'').
-\
+
+\odgovor{Ispravljeno.}
+
 \item У петој реченици написана је реч \zn дугоког''. Треба је исправити на \zn дубоког'' или \zn дугог
-\odgovor {Ispravljeno dovde.}
+
+\odgovor{Ispravljeno.}
 
 \item У последњем пасусу је неправилно преломљена реч \zn CEGIS-u''. Потребно је спречити прелом речи или додати још неку реч како не би једно слово било пренето у наредни ред.
+
+\odgovor{Ispravljeno.}
+
 \end{enumerate}
 
 \par У пододељку 2.1 Припрема података, примећене су следеће грешке:
 \begin{enumerate}
 \item Уместо речи \zn полу-структуираног'' треба ставити реч \zn полуструктурираног''.
+
+\odgovor{Ispravljeno.}
+
 \item У последњем пасусу у првој реченици треба ставити \zn измене'' уместо \zn изменама'', да би била у исправном падежу.
 \end{enumerate}
 
+\odgovor{Ispravljeno.}
+
 \par У пододељку 2.2 Поправка кода, у коду функције buggy употребљена је недекларисана променљива inhb. Аутори су вероватно мислили на променљиву inb која је аргумент функције.
+
+\odgovor{Ispravljeno.}
 
 \par У пододељку 2.3 Сугестије приликом кодирања, примећене су следеће грешке:
 \begin{enumerate}
 \item У другој реченици уместо речи \zn синтесизери'' треба ставити реч \zn синтезери''. Такође, требало би додати запету после речи \zn токене''.
+
+\odgovor{Ispravljeno.}
+
 \item У трећој реченици би требало превести \zn type-directed completion'' на српски, да би било у складу с претходним појмом, који је преведен.
 \end{enumerate}
 
+\odgovor{Ispravljeno.}
+
 \par У пододељку 2.6 Конкурентно програмирање, у другом пасусу у четвртој реченици треба ставити реч \zn додајући'' уместо речи \zn додавајући''.
+
+\odgovor{Ispravljeno.}
+
 
 \par У пододељку 3.1 Дефинисање спецификација, примећене су следеће грешке:
 \begin{enumerate}
 \item У другом пасусу, у првој реченици уместо речи \zn неко'' треба ставити реч \zn него''.
+
+\odgovor {Ispravljeno.}
+
 \item У трећем пасусу, у другој реченици уместо речи \zn као'' треба ставити реч \zn колико'', због претходно употребљене речи \zn толико''.
 \end{enumerate}
+
 \odgovor {Ispravljeno.}
 
 \par У делу 3.2.1 Енумеративна претрага, треба избацити цртице у речима \zn мета-података'' и \zn полу-одлучива''. У делу 3.2.2 Дедуктивна претрага, треба писати \zn одозго надоле'' уместо \zn одозго - на доле''.
+
 \odgovor {Ispravljeno.}
 
 \par У делу 3.2.3 Технике са ограничењима, примећене су следеће грешке:
 \begin{enumerate}
 \item У делу о генерисању ограничења, после речи \zn ограничењима'' треба додати запету.
-\item У делу о разрешавању ограничења, у другој реченици уместо речи \zn неког'' треба ставити реч \zn неки'' (\zn за неки од решавача'').
-\end{enumerate}
+
 \odgovor {Ispravljeno.}
+
+\item У делу о разрешавању ограничења, у другој реченици уместо речи \zn неког'' треба ставити реч \zn неки'' (\zn за неки од решавача'').
+
+\odgovor {Ispravljeno.}
+
+\end{enumerate}
+
 
 \par У делу 3.2.5 Статистичка претрага, примећене су следеће грешке:
 \begin{enumerate}
@@ -356,24 +506,45 @@ Negde sam na granici između 'srednje upućen' i 'malo upućen'. Pročitah par �
 \item У другом пасусу уместо речи \zn грањања'' треба ставити реч \zn гранања'', а у последњој реченици треба ставити запете пре и после синтагме \zn на пример''.
 \item У четвртом пасусу реч \zn техника'' треба преломити као \zn те-хника''. У другој реченици је пожељно додати реч \zn се'' после речи \zn проверава''.
 \end{enumerate}
+
 \odgovor {Ispravljeno. TODO milana za te-hnika}
 
 \par У одељку 4 CEGIS, у другом пасусу треба ставити велико почетно слово у упитној реченици која је под наводницима и треба обрисати тачку после знака навода на крају. Такође, уочена је неконзистентност у писању речи \zn контрапример''. На почетку одељка је писано \zn контра-пример'', а касније у тексту као две речи, \zn контра пример''. Оба начина су неисправна и треба писати састављено \zn контрапример''.
 
+TODO anja/veca
+
 \par Препорука је да се слици 2 (CEGIS петља) смањи величина, како би стала на крај 8. стране. Тако ће се наћи одмах испод текста на коме се реферише на њу.
+
+TODO anja/veca
 
 \par Наслов пододељка 4.2 је неправилно написан. Треба додати цртицу да би писало \zn CEGIS-a''. Такође, део 4.2.1 је писан у активном стилу, док је остатак текста писан у пасивном стилу, што нарушава конзистентност. Примећене су и следеће грешке:
 \begin{enumerate}
 \item У параграфу о фази верификације, треба искосити слово \zn z'' и одмах након тога исправити реч \zn раликује'' у \zn разликује''. Такође, у петој реченици треба заменити реч \zn ја'' са \zn су''. Треба додати запете после синтагме \zn другим речима'', у реченици \zn Ако постоји, нисмо завршили'' и после синтагме \zn на пример'' у другом пасусу.
+
+TODO anja/veca
+
 \item Треба исправити неисправну реч \zn собзиром'' у две речи \zn с обзиром'' и треба додати запету после \zn међутим''.
+
+TODO anja/veca
+
 \item У параграфу о повратном кораку треба превести реч \zn oracle'', или је у крајњој мери употребити транскрибовано на оракл.
+
+TODO anja/veca
+
 \end{enumerate}
 
 \par У делу 4.2.2 Стохастичка супероптимизација, у параграфу о фази верификације, треба исправити реч \zn прилагпђености'' у \zn прилагођености''.
 
+TODO anja/veca
+
 \par У делу 4.2.3 Енумеративна претрага, у параграфу о фази верификације, треба додати запете у првој реченици после синтагме \zn тест примерима'' и у последњој реченици пре \zn завршили смо''.
 
+TODO anja/veca
+
 \par Коначно, у закључку треба да се исправи реченица тако да гласи овако: \zn Иако теоретски делује да овај приступ није довољно ефикасан, те да ће се извршати предуго, CEGIS је, као водећи представник ове групе, у пракси показао неочекивано добре резултате.''
+
+\odgovor{Ispravljeno.}
+
 
 \section{Провера садржајности и форме семинарског рада}
 % Oдговорите на следећа питања --- уз сваки одговор дати и образложење
@@ -428,6 +599,8 @@ Negde sam na granici između 'srednje upućen' i 'malo upućen'. Pročitah par �
 % Obrazložite svoju odluku
 \par У област коју рецензирам сам потпуно неупућен, с обзиром на то да ми до момента читања овог рада није ни било познато да постоје програми који се баве аутоматским генерисањем кода. Читањем овог рада сазнао сам за једну нову, занимљиву и корисну област рачунарства и стекао знање о томе колико се до данас постигло у тој области.
 
+
+
 \chapter{Recenzent \odgovor{--- ocena:} }
 
 
@@ -439,7 +612,9 @@ U radu ''Sinteza programa'' je objašnjeno sta predstavlja pojam sinteze program
 % ???????? ????? ???????? ? ????????????? ????? ??? ? ???? ????????? ? ??? ?? ??????? ?? ?? ???????-??????-????-?????? ?? ?? ??? ??? ????????????.
 \begin{itemize}
     \item U sažetku ili uvodu dodati da li je sama oblast slicna mašinskom ucenju ili automatskom rezonovanju. Da li je možda podoblast neke od ovih, ili samo koristi neke od ideja i tehnika istih.\\
+	\odgovor{Ove oblasti imaju nekih zajedničkih odlika (npr. SAT), ali suštinki nisu slične. Možda je moguće primeniti mašinsko učenje u algoritmima za pretrage ili eventualno optimizacije, ali to je van granica rada (ideja je prikazati osnovne ideje i primene programske sinteze).}
     \item sekcija 2.6 Konkurentno programiranje - Možda dodati, malo objasniti (kratko), na koji nacin sam AGS algoritam odreduje da li se menja apstrakcija ili se menja program. Da li su u pitanju metode mašinskog ucenja ili nesto drugo?\\
+	\odgovor{Navedeno je da se to određuje nedeterministički, najčešće slučajnim izborom se bira jedno od ta dva ali ne postoji jedinstveni pristup već zavisi od algoritma. Smatramo da je izraz "nedeterministički" sasvim na mestu.}
     \item sekcija 3.1 Definisanje specifikacija - Da li postoje alati koji omogucavaju da se program ''sam'' generiše do neke tacke, a da tek onda korisnik definiše ostatak? Da ne bude opisane situacije gde na pocetku korisnik radi, a zatim sintezer, vec obrnuto. Mislim da je ukoliko je to moguce lepo pomenuti i dati referencu i ka tom alatu.\\
     \odgovor {Sintezeru je neophodno dati neka početne specifikacije jer inače on ne bi imao nikakve smernice kuda da vrši pretragu za rešenjem. Ukoliko bi alat sam imao definisane specifikacije za uopstene primere programa, to bi bilo moguće. Međutim, istraživanjem ove oblasti nismo došli do ovakvih alata.}
     \item sekcija 3.2 Pretraživanje prostora programa - Mislim da bi bilo dobro dodati referencu ka prostoru mogucih programa. Ili u jednoj recenici opisati šta je. Pretpostavke se mogu napraviti, ali bi bilo dobro da postoji opis ili referenca ka pojmu. Referenca ili objašnjenje se mogu naci i u sekciji 3 Izazovi gde je pojam prvi put pomenut.\\
@@ -449,29 +624,49 @@ U radu ''Sinteza programa'' je objašnjeno sta predstavlja pojam sinteze program
     \item sekcija 3.2.5 Statisticka pretraga - Nadogradnju programa vrši sintezer ili korisnik?\\
     \odgovor {Probabilističko zaključivanje je stvar koju vrši sam sintezer. Međutim, uz dodatne optimizacije, korisnik bi mogao da prati ovo nadograđivanje i svojim akcijama ga usmerava.}
     \item sekcija 4.2.1 Sinteza vodena uzorom - Šta znaci da u fazi validacije treba proveriti da li program zadovoljava sve ulaze? Na koji nacin se generišu ''svi ulazi''? Generalno, šta se podrazumeva pod ovim pojmom? Sve moguce ulaze ili njihove kombinacije nije moguce generisati za malo vece programe. O velikim softverima za kakve bi sinteza mogla jednog dana da se koristi da i ne govorimo.\\
+	TODO anja/veca
 \end{itemize}
 \section{Sitne primedbe}
 % ???????? ????? ???????? ?? ???? ???????????-????????-???????? ??????
 \begin{itemize}
     \item Sažetak - linija 6, popravki umesto popravka.\\
+	\odgovor{Izmenjeno. Taj tekst se ne nalazi u novoj verziji.}
     \item Uvod - linija 2, veca umesto veca.\\
+	\odgovor{Izmenjeno.}
     \item Uvod - linija 8, dubokog umesto dugokog.\\
+	\odgovor{Izmenjeno.}
     \item sekcija 2.3 Sugestije prilikom kodiranja - linija 3, sintezeri umesto sintesizeri. Možda i nije greška, ali u celom tekstu se javlja rec sintezeri, nigde više sintesizeri.\\
+	\odgovor{Izmenjeno.}
     \item sekcija 2.6 Konkurentno programiranje - pasus 2, linije 4 i 6, mislim da je bolje ''kršenje'' nego ''prekrčenje''.\\
+	\odgovor{Izmenjeno.}
     \item sekcija 2.6 Konkurentno programiranje - pasus 2, linija 8 dodajuci umesto dodavajuci.\\
+	\odgovor{Izmenjeno.}
     \item sekcija 3.1 Definisanje specifikacija - linija 1, na nacin na koji to korisnik definiše umesto na nacin koji to korisnik definiše.\\
+	TODO milana
     \item sekcija 3.1 Definisanje specifikacija - linija 5, definisanjem umesto definisanje.\\
+	TODO milana
     \item sekcija 3.1 Definisanje specifikacija - linija 7, nego umesto neko.\\
-    \item sekcija 3.1 Definisanje specifikacija - poslednji pasus, linija 1, naprednu umesto napradnu.\\
+	TODO milana
+	\item sekcija 3.1 Definisanje specifikacija - poslednji pasus, linija 1, naprednu umesto napradnu.\\
+	TODO milana
     \item sekcija 3.2.3 Tehnike sa ogranicenjima - stavka Razrešavanje ogranicenja, linija 3, neki umesto nekog.\\
+	TODO milana
     \item sekcija 3.2.4 induktivna pretraga - linija 6, rešavacem se dode do moguceg rešenja umesto rešavacem se dode moguceg rešenja.\\
+	TODO milana
     \item sekcija 3.2.5 Statisticka pretraga - stavka Genetsko programiranje, linija 3, mogucih umesto mogucih.\\
+	TODO milana
     \item sekcija 4 CEGIS - linija 5 koji umesto koje.\\
+	TODO anja/veca
     \item sekcije 4 CEGIS i 4.1 Arhitektura - u prvoj sekciji piše kontra-primer, a u drugoj kontra primer. Nekonzistentno.\\
+	TODO anja/veca
     \item sekcija 4.2.1 Sinteza vodena uzorom - podsekcija Faza verifikacije, pasusu ispod slike, linija 5, programi umesto program.\\
+	TODO anja/veca
     \item sekcija 4.2.1 Sinteza vodena uzorom - podsekcija Faza verifikacije, pasusu ispod slike, linija 7, s obzirom umesto sobzirom.\\
+	TODO anja/veca
     \item sekcija 4.2.2 Stohasticka superoptimizacija - linija 3, pretpostaviti umesto prtpostaviti.\\
+	TODO anja/veca
     \item sekcija 4.2.2 Stohasticka superoptimizacija - podsekcija Faza verifikacije, linija 4, prilagodenosti umesto prilagpdenosti.\\
+	TODO anja/veca
 \end{itemize}
 
 \section{Provera sadržajnosti i forme seminarskog rada}
@@ -509,3 +704,5 @@ Rekao bih da je moj nivo upucenosti u datu temu ''skoro neupucen''.
 %Ovde navedite ukoliko ima izmena koje ste uradili a koje vam recenzenti nisu tražili.
 
 \end{document}
+
+TODO oceniti recenzente
