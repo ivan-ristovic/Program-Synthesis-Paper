@@ -1,17 +1,17 @@
 \section{CEGIS}
 \label{sec:cegis}
 
-Program se može sintetisati tako što se definišu njegove specifikacije i zapišu u vidu formule koja se prosledi SMT rešavaču (npr. Z3 \cite{Z3}). SMT nađe valuaciju koja je zadovoljiva i to predstavlja rešenje. Problem nastaje u tome što formula koja se prosleđuje rešavaču sadrži univerzalne kvantifikatore koje usporavaju pretragu. Naime, rešavač bi u svakom slučaju pronašao rešenje za datu formulu, ali kako bi se to desilo u realnom vremenu, CEGIS (eng. \emph{Counterexample-Guided Inductive Synthesis}) u sebi sadrži posebne tehnike za optimizaciju. Jedna od mogućih implementacija se može naći na \cite{CEGISimpl}.
+Program se može sintetisati tako što se definišu njegove specifikacije i zapišu u vidu formule koja se prosledi SMT rešavaču (npr. Z3 \cite{Z3}). SMT rešavač nađe valuaciju koja je zadovoljiva i to predstavlja rešenje. Problem nastaje u tome što formula koja se prosleđuje rešavaču sadrži univerzalne kvantifikatore koji usporavaju pretragu. Naime, rešavač je u stanju da pronađe rešenje za bilo koju proizvoljnu ulaznu formulu, ali kako bi se to desilo u realnom vremenu, CEGIS u sebi sadrži posebne tehnike za optimizaciju. Jedna od mogućih implementacija se može naći na \cite{CEGISimpl}.
 
-Za većinu realnih problema nije neophodno da se razmatraju svi ulazi i izlazi kako bi se došlo do programa koji radi tačno za svaki od njih. Ovako razmišljajući, problem se menja i postaje: \emph{"koji je najmanji podskup ulaza koji je potrebno razmatrati da bi se sintetisao program koji zadovoljava date specifikacije?"}.
+Za većinu realnih problema nije neophodno da se razmatraju svi ulazi i izlazi kako bi se došlo do programa koji radi tačno za svaki od njih. Ovako razmišljajući, problem se menja i postaje: \emph{"Koji je najmanji podskup ulaza koji je potrebno razmatrati da bi se sintetisao program koji zadovoljava date specifikacije?"}
 
-CEGIS upravo traga za tim minimalnim skupom. U petlji, korišćenjem SMT rešavača, on postepeno dolazi do svih mogućih implementacija že\-lje\-nog programa koristeći sve ulaze koji su razmatrani do tog trenutka (počinje sa 0 ulaza). U sledećoj iteraciji on razmatra dalje. Paralelno sa tim, drugim SMT rešavačem pronalazi kontra-primer koji pokazuje da poslednji sintetisani program nije rešenje. Ukoliko kontra-primer ne postoji, poslednji sintetisani program je rešenje. Ukoliko se prođe kroz sve iteracije i ne pronađe se rešenje, specifikacija programa nije smislena.
+CEGIS upravo traga za tim minimalnim skupom. U petlji, korišćenjem SMT rešavača, on postepeno dolazi do svih mogućih implementacija že\-lje\-nog programa koristeći sve ulaze koji su razmatrani do tog trenutka (počinje sa 0 ulaza). U sledećoj iteraciji on razmatra dalje. Paralelno sa tim, drugim SMT rešavačem pronalazi kontraprimer koji pokazuje da poslednji sintetisani program nije rešenje. Ukoliko kontraprimer ne postoji, poslednji sintetisani program je rešenje. Ukoliko se prođe kroz sve iteracije i ne pronađe se rešenje, specifikacija programa nije smislena.
 
 
 \subsection{Arhitektura}
 \label{subsec:Arhitektura}
 
-CEGIS se sastoji iz dve faze, induktivne sinteze i verifikacije. Na početku sintezeru dajemo specifikaciju željenog programa. U fazi sinteze pronalazi se program kandidat koji može da zadovolji specifikacije. Nakon toga se u fazi verifikacije proverava da li taj kandidat zaista zadovoljava specifikacije. Ako verifikator ne uspe da pronađe kontra primer znači da smo pronašli traženi program. U suprotnom, verifikator prosleđuje sintezeru informacije o kontra primeru, koje će mu pomoći prilikom daljeg traženja novog kandidata. Na slici \ref{fig:cegis} predstavljena je opšta arhitektura CEGIS-a.
+CEGIS se sastoji iz dve faze, induktivne sinteze i verifikacije. Na početku sintezeru dajemo specifikaciju željenog programa. U fazi sinteze pronalazi se program kandidat koji može da zadovolji specifikacije. Nakon toga se u fazi verifikacije proverava da li taj kandidat zaista zadovoljava specifikacije. Ako verifikator ne uspe da pronađe kontraprimer znači da smo pronašli traženi program. U suprotnom, verifikator prosleđuje sintezeru informacije o kontraprimeru, koje će mu pomoći prilikom daljeg traženja novog kandidata. Na slici \ref{fig:cegis} predstavljena je opšta arhitektura CEGIS-a.
 
 Ovakav vid pretrage zove se pretraga vođena kontra primerima (eng. \emph{counterexample-guided}), zato što je povratna informacija sintezeru kontra primer koji se dodaje u specifikaciju programa \cite{PSE}.
 
@@ -33,7 +33,7 @@ Da bismo u potpunosti definisali CEGIS sintezu programa, potrebno je da odgovori
     \item Kako da prosledimo povratne informacije za buduće kandidate?
 \end{itemize}
 
-\subsection{Primene CEGISa}
+\subsection{Primene CEGIS-a}
 \label{subsec:PrimeneCEGISa}
 
 U nastavku ćemo opisati kako se neke različite vrste sinteze programa koriste zajedno sa CEGIS idejom. Fokusiraćemo se na \emph{sintezu vodjenu uzorom}, \emph{stohastičku superoptimizaciju} i \emph{enumerativnu pretragu}.
@@ -59,19 +59,19 @@ program(x,y):
 	return o3
 \end{lstlisting}
 
-Primetimo da SSA forma jednostavno povezuje komponente me\-đu\-so\-bno, tako da ako želimo da imamo dva sabiranja moramo da obezbedimo dve komponente za sabiranje. Takođe primetimo da se vrednost $o2$ ne koristi, takozvani \emph{mrtvi kod}. U ovom slučaju to je poželjna karakteristika, jer ne moramo unapred tačno da odredimo koliko ćemo imati kojih operacija, već možemo samo da zadamo gornju granicu, a sintezer će generisati mrtvi kod za komponente koje se ne koriste.
+Primetimo da SSA forma jednostavno povezuje komponente me\-đu\-so\-bno, tako da ako želimo da imamo dva sabiranja moramo da obezbedimo dve komponente za sabiranje. Takođe primetimo da se vrednost $o2$ ne koristi, takozvani \emph{mrtvi kod}. Prednost ove forme je što ne moramo unapred tačno da odredimo koliko ćemo imati kojih operacija. Dovoljno je samo da zadamo gornju granicu. Ukoliko se desi da neku komponentu ne iskoristimo, sintezer će generisati mrtvi kod za nju.
 
 Sintezer koristi test primere da ograniči broj načina na koje se komponente mogu povezati. On koristi SMT rešavač da odredi koje komponente da poveže kako bi program bio tačan za sve test primere. Ako SMT rešavač ne uspe da nađe rešenje, onda nijedan program koji koristi samo date komponente ne može da zadovolji sve test primere - komponente nisu dovoljne. U suprotnom vraća program u SSA formi koji zadovoljava sve test primere.
 
 
 \subsubsection*{Faza verifikacije}
 
-Ako postoji rešenje mi program koji je kandidat za rešenje prosleđujemo fazi verifikacije. Ovaj korak koristi SMT rešavač da odgovori na sledeće pitanje: Da li postoji program $P'$, različit od kandidata za rešenje $P$, koji takođe zadovoljava sve test primere, ali se na nekom ulazu z ralikuje od $P$?
-Pojasnimo ovo deo po deo. Iz faze sinteze dobili smo program $P$ koji je kandidat za rešenje i zadovoljava sve test primere. Ono što tražimo od verifikatora ja novi ulaz $z$ i novi program $P'$, takvi da za ulaz $z$ programi $P$ i $P'$ daju različite izlaze. Program $P'$ takođe zadovoljava sve početne test primere.
-Drugim rečima pitamo se da li postoji više od jednog programa koji mogu da zadovolje sve test primere? Ako postoji nismo završili.
+Ako postoji rešenje, program koji je kandidat za rešenje se prosleđuje fazi verifikacije. Ovaj korak koristi SMT rešavač da odgovori na sledeće pitanje: Da li postoji program $P'$, različit od kandidata za rešenje $P$, koji takođe zadovoljava sve test primere, ali se na nekom ulazu $z$ razlikuje od $P$?
+Pojasnimo ovo deo po deo. Iz faze sinteze dobili smo program $P$ koji je kandidat za rešenje i zadovoljava sve test primere. Ono što tražimo od verifikatora su novi ulaz $z$ i novi program $P'$, takvi da za ulaz $z$ programi $P$ i $P'$ daju različite izlaze. Program $P'$ takođe zadovoljava sve početne test primere.
+Drugim rečima, pitamo se da li postoji više od jednog programa koji mogu da zadovolje sve test primere? Ako postoji, nismo završili.
 U ovom trenutku ništa ne pitamo uzor. Može da se desi i da program $P$ i $P'$ daju netačan izlaz za ulaz $z$, ali jedino što je u ovom trenutku važno za verifikator je da oni daju različit rezultat.
 
-Na primer evo kako radi za dva test primera i komponente koje smo koristili u prethodnom primeru.
+Na primer, evo kako radi za dva test primera i komponente koje smo koristili u prethodnom primeru.
 
 \begin{figure}[h!]
     \begin{center}
@@ -81,7 +81,7 @@ Na primer evo kako radi za dva test primera i komponente koje smo koristili u pr
     \label{fig:oraclePrimer1}
 \end{figure}
 
-U ovom slučaju imamo samo dva test primera $(0,0)$ i $(1,0)$. Sintezer nam daje program $P=\sqrt{x}+y$ koji je kandidat i koji zadovoljava oba test primera. Od verifikatora tražimo da nam da dve stvari: novi program $P'$ i novi ulaz $z$. U ovom slučaju on to i uspeva. Vraća novi program $x+y$ i novi test primer $(4,5)$. Na novom test primeru program $P$ i $P'$ daju različite izlaze: $\sqrt{4}+5=7$ dok je $4+5=9$. U ovom slučaju ispostavlja se da oba programa daju pogrešan rezultat s obzirom da je izlaz koji daje program uzor $\sqrt{4+5}=3$. Međutim činjenica da se $P$ i $P'$ razlikuju nam je dovoljna da se u petlji vratimo nazad pomoću povratnog koraka.
+U ovom slučaju imamo samo dva test primera $(0,0)$ i $(1,0)$. Sintezer nam daje program $P=\sqrt{x}+y$ koji je kandidat i koji zadovoljava oba test primera. Od verifikatora tražimo da nam da dve stvari: novi program $P'$ i novi ulaz $z$. U ovom slučaju on to i uspeva. Vraća novi program $x+y$ i novi test primer $(4,5)$. Na novom test primeru programi $P$ i $P'$ daju različite izlaze: $\sqrt{4}+5=7$ dok je $4+5=9$. U ovom slučaju ispostavlja se da oba programa daju pogrešan rezultat s obzirom da je izlaz koji daje program uzor $\sqrt{4+5}=3$. Međutim činjenica da se $P$ i $P'$ razlikuju nam je dovoljna da se u petlji vratimo nazad pomoću povratnog koraka.
 
 
 \subsubsection*{Povratni korak}
@@ -130,7 +130,7 @@ Sintezu počinjemo od dubine $0$ i pritom numerišemo sve programe na ovoj dubin
 \subsubsection*{Faza verifikacije}
 
 
-Pošto nam se specifikacija programa zasniva na test primerima u ovoj fazi ćemo jednostavno pokrenuti sve test primere i uporediti rezultate. Ako program daje odgovarajuće izlaze za sve test primere završili smo.
+Pošto nam se specifikacija programa zasniva na test primerima, u ovoj fazi ćemo jednostavno pokrenuti sve test primere i uporediti rezultate. Ako program daje odgovarajuće izlaze za sve test primere, završili smo.
 
 
 \subsubsection*{Povratni korak}
