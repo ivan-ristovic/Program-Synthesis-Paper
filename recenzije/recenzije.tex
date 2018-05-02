@@ -61,7 +61,8 @@ Rad govori o automatskom procesu generisanja programskog koda. Jasno su prikazan
 
 Smatram da se sažetak nekako naglo prekida. Možda može da se završi rečenicom da će se rad najviše fokusirati na CEGIS ili da se doda neki 'zaključak'. Takođe, fale ključne reči.
 
-TODO keywords?!?!?
+\odgovor{Ispravljeno}
+
 
 
 \subsection{Naslov rada}
@@ -131,7 +132,7 @@ njegova složenost. Kada se mogući programi numerišu po osobinama, mogu da se 
 
 Meni iz ovog pasusa nije bilo baš najjasnije šta je enumerativna pretraga. Da li ovo znači da mi kažemo da hoćemo program od 100 linija koda, zatim sve programe u prostoru pretrage numerišemo po veličini i zatim odsečemo sve one sa preko 100 linija koda? Nije mi baš jasna poslednja rečenica - oni su numerisani i mi opet gledamo da li zadovoljavaju speficikacije? Ili nam ta numeracija govori da li zadovoljavaju ili ne. Možda bi neki primer ili malo izmenjena formulacija pomogli razumevanju.
 
-\odgovor{Numeracija nam pomaže da zaključimo da li program odgovara specifikaciji. Na primer ako očekujemo da će program biti složenosti $O_n$ možemo, na primer, da odbacimo sve programe koji su složenosti $O_n^2$. Smatramo da je tekst dovoljno jasno napisan, te ga nismo menjali.}
+\odgovor{Način opisivanja prostora programa u sklopu enumerativne pretrage je van granica ovog rada, pa ga zbog toga ovde nismo detaljninje opisali. Smatramo da je tekst dovoljno jasno napisan, te ga nismo menjali.}
 
 
 \subsubsection{Deo rada: Statistička pretraga}
@@ -139,7 +140,7 @@ Meni iz ovog pasusa nije bilo baš najjasnije šta je enumerativna pretraga. Da 
 
 Pretpostavljam da verovatnoća služi da se neki delovi prostora pretrage iseku ako je ona manja od nekog broja. Smatram da bi trebalo da stoji objašnjenje kako se generišu kao i čemu te verovatnoće služe, ili da se bar stavi referenca na rad koji govori o tome.
 
-\odgovor {Upotreba mašinskog učenja je van opsega naseg rada. Dodata referenca.}
+\odgovor {Upotreba mašinskog učenja je van opsega našeg rada. Dodata referenca.}
 
 
 \subsubsection{Deo rada: Sinteza vođena uzorom, deo Faza sinteze}
@@ -166,7 +167,7 @@ Ovde će biti izdvojene greške u kucanju, formulacije rečenica koje mi baš ni
 
     Ovo takođe zvuči malo neformalno. Možda bi bilo bolje iskoristiti 'podstakao' umesto ove sintagme.
 
-	TODO milana
+	\odgovor {Smatramo da je ova sintagma iako možda malo neformalna poželjna, jer rad čini zanimljivijim i čitljivijim.	
 
     \item Priprema podataka: \textbf{\textit{'Priprema podataka predstavlja proces čišćenja, transformacije i pripreme podataka...'}}
 
@@ -211,7 +212,7 @@ rešenje.'}}
 
     Preformulisati u 'Naime, rešavač je u stanju da pronađe rešenje za bilo koju proizvoljnu ulaznu formulu, ali da bi se to desilo u realnom vremenu, ..'. Takođe, treba izbaciti uvođenje skraćenice CEGIS jer je to već urađeno u uvodu.
 
-    \odgovor {Ispravljeno.}
+    \odgovor {Smatramo da je početak rečenice sasvim jasan i formulisan u skladu sa poentom rečenice, pa ga nismo menjali. Izbacili smo uvođeje skraćenice CEGIS.}
 
     \item Sinteza vođena uzorom, faza verifikacije: \textbf{\textit{'Ako postoji rešenje mi program koji je kandidat za rešenje prosleđujemo fazi verikacije.', 'Ako postoji nismo završili.', 'U ovom trenutku ništa ne pitamo uzor.'}}
 
@@ -269,7 +270,7 @@ rešenje.'}}
 
     \item Statistička pretraga: \textbf{\textit{'..jedna po jedna, i proverava da li..'}} ispraviti u '..jedna po jedna, i proverava se da li..'.
 
-    TODO milana
+    \odgovor{Izmenjeno.}
 
     \item CEGIS: \textbf{\textit{'SMT'}} u drugoj rečenici ispraviti u 'SMT rešavač' jer je SMT tip problema i on ne može da nalazi valuacije.
 
@@ -309,7 +310,7 @@ rešenje.'}}
 
     \item Sinteza vođena uzorom: \textbf{\textit{'Faza validacije treba da..'}} nigde se ne pominje faza validacije, ovo treba ispraviti u 'verifikacije'.
 
-	\odgovor{Izmenjeno.}
+	\odgovor{U ovom delu teksta uvodimo fazu validacije kao dodatnu fazu, tako da to nije greška.}
 
     \item Stohastička superoptimizacija: \textbf{\textit{'prtpostaviti'}} ispraviti u 'pretpostaviti'.
 
@@ -457,7 +458,7 @@ Negde sam na granici između 'srednje upućen' i 'malo upućen'. Pročitah par �
 \item У последњем пасусу у првој реченици треба ставити \zn измене'' уместо \zn изменама'', да би била у исправном падежу.
 \end{enumerate}
 
-\odgovor{Ispravljeno.}
+\odgovor{Tekst je uredno napisan.}
 
 \par У пододељку 2.2 Поправка кода, у коду функције buggy употребљена је недекларисана променљива inhb. Аутори су вероватно мислили на променљиву inb која је аргумент функције.
 
@@ -632,7 +633,7 @@ U radu ''Sinteza programa'' je objašnjeno sta predstavlja pojam sinteze program
     \item sekcija 3.2.5 Statisticka pretraga - Nadogradnju programa vrši sintezer ili korisnik?\\
     \odgovor {Probabilističko zaključivanje je stvar koju vrši sam sintezer. Međutim, uz dodatne optimizacije, korisnik bi mogao da prati ovo nadograđivanje i svojim akcijama ga usmerava.}
     \item sekcija 4.2.1 Sinteza vodena uzorom - Šta znaci da u fazi validacije treba proveriti da li program zadovoljava sve ulaze? Na koji nacin se generišu ''svi ulazi''? Generalno, šta se podrazumeva pod ovim pojmom? Sve moguce ulaze ili njihove kombinacije nije moguce generisati za malo vece programe. O velikim softverima za kakve bi sinteza mogla jednog dana da se koristi da i ne govorimo.\\
-	\odgovor{Slažemo se da nije moguće generisati sve moguće ulaze. U ovoj rečenici, pod pojmom svi ulazi, misli se na konačan podskup svih mogućih ulaza-izlaza koji ga dovoljno dobro reprezentuje. Problem je što skup test primera često nije dovoljno dobar, pa je potrebno dodatno testiranje.}
+	\odgovor{Slažemo se da nije moguće generisati sve moguće ulaze. U ovoj rečenici, pod pojmom svi ulazi, misli se na konačan podskup svih mogućih ulaza-izlaza koji ga dovoljno dobro reprezentuje. Problem je što skup test primera često nije dovoljno dobar, pa je potrebno dodatno testiranje.}-------------------
 \end{itemize}
 \section{Sitne primedbe}
 % ???????? ????? ???????? ?? ???? ???????????-????????-???????? ??????
