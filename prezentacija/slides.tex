@@ -274,11 +274,85 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{CEGIS}
+    \begin{itemize}
+        \item Program se može sintetisati tako što se definiše specifikacija i zapiše u vidu formule koja se prosledi SMT rešavačima
+        \item Koji je najmanji podskup ulaza koji je potrebno razmatrati da bi se sintetisao program koji zadovoljava date specifikacije?
+        \item Korišćenjem SMT rešavača dolazimo do svih mogućih implementacija željenog programa koristeći sve ulaze koji su razmatrani do tog trenutka
+        \item Paralelno, drugi SMT rešavač pronalazi kontraprimer koji pokazuje da poslednji sintetisani program nije rešenje
+    \end{itemize}
+\end{frame}
 
+\begin{frame}{CEGIS - Arhitektura}
+    \begin{itemize}
+        \item Pretraga vođena kontraprimerima (eng. \emph{counterexample-guided})
+        \item CEGIS se sastoji iz dve faze: \emph{induktivne sinteze} i \emph{verifikacije}
+        \item U fazi sinteze se pronalazi program kandidat koji može da zadovolji specifikaciju
+        \item U fazi verifikacije se proverava da li taj kandidat zaista zadovoljava specifikaciju
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{CEGIS - Arhitektura}
+    \begin{figure}
+        \begin{center}
+            \includegraphics[scale=0.4]{../resources/cegis.jpeg}
+        \end{center}
+        \caption{CEGIS petlja}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{CEGIS}
+    \begin{itemize}
+        \item Da bismo u potpunosti definisali CEGIS sintezu programa, potrebno je odgovoriti na sledeća pitanja:
+        \begin{itemize}
+            \item Kako treba da izgleda specifikacija traženog programa?
+            \item Kako ćemo vršiti sintezu programa kandidata?
+            \item Kako da proverimo da li program kandidat zadovoljava specifikacije?
+            \item Kako da prosledimo povratne informacije za buduće kandidate?
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{CEGIS - Sinteza vodjena uzorom}
+    \begin{itemize}
+        \item \emph{Oracle-guided synthesis}
+        \item Pretpostavlja da imamo implementaciju programa koji želimo da sintetišemo - uzor
+        \item Uzor se tretira kao crna kutija
+        \item Novi test primeri se kreiraju generišući proizvoljne ulaze a od uzora se dobijaju odgovarajući izlazi za svaki prosleđeni ulaz
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{CEGIS - Stohastička superoptimizacija}
+    \begin{itemize}
+        \item Pretražuje se prostor programa i traži se brži ili efikasniji ekvivalent polaznog programa
+        \item Takođe se pretpostavlja da imamo implementaciju programa kao specifikaciju
+        \item Koristi se \emph{MCMC} (eng. \emph{Markov-chain Monte Carlo sampling}) kao mera udaljenosti
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{CEGIS - Enumerativna pretraga}
+    \begin{itemize}
+        \item Za specifikaciju se koristi konačan skup test primera
+        \item Pretpostavja se da je dostupna gramatika koja opisuje ciljani jezik (\texttt{add(x, sub(x,y))})
+        \item Programi se dele prema dubini
+        \item Sinteza kreće od dubine $0$ i numerišu se svi programi na toj dubini
+        \item Na dubini $k$, ispituju se svi programe koji imaju oblik \texttt{operacija(a,b)}, gde su $a$ i $b$ bilo koji izrazi dubine $k-1$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Zaključak}
+    \centering
+    TODO
+\end{frame}
 
 \begin{frame}{Pitanja}
     \centering
     ???
+\end{frame}
+
+\begin{frame}{TODO}
+    \centering
+    Hvala na pažnji!
 \end{frame}
 
 
