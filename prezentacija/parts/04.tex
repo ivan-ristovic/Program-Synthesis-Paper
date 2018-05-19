@@ -2,25 +2,41 @@
 \begin{frame}{CEGIS - Sinteza vodjena uzorom}
     \begin{itemize}
         \item \emph{Oracle-guided synthesis}
-        \item Pretpostavlja da imamo implementaciju programa koji želimo da sintetišemo - uzor
-        \item Uzor se tretira kao crna kutija
-        \item Novi test primeri se kreiraju generišući proizvoljne ulaze a od uzora se dobijaju odgovarajući izlazi za svaki prosleđeni ulaz
+        \item Pretpostavlja postojanje uzora (npr. imlementacija programa)
+        \item Biblioteka komponenti za kreiranje programa
+		\item Primer:      
+				program(x,y):\\
+				o1 = add(x, y)\\
+				o2 = add(o1, y)\\
+				o3 = sqrt(o1)\\
+				return o3\\
+
+        \item Faza verifikacije:\\Da li postoji program P', različit od kandidata za rešenje P, koji takođe zadovoljava sve test primere, ali se na nekom ulazu z razlikuje od P?
+        \item Povratni korak - razmatra novodobijeni ulaz z
+        \item Faza validacije - potvrda da program zadovoljava sve ulaze
     \end{itemize}
 \end{frame}
 
 \begin{frame}{CEGIS - Stohastička superoptimizacija}
     \begin{itemize}
-        \item Pretražuje se prostor programa i traži se brži ili efikasniji ekvivalent polaznog programa
-        \item Takođe se pretpostavlja da imamo implementaciju programa kao specifikaciju
-        \item Koristi se \emph{MCMC} (eng. \emph{Markov-chain Monte Carlo sampling}) kao mera udaljenosti
+        \item Traži se brži ili efikasniji ekvivalent polaznog programa
+        \item Faza sinteze: novi program dobijamo primenom MCMC
+        \item novi program prihvatamo sa određenom verovatnoćom
+        \item verovatnoća je veća što su polazni i ciljni program sličniji
+        \item Faza verifikacij: proverama da li su ciljni i program kandidat isti
+        \item Povratni korak: poredimo prthodno prihvaćeni i novodobijeni program
+        \item određujemo koji od njih dalje razamtramo
     \end{itemize}
 \end{frame}
 
 \begin{frame}{CEGIS - Enumerativna pretraga}
     \begin{itemize}
-        \item Za specifikaciju se koristi konačan skup test primera
-        \item Pretpostavja se da je dostupna gramatika koja opisuje ciljani jezik (\texttt{add(x, sub(x,y))})
-        \item Programi se dele prema dubini
+        \item Specifikacija - konačan skup test primera
+        \item Gramatika opisuje ciljani jezik (\texttt{add(x, sub(x,y))})
+        \item Faza sinteze: pretražuje sve moguće programe
+        \item Faza verifikacije: proverava da li program zadovoljava sve test primere
+        \item Povratni korak: razmatramo samo različite progame
+        \item različiti programi daju različite rezultate na istom test primer
         \item Sinteza kreće od dubine $0$ i numerišu se svi programi na toj dubini
         \item Na dubini $k$, ispituju se svi programe koji imaju oblik \texttt{operacija(a,b)}, gde su $a$ i $b$ bilo koji izrazi dubine $k-1$
     \end{itemize}
