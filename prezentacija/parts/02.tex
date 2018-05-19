@@ -1,0 +1,89 @@
+% TODO skratiti na 5 slajdova
+
+
+\begin{frame}{Izazovi}
+    \begin{itemize}
+        \item Sa visokog nivoa, problem sinteze se može razložiti na dva potproblema:
+            \begin{itemize}
+                \item Definisanje specifikacija željenog programa
+                \item Pretraživanje prostora mogućih programa u potrazi za onim koji zadovoljava definisane specifikacije
+            \end{itemize}
+        \item Prostor programa se povećava eksponencijalno brzo u odnosu na veličinu željenog programa
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Izazovi - Definisanje specifikacija}
+    \begin{itemize}
+        \item Većina programa koji se danas koriste su previše komplikovani da bi se u potpunosti opisali bilo formalnim bilo neformalnim metodama
+        \item Potrebno je omogućiti korisniku da definiše željeni program do neke tačke, a da kasnije tokom sinteze, interaktivno sa računarom, postepeno dolazi do rešenja
+        \item \emph{FlashFill}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Izazovi - Pretraživanje prostora programa}
+    \begin{itemize}
+        \item Prostor programa - skup koji sadrži sve moguće programe koji se mogu napisati
+        \item Pretraga ovog skupa znači nalaženje programa koji zadovoljava specifikacije
+        \item Tehnike pretrage se mogu zasnivati na:
+            \begin{itemize}
+                \item Enumerativnoj pretrazi
+                \item Dedukciji
+                \item Tehnikama sa ograničenjima
+                \item Induktivnim i statističkim metodama
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Izazovi - Pretraživanje prostora programa - Enumerativna pretraga}
+    \begin{itemize}
+        \item Jedna od najefikasnijih tehnika za generisanje malih programa
+        \item Tehnike \emph{čišćenja}
+        \item Prvo se na neki način opiše prostor pretrage u kome se nalazi željeni program
+        \item Kada se mogući programi numerišu po osobinama, mogu da se odmah odbace oni koji ne zadovoljavaju specifikaciju
+        \item Enumerativna tehnika je poluodlučiva
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Izazovi - Pretraživanje prostora programa - Deduktivna pretraga}
+    \begin{itemize}
+        \item Pretpostavka da postoji celokupna formalna specifikacija željenog programa
+        \item Rešenje se sintetiše postupkom dokazivanja teorema, logičkim zaključivanjem i razrešavanjem ograničenja
+        \item Deduktivna pretraga je pretraga odozgo nadole
+        \item Koristi tehniku podeli-pa-vladaj
+        \item Deljenje problema na potprobleme nije moguće u opštem slučaju
+        \item Kombinovanje deduktivne pretrage sa enumerativnom
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Izazovi - Pretraživanje prostora programa - Tehnike sa ograničenjima}
+    \begin{itemize}
+        \item Tehnike prilagođavanja datim ograničenjima
+        \item Dva velika koraka:
+            \begin{itemize}
+                \item Generisanje ograničenja
+                \item Razrešavanje ograničenja
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Izazovi - Pretraživanje prostora programa - Statistička pretraga}
+    \begin{itemize}
+        \item Koriste neku vrstu statistike kako bi došle do rešenja
+        \item \emph{Mašinsko učenje}
+        \item \emph{Genetsko programiranje}
+        \item \emph{Probabilističko zaključivanje}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Izazovi - Pretraživanje prostora programa - Induktivna pretraga}
+    \begin{itemize}
+        \item Može se smatrati kao nadogradnja tehnike pretrage sa ograničenjima
+        \item Prilikom svake iteracije se generišu ograničenja
+        \item Rešavačem se dođe do mogućeg rešenja a zatim se ispita da li je ono zadovoljavajuće kao opšte rešenje
+        \item Može da koristi tehnike mašinskog učenja - \emph{Aktivno učenje}
+        \item \emph{CEGIS}
+    \end{itemize}
+\end{frame}

@@ -1,0 +1,27 @@
+
+\begin{frame}{CEGIS - Sinteza vodjena uzorom}
+    \begin{itemize}
+        \item \emph{Oracle-guided synthesis}
+        \item Pretpostavlja da imamo implementaciju programa koji želimo da sintetišemo - uzor
+        \item Uzor se tretira kao crna kutija
+        \item Novi test primeri se kreiraju generišući proizvoljne ulaze a od uzora se dobijaju odgovarajući izlazi za svaki prosleđeni ulaz
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{CEGIS - Stohastička superoptimizacija}
+    \begin{itemize}
+        \item Pretražuje se prostor programa i traži se brži ili efikasniji ekvivalent polaznog programa
+        \item Takođe se pretpostavlja da imamo implementaciju programa kao specifikaciju
+        \item Koristi se \emph{MCMC} (eng. \emph{Markov-chain Monte Carlo sampling}) kao mera udaljenosti
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{CEGIS - Enumerativna pretraga}
+    \begin{itemize}
+        \item Za specifikaciju se koristi konačan skup test primera
+        \item Pretpostavja se da je dostupna gramatika koja opisuje ciljani jezik (\texttt{add(x, sub(x,y))})
+        \item Programi se dele prema dubini
+        \item Sinteza kreće od dubine $0$ i numerišu se svi programi na toj dubini
+        \item Na dubini $k$, ispituju se svi programe koji imaju oblik \texttt{operacija(a,b)}, gde su $a$ i $b$ bilo koji izrazi dubine $k-1$
+    \end{itemize}
+\end{frame}
