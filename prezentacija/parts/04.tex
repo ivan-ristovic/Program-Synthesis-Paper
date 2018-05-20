@@ -1,15 +1,18 @@
 
-\begin{frame}{CEGIS - Sinteza vodjena uzorom}
+\begin{frame}[fragile]{CEGIS - Sinteza vodjena uzorom}
     \begin{itemize}
-        \item eng. \emph{Oracle-guided synthesis}
-        \item Pretpostavlja postojanje uzora (npr. imlementacija programa)
+        \item \emph{Oracle-guided synthesis}
+        \item Pretpostavlja postojanje uzora (npr. implementacija programa)
         \item Biblioteka komponenti za kreiranje programa
-		\item Primer:  \\
-				program(x,y):\\
-				o1 = add(x, y)\\
-				o2 = add(o1, y)\\
-				o3 = sqrt(o1)\\
-				return o3\\
+		\item Primer:\\
+		\centering
+        \begin{lstlisting}
+	    program(x,y): 
+		o1 = add(x, y)
+		o2 = add(o1, y) 
+		o3 = sqrt(o1) 
+		return o3
+        \end{lstlisting}
     \end{itemize}
 \end{frame}
 
@@ -17,8 +20,8 @@
 \begin{frame}{CEGIS - Sinteza vodjena uzorom}
     \begin{itemize}     
         \item Faza verifikacije: \emph{Da li postoji program $P'$, različit od kandidata za rešenje $P$, koji takođe zadovoljava sve test primere, ali se na nekom ulazu z razlikuje od $P$?} 
-        \item Povratni korak: kreira novi test primer na osnovu ulaza $z$
-        \item Faza validacije: potvrđuje da program zadovoljava sve ulaze
+        \item Povratni korak: Kreira se novi test primer na osnovu ulaza
+        \item Faza validacije: Potvrđuje se da program zadovoljava sve ulaze
     \end{itemize}
 \end{frame}
 
@@ -28,17 +31,16 @@
         \item Traži se brži ili efikasniji ekvivalent polaznog programa
         \item Faza sinteze:
         \begin{itemize}
-        	\item novi program sintetišemo na osnovu tekućeg programa
-        	\item novi program prihvatamo sa određenom verovatnoćom
-        	\item verovatnoća je veća što su polazni i ciljni program sličniji
+        	\item Novi program sintetišemo na osnovu tekućeg programa
+        	\item Novi program prihvatamo sa određenom verovatnoćom
+        	\item Verovatnoća je veća što su polazni i ciljni program sličniji
         \end{itemize}
-        \item Faza verifikacij: proverava da li su ciljni i program kandidat isti
+        \item Faza verifikacije: Proverava se jednakost programa kandidata i ciljnog programa
         \item Povratni korak: 
         \begin{itemize}
-        	\item poredi prethodno prihvaćeni i novodobijeni program
-        	\item određuje koji od njih dalje razmatra
+        	\item Porede se prethodno prihvaćeni i novodobijeni program
+        	\item Određuje se koji od njih \'c{}e dalje da se razmatra
         \end{itemize}
-       
     \end{itemize}
 \end{frame}
 
@@ -46,14 +48,13 @@
     \begin{itemize}
         \item Specifikacija - konačan skup test primera
         \item Gramatika opisuje ciljni jezik (\texttt{add(x, sub(x,y))})
-        \item Faza sinteze: pretražuje sve moguće programe
-        \item Faza verifikacije: proverava da li program zadovoljava sve test primere
+        \item Faza sinteze: Pretražuju se svi mogući programi
+        \item Faza verifikacije: Proverava se da li program zadovoljava sve test primere
         \item Povratni korak: 
         \begin{itemize}
-        	\item razmatra samo različite programe
-        	\item različiti programi daju različite rezultate na istom test primeru
-        	\item Na dubini $k$, ispituju se svi programe koji imaju oblik \texttt{operacija(a,b)}, gde su $a$ i $b$ bilo koji izrazi dubine $k-1$
+        	\item Razmatra samo različite programe
+        	\item Različiti programi daju različite rezultate na istom test primeru
+        	\item Na dubini $k$, ispituju se svi programi koji imaju oblik \texttt{operacija(a,b)}, gde su $a$ i $b$ bilo koji izrazi dubine $k-1$
         \end{itemize}
-       
     \end{itemize}
 \end{frame}
