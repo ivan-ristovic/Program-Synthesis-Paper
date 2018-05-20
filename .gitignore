@@ -1,6 +1,5 @@
 ## PDF output 
-SintezaPrograma.pdf
-slides.pdf
+*.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
