@@ -2,19 +2,27 @@
 
 \begin{frame}{CEGIS}
     \begin{itemize}
-        \item Program se može sintetisati tako što se definiše specifikacija i zapiše u vidu formule koja se prosledi SMT rešavačima
-        \item Koji je najmanji podskup ulaza koji je potrebno razmatrati da bi se sintetisao program koji zadovoljava date specifikacije?
-        \item Korišćenjem SMT rešavača dolazimo do svih mogućih implementacija željenog programa koristeći sve ulaze koji su razmatrani do tog trenutka
-        \item Paralelno, drugi SMT rešavač pronalazi kontraprimer koji pokazuje da poslednji sintetisani program nije rešenje
+		\item Ideja:
+			\begin{itemize}
+				\item Definiše se specifikacija programa u vidu formule
+		    	\item SMT rešavač pronalazi program koji zadovoljava rešenje
+			\end{itemize}    	
+    	\item Problem: previše ulaza 
+        \item \emph{Koji je najmanji podskup ulaza koji je potrebno razmatrati da bi se sintetisao program koji zadovoljava date specifikacije?}
+        \item CEGIS iterativno povećava prostor pretrage i pronalazi program kandidat
+        \item Paralelno, drugi SMT rešavač pronalazi kontraprimer 
+		\item Ako ne postoji kontraprimer, kandidat je traženi program
     \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{CEGIS - Arhitektura}
     \begin{itemize}
-        \item Pretraga vođena kontraprimerima (eng. \emph{counterexample-guided})
-        \item CEGIS se sastoji iz dve faze: \emph{induktivne sinteze} i \emph{verifikacije}
-        \item U fazi sinteze se pronalazi program kandidat koji može da zadovolji specifikaciju
-        \item U fazi verifikacije se proverava da li taj kandidat zaista zadovoljava specifikaciju
+    	\item Pretraga vođena kontraprimerima \\(eng. \emph{Counterexample-Guided Inductive Synthesis})
+        \item Dve faze: 
+        	\begin{itemize}
+        		\item \emph{Faza sinteze} - pronalazi program kandidat
+        		\item \emph{Faza verifikacije} - proverava da li kandidat zadovoljava specifikaciju 
+        	\end{itemize}
     \end{itemize}
     \begin{figure}
         \begin{center}
