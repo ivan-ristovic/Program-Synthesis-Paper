@@ -5,12 +5,13 @@
 		\item Ideja:
 			\begin{itemize}
 				\item Definiše se specifikacija programa u vidu formule
-		    	\item SMT rešavač pronalazi program koji zadovoljava rešenje
+		    	\item SMT rešavač pronalazi program koji zadovoljava specifikaciju
 			\end{itemize}    	
     	\item Problem: previše ulaza 
         \item \emph{Koji je najmanji podskup ulaza koji je potrebno razmatrati da bi se sintetisao program koji zadovoljava date specifikacije?}
-        \item CEGIS iterativno povećava prostor pretrage i pronalazi program kandidat
-        \item Paralelno, drugi SMT rešavač pronalazi kontraprimer 
+        \item CEGIS pokušava da reši ovaj problem
+        \item Iterativno se povećava prostor pretrage i pronalazi program kandidat za rešenje
+        \item Drugi SMT rešavač pronalazi kontraprimer za nađeni kandidat
 		\item Ako ne postoji kontraprimer, kandidat je traženi program
     \end{itemize}
 \end{frame}
@@ -26,7 +27,7 @@
     \end{itemize}
     \begin{figure}
         \begin{center}
-            \includegraphics[scale=0.4]{../resources/cegis.jpeg}
+            \includegraphics[scale=0.4]{../resources/cegis.png}
         \end{center}
         \caption{CEGIS petlja}
     \end{figure}
