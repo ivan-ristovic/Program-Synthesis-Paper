@@ -1,4 +1,4 @@
-# msnr-seminarski
+# Program Synthesis paper
 
 Science Paper Methodology course group project - Paper on Program Synthesis
 
